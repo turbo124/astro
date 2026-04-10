@@ -1,5 +1,12 @@
 ---
-// Testimonials section — exact content from invoiceninja.com
+import { t, type Locale } from '../../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+
 const testimonials = [
   {
     quote: "Invoice Ninja is a robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day\u2026",
@@ -23,14 +30,14 @@ const testimonials = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-dark">Testimonials</h2>
-      <p class="mt-3 text-lg text-gray-500">200,000+ businesses rely on Invoice Ninja</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-dark">{t(locale, 'testimonials.heading')}</h2>
+      <p class="mt-3 text-lg text-gray-500">{t(locale, 'testimonials.subheading')}</p>
     </div>
 
     <!-- Testimonial Cards -->
     <div class="grid md:grid-cols-3 gap-8">
-      {testimonials.map((t) => (
-        <a href={t.href} target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+      {testimonials.map((testimonial) => (
+        <a href={testimonial.href} target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
           <!-- 5 Stars -->
           <div class="flex gap-1 mb-5">
             {[1, 2, 3, 4, 5].map(() => (
@@ -40,9 +47,9 @@ const testimonials = [
             ))}
           </div>
           <blockquote class="text-gray-600 leading-relaxed mb-6 text-sm lg:text-base">
-            &ldquo;{t.quote}&rdquo;
+            &ldquo;{testimonial.quote}&rdquo;
           </blockquote>
-          <div class="text-sm font-semibold text-primary">{t.source}</div>
+          <div class="text-sm font-semibold text-primary">{testimonial.source}</div>
         </a>
       ))}
     </div>

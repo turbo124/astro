@@ -1,48 +1,55 @@
 ---
-// "4 Steps to Get Paid" — styled to match invoiceninja.com homepage
+import { t, type Locale } from '../../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+
 const steps = [
   {
     number: 1,
-    title: "Let's get started!",
+    title: t(locale, 'steps.1.title'),
     items: [
-      { label: "Create a FREE account", href: "https://app.invoicing.co/#/register" },
-      { label: "Confirm your email" },
-      { label: "Login & customize!" },
+      { label: t(locale, 'steps.1.item1'), href: "https://app.invoicing.co/#/register" },
+      { label: t(locale, 'steps.1.item2') },
+      { label: t(locale, 'steps.1.item3') },
     ],
-    cta: { label: "Create Account", href: "https://app.invoicing.co/#/register" },
+    cta: { label: t(locale, 'steps.1.cta'), href: "https://app.invoicing.co/#/register" },
   },
   {
     number: 2,
-    title: "Upload your logo",
+    title: t(locale, 'steps.2.title'),
     items: [
-      { label: "Upload your logo" },
-      { label: "Enter company info" },
-      { label: "Explore invoice designs" },
+      { label: t(locale, 'steps.2.item1') },
+      { label: t(locale, 'steps.2.item2') },
+      { label: t(locale, 'steps.2.item3') },
     ],
-    cta: { label: "Invoice Templates", href: "/invoice-templates/" },
+    cta: { label: t(locale, 'steps.2.cta'), href: "/invoice-templates/" },
   },
   {
     number: 3,
-    title: "Setup online payments",
+    title: t(locale, 'steps.3.title'),
     items: [
-      { label: "Stripe Connect", href: "/payment-gateway/stripe/" },
-      { label: "PayPal & Venmo", href: "/payment-gateway/paypal/" },
-      { label: "GoCardless", href: "/payment-gateway/gocardless/" },
-      { label: "Many payment options", href: "/payments/" },
+      { label: t(locale, 'steps.3.item1'), href: "/payment-gateway/stripe/" },
+      { label: t(locale, 'steps.3.item2'), href: "/payment-gateway/paypal/" },
+      { label: t(locale, 'steps.3.item3'), href: "/payment-gateway/gocardless/" },
+      { label: t(locale, 'steps.3.item4'), href: "/payments/" },
     ],
-    cta: { label: "Payment Gateways", href: "/payments/" },
+    cta: { label: t(locale, 'steps.3.cta'), href: "/payments/" },
   },
   {
     number: 4,
-    title: "Create invoices, get paid",
+    title: t(locale, 'steps.4.title'),
     items: [
-      { label: "Email invoices & quotes", href: "/invoicing/" },
-      { label: "Time-tasks & projects", href: "/projects/" },
-      { label: "Track expenses & vendors", href: "/expenses/" },
-      { label: "Sync your bank accounts", href: "/banking/" },
-      { label: "So much more!", href: "/features/" },
+      { label: t(locale, 'steps.4.item1'), href: "/invoicing/" },
+      { label: t(locale, 'steps.4.item2'), href: "/projects/" },
+      { label: t(locale, 'steps.4.item3'), href: "/expenses/" },
+      { label: t(locale, 'steps.4.item4'), href: "/banking/" },
+      { label: t(locale, 'steps.4.item5'), href: "/features/" },
     ],
-    cta: { label: "Learn More", href: "/overview/" },
+    cta: { label: t(locale, 'steps.4.cta'), href: "/overview/" },
   },
 ];
 ---
@@ -52,9 +59,9 @@ const steps = [
     <!-- Section Header -->
     <div class="text-center mb-16">
       <a href="/how-it-works/" class="hover:text-primary transition-colors">
-        <h2 class="text-3xl sm:text-4xl font-bold text-dark">4 Steps to Get Paid.</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark">{t(locale, 'steps.heading')}</h2>
       </a>
-      <p class="mt-3 text-lg text-gray-500">Yes, it's really that easy!</p>
+      <p class="mt-3 text-lg text-gray-500">{t(locale, 'steps.subheading')}</p>
     </div>
 
     <!-- Steps Grid -->
@@ -63,7 +70,7 @@ const steps = [
         <div class="relative bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-6 text-white group hover:from-primary hover:to-primary-dark transition-all duration-300 shadow-lg">
           <!-- Step Label -->
           <div class="mb-4">
-            <span class="text-xs font-bold uppercase tracking-widest text-white/60">{step.number} Step</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-white/60">{step.number} {t(locale, 'steps.step')}</span>
           </div>
 
           <!-- Title -->

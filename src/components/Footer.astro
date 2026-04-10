@@ -1,47 +1,55 @@
 ---
+import { t, type Locale } from '../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+
 const products = [
-  { label: "Invoice Ninja Overview", href: "/overview/" },
-  { label: "Invoicing & Quotations", href: "/invoicing/" },
-  { label: "Online Payments", href: "/payments/" },
-  { label: "Time Track Tasks & Projects", href: "/projects/" },
-  { label: "Expenses, Vendors, PO's", href: "/expenses/" },
-  { label: "Integrate Bank Accounts", href: "/banking/" },
-  { label: "Mobile & Desktop Apps", href: "/download-apps/" },
-  { label: "DocuNinja App", href: "/documents/" },
-  { label: "Event Schedule App", href: "https://www.eventschedule.com/" },
-  { label: "QuickBooks Backup App", href: "/quickbooks-backup-tool/" },
+  { label: t(locale, 'footer.products.overview'), href: "/overview/" },
+  { label: t(locale, 'footer.products.invoicing'), href: "/invoicing/" },
+  { label: t(locale, 'footer.products.payments'), href: "/payments/" },
+  { label: t(locale, 'footer.products.projects'), href: "/projects/" },
+  { label: t(locale, 'footer.products.expenses'), href: "/expenses/" },
+  { label: t(locale, 'footer.products.banking'), href: "/banking/" },
+  { label: t(locale, 'footer.products.apps'), href: "/download-apps/" },
+  { label: t(locale, 'footer.products.docuninja'), href: "/documents/" },
+  { label: t(locale, 'footer.products.events'), href: "https://www.eventschedule.com/" },
+  { label: t(locale, 'footer.products.quickbooks'), href: "/quickbooks-backup-tool/" },
 ];
 
 const whyUs = [
-  { label: "Referral Program -- Earn 50%!", href: "/referrals/" },
-  { label: "Yes!", href: "/yes/" },
-  { label: "Our Story", href: "/our-story/" },
-  { label: "Who's It For?", href: "/whos-it-for/" },
-  { label: "How It Works", href: "/how-it-works/" },
-  { label: "How We Compare", href: "/compare/" },
-  { label: "Slack", href: "https://slack.invoiceninja.com/" },
-  { label: "Discord", href: "https://discord.gg/ZwEdtfCwXA" },
+  { label: t(locale, 'footer.whyUs.referrals'), href: "/referrals/" },
+  { label: t(locale, 'footer.whyUs.yes'), href: "/yes/" },
+  { label: t(locale, 'footer.whyUs.ourStory'), href: "/our-story/" },
+  { label: t(locale, 'footer.whyUs.whoIsItFor'), href: "/whos-it-for/" },
+  { label: t(locale, 'footer.whyUs.howItWorks'), href: "/how-it-works/" },
+  { label: t(locale, 'footer.whyUs.compare'), href: "/compare/" },
+  { label: t(locale, 'footer.whyUs.slack'), href: "https://slack.invoiceninja.com/" },
+  { label: t(locale, 'footer.whyUs.discord'), href: "https://discord.gg/ZwEdtfCwXA" },
 ];
 
 const resources = [
-  { label: "Contact & Support", href: "/contact-support/" },
-  { label: "EU eInvoicing", href: "/e-invoicing/" },
-  { label: "App User Guide", href: "https://invoiceninja.github.io/" },
-  { label: "API Documentation", href: "https://api-docs.invoicing.co/" },
-  { label: "Self-Hosting Installers", href: "/installers/" },
-  { label: "Self-Hosting Recommendations", href: "/hosting-recommendations/" },
-  { label: "Business Blog", href: "/blog/" },
-  { label: "Server Status", href: "https://status.invoiceninja.com/" },
-  { label: "Branding Kit", href: "/brand-kit/" },
+  { label: t(locale, 'footer.resources.contact'), href: "/contact-support/" },
+  { label: t(locale, 'footer.resources.eInvoicing'), href: "/e-invoicing/" },
+  { label: t(locale, 'footer.resources.userGuide'), href: "https://invoiceninja.github.io/" },
+  { label: t(locale, 'footer.resources.api'), href: "https://api-docs.invoicing.co/" },
+  { label: t(locale, 'footer.resources.installers'), href: "/installers/" },
+  { label: t(locale, 'footer.resources.hosting'), href: "/hosting-recommendations/" },
+  { label: t(locale, 'footer.resources.blog'), href: "/blog/" },
+  { label: t(locale, 'footer.resources.status'), href: "https://status.invoiceninja.com/" },
+  { label: t(locale, 'footer.resources.brandKit'), href: "/brand-kit/" },
 ];
 
 const legal = [
-  { label: "Terms of Service", href: "/terms/" },
-  { label: "Data Privacy", href: "/privacy-policy/" },
-  { label: "PCI Compliance", href: "/pci/" },
-  { label: "GDPR", href: "/gdpr/" },
-  { label: "Self-Hosting Data", href: "/self-hosting-privacy-data-control/" },
-  { label: "Self-Hosting Terms", href: "/self-hosting-terms-service/" },
+  { label: t(locale, 'footer.legal.terms'), href: "/terms/" },
+  { label: t(locale, 'footer.legal.privacy'), href: "/privacy-policy/" },
+  { label: t(locale, 'footer.legal.pci'), href: "/pci/" },
+  { label: t(locale, 'footer.legal.gdpr'), href: "/gdpr/" },
+  { label: t(locale, 'footer.legal.selfHostPrivacy'), href: "/self-hosting-privacy-data-control/" },
+  { label: t(locale, 'footer.legal.selfHostTerms'), href: "/self-hosting-terms-service/" },
 ];
 ---
 
@@ -55,14 +63,14 @@ const legal = [
           <img src="/images/logo-circle.png" alt="Invoice Ninja" class="h-10 w-10" />
         </a>
         <div class="space-y-3 mt-6">
-          <a href="/pricing-plans/" class="block text-sm text-gray-400 hover:text-white transition-colors font-medium">Pricing</a>
-          <a href="https://app.invoicing.co/#/login" class="block text-sm text-gray-400 hover:text-white transition-colors font-medium">Account Login</a>
+          <a href="/pricing-plans/" class="block text-sm text-gray-400 hover:text-white transition-colors font-medium">{t(locale, 'footer.pricing')}</a>
+          <a href="https://app.invoicing.co/#/login" class="block text-sm text-gray-400 hover:text-white transition-colors font-medium">{t(locale, 'footer.login')}</a>
         </div>
       </div>
 
       <!-- Products -->
       <div>
-        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products</h3>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t(locale, 'footer.products')}</h3>
         <ul class="space-y-2.5">
           {products.map((link) => (
             <li>
@@ -74,7 +82,7 @@ const legal = [
 
       <!-- Why Invoice Ninja? -->
       <div>
-        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Why Invoice Ninja?</h3>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t(locale, 'footer.whyUs')}</h3>
         <ul class="space-y-2.5">
           {whyUs.map((link) => (
             <li>
@@ -86,7 +94,7 @@ const legal = [
 
       <!-- Resources -->
       <div>
-        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t(locale, 'footer.resources')}</h3>
         <ul class="space-y-2.5">
           {resources.map((link) => (
             <li>
@@ -99,7 +107,7 @@ const legal = [
 
     <!-- Bottom Bar -->
     <div class="border-t border-gray-800 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-gray-500">&copy; {new Date().getFullYear()} Invoice Ninja</p>
+      <p class="text-xs text-gray-500">&copy; {new Date().getFullYear()} {t(locale, 'footer.copyright')}</p>
       <div class="flex flex-wrap justify-center gap-4">
         {legal.map((link) => (
           <a href={link.href} class="text-xs text-gray-500 hover:text-gray-300 transition-colors">{link.label}</a>
