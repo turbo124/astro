@@ -10,17 +10,34 @@ import Button from "../components/ui/Button.astro";
 
   <section class="py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">E-Signatures</h1>
-        <p class="text-xl text-gray-600">Legally binding e-signatures with DocuNinja. Sign documents securely from anywhere.</p>
+        <p class="text-xl text-gray-600">Sign documents securely from anywhere with legally binding e-signatures.</p>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {[
+          { title: "Document Audit Trail", desc: "Track all document interactions with timestamps. Monitor who opens, views, and engages." },
+          { title: "Flexible Signing", desc: "Single or multiple signers, co-signing, and sequential signing workflows." },
+          { title: "Invoice Ninja Integration", desc: "Attach signed contracts to invoices. Request payments upon signature completion." },
+          { title: "Security & Compliance", desc: "SOC 2, HIPAA, and GDPR compliance. Data encryption and multi-factor authentication." },
+          { title: "Team Roles", desc: "Assign roles for signers, approvers, and viewers with controlled permissions." },
+          { title: "Custom Branding", desc: "Add your company logo, colors, and branding to every document." },
+        ].map((f) => (
+          <div class="p-6 rounded-xl border border-gray-200">
+            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
+            <p class="text-sm text-gray-600">{f.desc}</p>
+          </div>
+        ))}
       </div>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      <div class="prose prose-lg prose-gray max-w-none mb-12">
+        <h2>Pre-Built Templates</h2>
+        <p>10 professional templates: Contractor Agreements, NDAs, Partnership Agreements, Power of Attorney, Sales Contracts, Scope of Work, Service Agreements, Liability Agreements, Non-Compete, and Non-Solicitation Agreements.</p>
+      </div>
+
+      <div class="text-center">
+        <Button href="/documents/" variant="primary" size="lg">Learn More About DocuNinja</Button>
       </div>
     </div>
   </section>

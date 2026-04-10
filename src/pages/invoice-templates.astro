@@ -5,21 +5,54 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Invoice Templates" description="Professional invoice templates and customizable designs for your business." path="/invoice-templates/">
+<BaseLayout title="Invoice Templates" description="Professional invoice templates and customizable designs. 4 free templates, 11 with Pro plan." path="/invoice-templates/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Invoice Templates</h1>
-        <p class="text-xl text-gray-600">Professional invoice templates and customizable designs for your business.</p>
+        <p class="text-xl text-gray-600">Beautifully designed, fully customizable invoice templates.</p>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold text-dark mb-6">Free Plan — 4 Designs</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {["Bold", "Creative", "Business", "Hipster"].map((name) => (
+            <div class="p-6 rounded-xl border border-gray-200 text-center">
+              <div class="w-full aspect-[3/4] bg-gray-100 rounded-lg mb-3"></div>
+              <p class="text-sm font-medium text-gray-700">{name}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-2xl font-bold text-dark mb-6">Pro & Enterprise — 11 Designs</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {["Elegant", "Tech", "Playful", "Modern", "Plain", "Clean", "Bold"].map((name) => (
+            <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 text-center">
+              <div class="w-full aspect-[3/4] bg-primary/10 rounded-lg mb-3"></div>
+              <p class="text-sm font-medium text-gray-700">{name}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div class="mt-12 text-center">
+      <div class="prose prose-lg prose-gray max-w-none mb-12">
+        <h2>Industry Templates</h2>
+        <p>Specialized templates for: Graphic Design, Programming, Coaching, Consulting, Web Design, Video Production, SEO, Photography, Auto Repair, Law Firms, Non-Profits, Digital Marketing, Manufacturing, IT Services, and more.</p>
+
+        <h2>Customization</h2>
+        <ul>
+          <li>Upload your company logo</li>
+          <li>Custom invoice number sequences</li>
+          <li>Personalized email subject lines and body text</li>
+          <li>Invoice approval checkboxes or e-signature</li>
+          <li>Attach PDF files to emails</li>
+          <li>Custom reminder email schedules</li>
+        </ul>
+      </div>
+
+      <div class="text-center">
         <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
       </div>
     </div>

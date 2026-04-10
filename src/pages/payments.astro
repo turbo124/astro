@@ -3,24 +3,59 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+import Card from "../components/ui/Card.astro";
 ---
 
-<BaseLayout title="Online Payments" description="Accept credit cards, ACH, PayPal, and more with Invoice Ninja payment integrations." path="/payments/">
+<BaseLayout title="Online Payments" description="Accept credit cards, ACH, PayPal and more. No platform fees — Invoice Ninja never takes a cut." path="/payments/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Online Payments</h1>
-        <p class="text-xl text-gray-600">Accept credit cards, ACH, PayPal, and more with Invoice Ninja payment integrations.</p>
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-6">Accept Payments Online</h1>
+      <p class="text-xl text-gray-600 mb-4">Integrate payment gateways directly into your invoices. Clients pay with a single click.</p>
+      <p class="text-lg font-medium text-primary">Invoice Ninja does not charge or take any fee or % whatsoever!</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-dark mb-8 text-center">Recommended Gateways</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <Card padding="lg">
+          <h3 class="text-xl font-bold text-dark mb-2">Stripe Connect</h3>
+          <p class="text-sm text-gray-600 mb-4">135+ currencies with dozens of payment methods. Rapid market expansion.</p>
+          <a href="/payment-gateway/stripe/" class="text-sm text-primary hover:underline">Learn more &rarr;</a>
+        </Card>
+        <Card padding="lg">
+          <h3 class="text-xl font-bold text-dark mb-2">PayPal & Venmo</h3>
+          <p class="text-sm text-gray-600 mb-4">300+ million PayPal customers globally. Flexible purchasing options.</p>
+          <a href="/payment-gateway/paypal/" class="text-sm text-primary hover:underline">Learn more &rarr;</a>
+        </Card>
+        <Card padding="lg">
+          <h3 class="text-xl font-bold text-dark mb-2">GoCardless</h3>
+          <p class="text-sm text-gray-600 mb-4">85,000+ businesses. Instant one-off payments and automated recurring billing.</p>
+          <a href="/payment-gateway/gocardless/" class="text-sm text-primary hover:underline">Learn more &rarr;</a>
+        </Card>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <h2 class="text-2xl font-bold text-dark mb-8 text-center">All Payment Gateways</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        {["BTCPay", "Braintree", "Payfast", "Mollie", "Square", "CSG Forte", "PayTrace", "eWAY", "Alipay", "Apple Pay", "Razorpay", "Authorize.net", "Checkout.com"].map((name) => (
+          <div class="p-4 rounded-lg border border-gray-200 text-center text-sm font-medium text-gray-700">{name}</div>
+        ))}
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl p-8 space-y-4">
+        <h3 class="text-lg font-bold text-dark">How It Works</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">1.</span> OAuth-based gateways offer automatic integration; others require API credentials.</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">2.</span> Most gateways charge ~2.9% for credit cards; ACH transfers cost substantially less.</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">3.</span> Initial deposits within 1-2 weeks; subsequent deposits in 2-3 days.</li>
+        </ul>
       </div>
 
       <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+        <Button href="/payment-gateway/" size="lg">View All Gateways</Button>
       </div>
     </div>
   </section>

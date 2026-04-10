@@ -2,25 +2,38 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Button from "../components/ui/Button.astro";
+import Card from "../components/ui/Card.astro";
 ---
 
-<BaseLayout title="Self-Hosting Installers" description="Install Invoice Ninja on your own server with our self-hosting solutions." path="/installers/">
+<BaseLayout title="Self-Hosting Installers" description="Install Invoice Ninja on your own server. Choose from Softaculous, Cloudron, Docker, and more." path="/installers/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Self-Hosting Installers</h1>
-        <p class="text-xl text-gray-600">Install Invoice Ninja on your own server with our self-hosting solutions.</p>
+        <p class="text-xl text-gray-600">Host Invoice Ninja on your own server with one-click installers.</p>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { name: "Softaculous", desc: "Automate installation on cPanel-based hosting." },
+          { name: "Cloudron", desc: "Auto-updates, security fixes, and managed deployments." },
+          { name: "Coolify", desc: "Open-source self-hostable Heroku/Netlify alternative." },
+          { name: "Elestio", desc: "Managed deployment with encryption, backups, and monitoring." },
+          { name: "Installatron", desc: "One-click installation and management." },
+          { name: "Hossted", desc: "Instantly deploy on your cloud infrastructure." },
+          { name: "Umbrel", desc: "Run on your own home cloud environment." },
+        ].map((item) => (
+          <Card padding="md">
+            <h3 class="text-lg font-bold text-dark mb-2">{item.name}</h3>
+            <p class="text-sm text-gray-600">{item.desc}</p>
+          </Card>
+        ))}
       </div>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      <div class="mt-12 text-center text-gray-500">
+        <p>Need help? Join our <a href="https://slack.invoiceninja.com/" class="text-primary hover:underline">Slack community</a> (5,000+ members) or email <a href="mailto:Contact@InvoiceNinja.com" class="text-primary hover:underline">Contact@InvoiceNinja.com</a>.</p>
       </div>
     </div>
   </section>

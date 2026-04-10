@@ -2,26 +2,34 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Languages" description="Invoice Ninja supports multiple languages for global businesses." path="/languages/">
+<BaseLayout title="Languages & Currencies" description="Invoice Ninja supports 23+ languages and dozens of currencies. Getting paid is fun in every language!" path="/languages/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Languages</h1>
-        <p class="text-xl text-gray-600">Invoice Ninja supports multiple languages for global businesses.</p>
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Languages & Currencies</h1>
+        <p class="text-xl text-gray-600">Getting paid is fun in every language :)</p>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <h2 class="text-2xl font-bold text-dark mb-6">Supported Languages</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-16">
+        {[
+          "English", "Spanish", "Swedish", "Turkish", "Arabic", "Dutch",
+          "Portuguese (PT)", "French (CA)", "German", "Greek", "Portuguese (BR)",
+          "Italian", "Croatian", "Persian", "Finnish", "French", "Bulgarian",
+          "Chinese", "Serbian", "Latvian", "Macedonian", "Slovak", "Russian",
+        ].map((lang) => (
+          <div class="p-3 rounded-lg bg-gray-50 text-sm text-gray-700 text-center">{lang}</div>
+        ))}
       </div>
+      <p class="text-center text-gray-500 mb-12">And many more community-contributed translations!</p>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
-      </div>
+      <h2 class="text-2xl font-bold text-dark mb-6">Multi-Currency Support</h2>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja supports dozens of currencies from Albanian Lek to Zimbabwean Dollar. Invoice clients globally in their preferred currency with automatic conversion.</p>
+      <p class="text-sm text-gray-500">Language and currency localization is available on the <strong>Forever Free</strong> plan.</p>
     </div>
   </section>
 

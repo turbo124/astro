@@ -5,22 +5,48 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="QuickBooks Backup Tool" description="Backup and migrate your QuickBooks data to Invoice Ninja." path="/quickbooks-backup-tool/">
+<BaseLayout title="QuickBooks Backup Tool" description="Securely backup your QuickBooks Online data with automated scheduling and encrypted storage." path="/quickbooks-backup-tool/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">QuickBooks Backup Tool</h1>
-        <p class="text-xl text-gray-600">Backup and migrate your QuickBooks data to Invoice Ninja.</p>
+        <p class="text-xl text-gray-600">Ninja Backups — Securely backup your QuickBooks Online data.</p>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <div class="space-y-6 mb-12">
+        <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-dark mb-1">Easy OAuth Connection</h3>
+            <p class="text-gray-600">Connect with QuickBooks Online in seconds using secure OAuth authentication.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-dark mb-1">Automated Backups</h3>
+            <p class="text-gray-600">Schedule automatic backups at the intervals you choose.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-6 rounded-xl border border-gray-200">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-dark mb-1">Secure Storage</h3>
+            <p class="text-gray-600">Data protection through encrypted backup systems.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
       </div>
     </div>
   </section>

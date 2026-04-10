@@ -5,22 +5,43 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Bank Integration" description="Connect your bank accounts and automatically import transactions." path="/banking/">
+<BaseLayout title="Bank Integration" description="Connect your bank accounts and automatically import transactions. Powered by Yodlee & GoCardless." path="/banking/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Bank Integration</h1>
-        <p class="text-xl text-gray-600">Connect your bank accounts and automatically import transactions.</p>
+        <p class="text-xl text-gray-600">Automate transaction imports from your bank accounts, credit cards, and PayPal.</p>
+        <p class="mt-2 text-sm text-primary font-medium">Enterprise Plan feature</p>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {[
+          { title: "Import Transactions", desc: "Automatically sync bank, credit card, and PayPal transactions." },
+          { title: "Match Deposits", desc: "Match incoming deposits against multiple invoices simultaneously." },
+          { title: "Reconcile Withdrawals", desc: "Link withdrawals and expenses to vendors for clean bookkeeping." },
+          { title: "Autosync", desc: "Enable automated transaction downloads — no manual refreshing." },
+          { title: "Bulk Categorize", desc: "Bulk assign expense categories across transactions." },
+          { title: "Export Data", desc: "Export expenses and vendors for external reporting." },
+        ].map((f) => (
+          <div class="p-6 rounded-xl border border-gray-200">
+            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
+            <p class="text-sm text-gray-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+        <h2>Powered by Yodlee & GoCardless</h2>
+        <p>Invoice Ninja does NOT access your bank directly. We use secure third-party bank data integrators — Yodlee and GoCardless Bank Account Data (formerly Nordigen) — with read-only access. Neither Invoice Ninja nor these partners can make payments or move money in your accounts.</p>
+
+        <h2>Setup</h2>
+        <p>Navigate to <strong>Settings &gt; Bank Account &gt; Connect Accounts</strong> to get started. Invoice Ninja does NOT store or use your online banking credentials in any capacity.</p>
       </div>
 
       <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
       </div>
     </div>
   </section>

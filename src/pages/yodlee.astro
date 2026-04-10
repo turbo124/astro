@@ -5,22 +5,36 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Yodlee Banking Integration" description="Connect your bank accounts via Yodlee for automatic transaction import." path="/yodlee/">
+<BaseLayout title="Yodlee Banking Integration" description="Securely import bank transactions with Yodlee. Read-only access — we can never move your money." path="/yodlee/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Yodlee Banking Integration</h1>
-        <p class="text-xl text-gray-600">Connect your bank accounts via Yodlee for automatic transaction import.</p>
+        <p class="text-xl text-gray-600">Securely import bank transactions. Read-only access — we can never move your money.</p>
+        <p class="mt-2 text-sm text-primary font-medium">Enterprise Plan feature</p>
       </div>
 
-      <div class="prose prose-lg prose-gray max-w-none mx-auto">
-        <p>This page is being migrated from WordPress. Full content coming soon.</p>
+      <div class="prose prose-lg prose-gray max-w-none">
+        <h2>Security</h2>
+        <p>Invoice Ninja does NOT access your bank directly. We use Yodlee & GoCardless as secure third-party bank data integrators with <strong>read-only</strong> connections. Invoice Ninja does NOT store your banking username or password.</p>
+
+        <h2>Features</h2>
+        <ul>
+          <li>Import bank and credit card transactions</li>
+          <li>Sync PayPal data</li>
+          <li>Match deposits to multiple invoices</li>
+          <li>Match withdrawals to vendors</li>
+          <li>Autosync for automatic downloads</li>
+        </ul>
+
+        <h2>Setup</h2>
+        <p>Navigate to <strong>Settings &gt; Bank Account &gt; Connect Accounts</strong>. If your bank requires 2FA, you'll need to manually refresh to pull the latest transactions.</p>
       </div>
 
       <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
       </div>
     </div>
   </section>

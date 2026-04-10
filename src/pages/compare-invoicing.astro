@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Compare Invoicing Software" description="Compare Invoice Ninja Pro at $140/year against competitors charging $500-$6,000." path="/compare-invoicing/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Compare Invoicing Software</h1>
+        <p class="text-xl text-gray-600">200,000+ users trust Invoice Ninja.</p>
+      </div>
+
+      <div class="overflow-x-auto mb-12">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="py-4 pr-4 text-sm font-semibold text-gray-700">Software</th>
+              <th class="py-4 text-sm font-semibold text-gray-700 text-right">Annual Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100 bg-primary/5">
+              <td class="py-4 pr-4 font-bold text-primary">Invoice Ninja Pro</td>
+              <td class="py-4 text-right font-bold text-primary">$140</td>
+            </tr>
+            {[
+              ["FreshBooks", "$660"], ["Invoice2Go", "$400"], ["Hiveage", "$588"],
+              ["Invoicely", "$360"], ["QuickBooks", "$540"], ["Xero", "$744"],
+              ["Invoiced", "$6,000"], ["FreeAgent", "$240"],
+            ].map(([name, price]) => (
+              <tr class="border-b border-gray-100">
+                <td class="py-4 pr-4 text-gray-700">{name}</td>
+                <td class="py-4 text-right text-gray-700">{price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Try Invoice Ninja Free</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
