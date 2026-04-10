@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Automations" description="Integrate Invoice Ninja with hundreds of apps via Zapier, Make, n8n, Integrately, Pabbly and more." path="/automations/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Automations</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Integrate Invoice Ninja with hundreds of apps via Zapier, Make, n8n, Integrately, Pabbly and more.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+        <a href="/zapier/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
+          <h3 class="font-bold text-dark mb-1">Zapier</h3>
+          <p class="text-sm text-gray-500">5,000+ app integrations</p>
+        </a>
+        <a href="/make-integrations/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
+          <h3 class="font-bold text-dark mb-1">Make</h3>
+          <p class="text-sm text-gray-500">Visual automation builder</p>
+        </a>
+        <a href="/software/n8n/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
+          <h3 class="font-bold text-dark mb-1">n8n</h3>
+          <p class="text-sm text-gray-500">Open-source automation</p>
+        </a>
+        <a href="/software/integrately/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
+          <h3 class="font-bold text-dark mb-1">Integrately</h3>
+          <p class="text-sm text-gray-500">One-click automations</p>
+        </a>
+        <a href="/software/pabbly/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
+          <h3 class="font-bold text-dark mb-1">Pabbly Connect</h3>
+          <p class="text-sm text-gray-500">Affordable automation</p>
+        </a>
+        <a href="/software/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
+          <h3 class="font-bold text-dark mb-1">View All</h3>
+          <p class="text-sm text-gray-500">All integrations &rarr;</p>
+        </a>
+      </div>
+      <div class="mt-12 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -25,6 +25,8 @@ const {
   noindex,
 } = Astro.props;
 
+import '../styles/global.css';
+
 const htmlLang = locale === 'be' ? 'nl-BE' : locale;
 
 const organizationSchema = {
@@ -71,10 +73,6 @@ const organizationSchema = {
       rel="stylesheet"
     />
 
-    <!-- Global CSS -->
-    <style>
-      @import "../styles/global.css";
-    </style>
   </head>
   <body class="font-sans text-dark bg-white antialiased">
     <slot name="header" />

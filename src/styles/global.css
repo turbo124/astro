@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @theme {
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
@@ -19,47 +18,247 @@
   --color-gray-900: #111827;
 }
 
-/* Smooth page transitions */
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Prevent layout shift from scrollbar */
+/* Base resets */
 html {
   overflow-y: scroll;
 }
 
-/* Better image defaults */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Focus styles for accessibility */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-/* Prose overrides for Invoice Ninja brand colors */
+/* ============================================================
+   PROSE TYPOGRAPHY SYSTEM
+   Since @tailwindcss/typography has no v4-compatible release,
+   we implement prose styles manually.
+   ============================================================ */
+
+.prose {
+  color: var(--color-gray-700);
+  line-height: 1.75;
+  max-width: 65ch;
+}
+
+.prose.max-w-none {
+  max-width: none;
+}
+
+/* Headings */
+.prose h1 {
+  color: var(--color-dark);
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  line-height: 1.1;
+}
+
+.prose h2 {
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+  line-height: 1.3;
+}
+
+.prose h3 {
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.4;
+}
+
+.prose h4 {
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Paragraphs */
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose p:first-child {
+  margin-top: 0;
+}
+
+/* Links */
 .prose a {
   color: var(--color-primary);
   text-decoration: none;
+  font-weight: 500;
 }
+
 .prose a:hover {
   text-decoration: underline;
 }
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  color: var(--color-dark);
-}
+
+/* Bold */
 .prose strong {
+  color: var(--color-dark);
+  font-weight: 700;
+}
+
+/* Lists */
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose li::marker {
+  color: var(--color-gray-400);
+}
+
+.prose ol li::marker {
+  color: var(--color-gray-500);
+  font-weight: 500;
+}
+
+/* Nested lists */
+.prose ul ul, .prose ol ul, .prose ul ol, .prose ol ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: 1em;
+  font-style: italic;
+  color: var(--color-gray-600);
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+/* Code */
+.prose code {
+  background: var(--color-gray-100);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.875em;
+  font-weight: 500;
   color: var(--color-dark);
 }
 
-/* Line clamp utility */
+.prose pre {
+  background: var(--color-gray-900);
+  color: var(--color-gray-100);
+  padding: 1em 1.25em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 0.875em;
+  line-height: 1.7;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-weight: 400;
+}
+
+/* Images */
+.prose img {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 0.75em;
+}
+
+/* Horizontal rules */
+.prose hr {
+  border-color: var(--color-gray-200);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 0.875em;
+}
+
+.prose th {
+  border-bottom: 2px solid var(--color-gray-200);
+  padding: 0.75em 1em;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.prose td {
+  border-bottom: 1px solid var(--color-gray-100);
+  padding: 0.75em 1em;
+  vertical-align: top;
+}
+
+/* Figures */
+.prose figcaption {
+  color: var(--color-gray-500);
+  font-size: 0.875em;
+  margin-top: 0.75em;
+  text-align: center;
+}
+
+/* Size variant */
+.prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.prose-lg h2 {
+  font-size: 1.625em;
+}
+
+.prose-lg h3 {
+  font-size: 1.375em;
+}
+
+/* First child margin fix */
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   LINE CLAMP
+   ============================================================ */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
