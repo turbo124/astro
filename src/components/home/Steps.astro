@@ -1,10 +1,9 @@
 ---
-// "4 Steps to Get Paid" — exact content from invoiceninja.com
+// "4 Steps to Get Paid" — styled to match invoiceninja.com homepage
 const steps = [
   {
     number: 1,
     title: "Let's get started!",
-    icon: "/images/how-it-works/create.png",
     items: [
       { label: "Create a FREE account", href: "https://app.invoicing.co/#/register" },
       { label: "Confirm your email" },
@@ -15,7 +14,6 @@ const steps = [
   {
     number: 2,
     title: "Upload your logo",
-    icon: "/images/how-it-works/companylogo.png",
     items: [
       { label: "Upload your logo" },
       { label: "Enter company info" },
@@ -26,7 +24,6 @@ const steps = [
   {
     number: 3,
     title: "Setup online payments",
-    icon: "/images/how-it-works/gateway.png",
     items: [
       { label: "Stripe Connect", href: "/payment-gateway/stripe/" },
       { label: "PayPal & Venmo", href: "/payment-gateway/paypal/" },
@@ -38,7 +35,6 @@ const steps = [
   {
     number: 4,
     title: "Create invoices, get paid",
-    icon: "/images/how-it-works/invoices.png",
     items: [
       { label: "Email invoices & quotes", href: "/invoicing/" },
       { label: "Time-tasks & projects", href: "/projects/" },
@@ -62,46 +58,40 @@ const steps = [
     </div>
 
     <!-- Steps Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {steps.map((step) => (
-        <div class="relative group">
-          <!-- Step Icon & Number -->
-          <div class="flex flex-col items-center mb-5">
-            <img src={step.icon} alt={`Step ${step.number}`} class="w-16 h-16 object-contain mb-3" loading="lazy" />
-            <span class="text-xs font-semibold text-primary uppercase tracking-wider">Step {step.number}</span>
+        <div class="relative bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-6 text-white group hover:from-primary hover:to-primary-dark transition-all duration-300 shadow-lg">
+          <!-- Step Label -->
+          <div class="mb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-white/60">{step.number} Step</span>
           </div>
 
-          <h3 class="text-xl font-bold text-dark mb-4">{step.title}</h3>
+          <!-- Title -->
+          <h3 class="text-lg font-bold text-white mb-5">{step.title}</h3>
 
-          <ul class="space-y-2.5 mb-6">
+          <!-- Items List -->
+          <ol class="space-y-2 mb-6 list-decimal list-inside">
             {step.items.map((item) => (
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
+              <li class="text-sm text-white/80">
                 {item.href ? (
-                  <a href={item.href} class="text-sm text-gray-600 hover:text-primary transition-colors">{item.label}</a>
+                  <a href={item.href} class="text-white/80 hover:text-white transition-colors underline decoration-white/30 hover:decoration-white" target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>{item.label}</a>
                 ) : (
-                  <span class="text-sm text-gray-600">{item.label}</span>
+                  <span>{item.label}</span>
                 )}
               </li>
             ))}
-          </ul>
+          </ol>
 
+          <!-- CTA Arrow Button -->
           <a
             href={step.cta.href}
-            class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+            class="absolute bottom-5 right-5 w-10 h-10 flex items-center justify-center rounded-full border border-white/30 hover:border-white hover:bg-white/10 transition-all"
+            aria-label={step.cta.label}
           >
-            {step.cta.label}
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7V17M17 7H7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </a>
-
-          <!-- Connector line (desktop only, not on last) -->
-          {step.number < 4 && (
-            <div class="hidden lg:block absolute top-5 -right-4 w-8 border-t-2 border-dashed border-gray-200"></div>
-          )}
         </div>
       ))}
     </div>
