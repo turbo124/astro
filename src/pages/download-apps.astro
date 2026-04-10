@@ -2,61 +2,478 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Download Apps" description="Download Invoice Ninja for iOS, Android, macOS, Windows, and Linux." path="/download-apps/">
+<BaseLayout title="Download Apps" description="Download Invoice Ninja desktop and mobile apps for iOS, Android, macOS, Windows, and Linux. Auto-syncing across all devices." path="/download-apps/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Download Invoice Ninja</h1>
-        <p class="text-xl text-gray-600 mb-10">Available on every platform. Auto-syncing across all devices.</p>
-        <div class="flex items-center justify-center gap-8">
-          <img src="/images/download-apps/iPad-Pro.svg" alt="Invoice Ninja on iPad" class="hidden md:block w-72 lg:w-96 drop-shadow-xl" loading="lazy" />
-          <img src="/images/download-apps/Phone-2.png" alt="Invoice Ninja on iPhone" class="w-40 lg:w-52 drop-shadow-xl" loading="lazy" />
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-6xl font-bold text-dark mb-4">Download the apps</h1>
+      <p class="text-xl lg:text-2xl text-gray-600 mb-12">Run Your Business, Get Paid.</p>
+      <div class="flex items-end justify-center gap-6 lg:gap-10">
+        <img src="/images/download-apps/iPad-Pro.svg" alt="Invoice Ninja on iPad" class="hidden md:block w-72 lg:w-[28rem] drop-shadow-xl" loading="eager" />
+        <img src="/images/download-apps/Phone-2.png" alt="Invoice Ninja on iPhone" class="w-40 lg:w-52 drop-shadow-xl" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Desktop Apps -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Desktop Apps</h2>
+      <p class="text-gray-600 mb-10">Available on macOS, Windows, and Linux</p>
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <a href="https://apps.apple.com/app/id1503970375?platform=mac" class="block hover:opacity-80 transition-opacity">
+          <img src="/images/download-apps/Download-on-App-Store-pvpidybswa2ycc7n9s3diqnrb46c4pwgp7kua8e7cs.png" alt="Download on the Mac App Store" class="h-14" loading="lazy" />
+        </a>
+        <a href="https://apps.microsoft.com/store/detail/invoice-ninja/9N3F2BBCFDR6" class="block hover:opacity-80 transition-opacity">
+          <img src="/images/download-apps/Download-on-Windows-App-Store-pvpieajpd4joj9pwafdix5kr14i3ws8z2w25itw33w.png" alt="Download on the Windows Store" class="h-14" loading="lazy" />
+        </a>
+        <a href="https://snapcraft.io/invoiceninja" class="block hover:opacity-80 transition-opacity">
+          <img src="/images/download-apps/Download-on-Linux-pvpiekvxgaxu2zavm1uf6kytkd359ge0sb8hsvgr7g.png" alt="Download for Linux (Snapcraft)" class="h-14" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Apps -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Mobile Apps</h2>
+      <p class="text-gray-600 mb-10">Available on iOS and Android</p>
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <a href="https://apps.apple.com/app/id1503970375?platform=iphone" class="block hover:opacity-80 transition-opacity">
+          <img src="/images/download-apps/Download-on-App-Store-1-pvpif3op8znkj6jkk9yykg81g2ihjegniwa7eeovr0.png" alt="Download on the iOS App Store" class="h-14" loading="lazy" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.invoiceninja.app" class="block hover:opacity-80 transition-opacity">
+          <img src="/images/download-apps/Download-on-Google-Play-pvpiex3tx5ek9wt4mp4kkzvtadex1iqj5zpt1gymyk.png" alt="Get it on Google Play" class="h-14" loading="lazy" />
+        </a>
+        <a href="https://github.com/invoiceninja/admin-portal/releases" class="block hover:opacity-80 transition-opacity">
+          <img src="/images/download-apps/Download-on-Github-pvpifc58yhz5fo7a6vmlow36sjcsgoe8k25kpwcc70.png" alt="Download on GitHub" class="h-14" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Overview: 2-column -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">Desktop & Mobile Apps, built with Google Flutter</h2>
+          <p class="text-lg text-gray-600 mb-8">Desktop, Mobile, and Web Apps Auto-Sync Data.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Invoicing & Quotes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Online Payments</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Tasks & Projects</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Vendors & Expenses</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Product Library</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Full persistence (saves work in progress)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Support 2FA and Google Login</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="/images/download-apps/image.png" alt="Invoice Ninja app features" class="w-full rounded-xl shadow-lg" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Invoice Creation Features -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-16 text-center">Create Invoices in Seconds</h2>
+
+      <!-- Intuitive Business Dashboard -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Intuitive Business Dashboard</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              View revenue, invoices sent, recent activity data
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Track upcoming invoices, invoices past due, and more
+            </li>
+          </ul>
+        </div>
+        <img src="/images/download-apps/image-1.png" alt="Invoice Ninja dashboard" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+
+      <!-- Invoice Clients -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="/images/download-apps/image-2.png" alt="Invoice clients in seconds" class="w-full rounded-xl shadow-lg md:order-first" loading="lazy" />
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Invoice Clients</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Create clients and send invoices in seconds
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Subscriptions, recurring invoices, payment profiles
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Send invoices directly via Gmail/MSN accounts
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Product library to quickly populate invoices & quotes
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment & Notifications -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-16 text-center">Clients pay faster</h2>
+
+      <!-- Online Payments -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Credit cards, ACH payments, PayPal, & much more</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Clients pay directly from their invoice with 1-click
+            </li>
+          </ul>
+        </div>
+        <img src="/images/download-apps/image-3.png" alt="Online payment processing" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+
+      <!-- Notifications -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <img src="/images/download-apps/image-4.png" alt="Real-time notifications" class="w-full rounded-xl shadow-lg md:order-first" loading="lazy" />
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Real-time Notifications</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Receive app/email notifications when clients view/pay
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              View instant data updates when payments are made
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Automate payment reminders & past due notifications
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-2xl border border-gray-200 text-center">
-          <h3 class="text-xl font-bold text-dark mb-6">Mobile</h3>
-          <div class="space-y-4 flex flex-col items-center">
-            <a href="https://apps.apple.com/app/id1503970375?platform=iphone" class="block hover:opacity-80 transition-opacity">
-              <img src="/images/download-apps/Download-on-App-Store-pvpidybswa2ycc7n9s3diqnrb46c4pwgp7kua8e7cs.png" alt="Download on the App Store" class="h-12" loading="lazy" />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.invoiceninja.app" class="block hover:opacity-80 transition-opacity">
-              <img src="/images/download-apps/Download-on-Google-Play-pvpiex3tx5ek9wt4mp4kkzvtadex1iqj5zpt1gymyk.png" alt="Get it on Google Play" class="h-12" loading="lazy" />
-            </a>
-            <a href="https://f-droid.org/en/packages/com.invoiceninja.app" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Android — F-Droid</a>
+      <!-- Time Tracking & Tasks -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Time-tracking, Tasks, Kanban Boards</h3>
+          <p class="text-gray-600 mb-3">The feel of desktop software but with the power of a web-based app.</p>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Create projects, time billable-tasks, monitor progress in kanban boards
+            </li>
+          </ul>
+        </div>
+        <img src="/images/apps/image-1.png" alt="Time tracking and kanban boards" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-4">
+        <div class="flex items-center justify-center gap-1 mb-3">
+          {[1,2,3,4,5].map(() => (
+            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
+        </div>
+        <p class="text-sm text-gray-500 mb-2">Rated 5 out of 5</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-12">200,000+ users trust Invoice Ninja</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="https://www.cardrates.com/news/invoice-ninja-makes-getting-paid-seamless-for-smbs/" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+          <div class="flex gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="text-gray-600 text-sm leading-relaxed mb-4">&ldquo;Invoice Ninja is a robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day...&rdquo;</blockquote>
+          <p class="text-sm font-semibold text-primary">CardRates.com</p>
+        </a>
+
+        <a href="https://www.merchantmaverick.com/review-category/invoicing-software/?sortby=rating&pagen=0" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+          <div class="flex gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="text-gray-600 text-sm leading-relaxed mb-4">&ldquo;Invoice Ninja is well on its way to becoming one of the greats of the invoicing world! A great option for small business owners!&rdquo;</blockquote>
+          <p class="text-sm font-semibold text-primary">Merchant Maverick</p>
+        </a>
+
+        <a href="https://www.forbes.com/advisor/business/software/best-free-invoice-software/" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+          <div class="flex gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="text-gray-600 text-sm leading-relaxed mb-4">&ldquo;The best free invoice software is not only easy on the bank account but user-friendly and packed with the features!&rdquo;</blockquote>
+          <p class="text-sm font-semibold text-primary">Forbes</p>
+        </a>
+
+        <a href="https://money.com/best-invoicing-software/" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+          <div class="flex gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="text-gray-600 text-sm leading-relaxed mb-4">&ldquo;Best Invoicing for Freelancers. Invoice Ninja can give any other free invoicing and billing software a run for its money!&rdquo;</blockquote>
+          <p class="text-sm font-semibold text-primary">Money.com</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Let's Connect -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-12 text-center">Let's Connect!</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Forums -->
+        <a href="https://forum.invoiceninja.com/" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 rounded-2xl p-8 text-center border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+          <img src="/images/apps/chat-1024x580.png" alt="Community Forums" class="w-full rounded-lg mb-6" loading="lazy" />
+          <h3 class="text-xl font-bold text-dark mb-3">Forums</h3>
+          <p class="text-gray-600 text-sm">Connect with thousands of Invoice Ninja users on our community forums.</p>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:Contact@InvoiceNinja.com" class="block bg-gray-50 rounded-2xl p-8 text-center border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+          <img src="/images/apps/email-1024x582.png" alt="Email us" class="w-full rounded-lg mb-6" loading="lazy" />
+          <h3 class="text-xl font-bold text-dark mb-3">Email</h3>
+          <p class="text-gray-600 text-sm">We want to hear from you! Questions? We're here to help!</p>
+          <p class="text-primary font-semibold text-sm mt-2">Contact@InvoiceNinja.com</p>
+        </a>
+
+        <!-- Slack -->
+        <a href="https://slack.invoiceninja.com/" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 rounded-2xl p-8 text-center border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+          <img src="/images/apps/slack-1024x582.png" alt="Slack community" class="w-full rounded-lg mb-6" loading="lazy" />
+          <h3 class="text-xl font-bold text-dark mb-3">Slack</h3>
+          <p class="text-gray-600 text-sm">Join over 5,000 Invoice Ninja members on our community Slack channel!</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-12 text-center">Frequently Asked Questions</h2>
+
+      <div class="space-y-3" id="download-faq-list">
+        <!-- FAQ 1 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">What are the benefits of using invoice templates?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>Businesses need their invoices to be clear, legally valid, set on time and professional -- a hastily typed Word document or email simply doesn't give the right impression and can pretty easily be mistaken for spam.</p>
+              <p>Invoice templates provide ready-made formats that are quick to upload your logo and company details. They ensure no crucial information is missed -- such as sales tax, due dates, and contact details -- giving you a professional and consistent appearance every time.</p>
+            </div>
           </div>
         </div>
-        <div class="p-8 rounded-2xl border border-gray-200 text-center">
-          <h3 class="text-xl font-bold text-dark mb-6">Desktop</h3>
-          <div class="space-y-4 flex flex-col items-center">
-            <a href="https://apps.apple.com/app/id1503970375?platform=mac" class="block hover:opacity-80 transition-opacity">
-              <img src="/images/download-apps/Download-on-App-Store-pvpidybswa2ycc7n9s3diqnrb46c4pwgp7kua8e7cs.png" alt="Download on the Mac App Store" class="h-12" loading="lazy" />
-            </a>
-            <a href="https://apps.microsoft.com/store/detail/invoice-ninja/9N3F2BBCFDR6" class="block hover:opacity-80 transition-opacity">
-              <img src="/images/download-apps/Download-on-Windows-App-Store-pvpieajpd4joj9pwafdix5kr14i3ws8z2w25itw33w.png" alt="Download on the Windows Store" class="h-12" loading="lazy" />
-            </a>
-            <a href="https://flathub.org/apps/com.invoiceninja.InvoiceNinja" class="block hover:opacity-80 transition-opacity">
-              <img src="/images/download-apps/Download-on-Linux-pvpiekvxgaxu2zavm1uf6kytkd359ge0sb8hsvgr7g.png" alt="Download for Linux (Flathub)" class="h-12" loading="lazy" />
-            </a>
-            <a href="https://snapcraft.io/invoiceninja" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Linux — Snapcraft</a>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">Which invoice template formats should I use?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>The choice is personal -- browse our professional templates and pick the one that best fits your brand. Our Free plan includes four freelance invoice templates, while the Pro plan unlocks eleven invoice formats. You can upload your business logo for customization and choose templates tailored to your individual business needs.</p>
+            </div>
           </div>
         </div>
-        <div class="p-8 rounded-2xl border border-gray-200 text-center">
-          <h3 class="text-xl font-bold text-dark mb-6">Web & Extensions</h3>
-          <div class="space-y-4">
-            <a href="https://app.invoicing.co" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Web App</a>
-            <a href="https://chromewebstore.google.com/detail/invoice-ninja-tasks/dlfcbfdpemfnjbjlladogijcchfmmaaf" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Chrome Extension</a>
-            <a href="https://wordpress.org/plugins/invoiceninja/" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">WordPress Plugin</a>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">How do I make an invoice for my small business?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>It's easy in three steps:</p>
+              <ol class="list-decimal list-inside space-y-2">
+                <li>Create your Invoice Ninja account, enter your details, and upload your logo.</li>
+                <li>Pick your preferred template and enter customer information.</li>
+                <li>Send to your client and integrate payment solutions to get paid fast.</li>
+              </ol>
+              <p>Need help? Join our 5,000+ community members in our exclusive Slack, get guidance in our online forums, or reach out directly to the Invoice Ninja team.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">Which are the best invoice templates?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>Our mission is to make business invoicing stress-free and seamless. Invoice Ninja combines advanced features with security and transparent pricing. Our Free plan offers a zero-cost option for up to 5 clients with unlimited invoicing, four templates, branded documents, and auto-billing. Scalable Pro and Enterprise plans are available with friendly support.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">How do I start invoicing online?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>Four simple steps to get started:</p>
+              <ol class="list-decimal list-inside space-y-2">
+                <li>Create a FREE Invoice Ninja account.</li>
+                <li>Upload your logo & choose an invoice design.</li>
+                <li>Integrate your payment gateway.</li>
+                <li>Create clients, invoices, get paid!</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">How do my clients pay their invoices online?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>A merchant processor (also called a "payment gateway") handles the transaction. After integrating your gateway, clients see a "Pay Now" button on their invoices. The payment gateway processes the payment while clients remain in your branded portal, then deposits the money into your business bank account. Invoice Ninja supports dozens of payment gateways.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">How do I upload my company logo on invoices?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>Navigate to Settings > Company Details, and click "Logo" to upload or change your logo. This is available to all invoice plans, including free.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button class="dl-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span class="text-base font-semibold text-dark pr-4">How do I customize my invoice template design?</span>
+            <svg class="dl-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dl-faq-content hidden px-6 pb-6">
+            <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+              <p>Free accounts get 4 invoice template designs. Pro & Enterprise plans unlock 11 invoice template designs. All plans allow logo upload and branding. Pro & Enterprise plans offer advanced customization options for full control over your invoice look and feel.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA Banner -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center bg-primary rounded-2xl py-14 px-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Start Invoicing Today!</h2>
+        <p class="text-lg text-white/90 mb-8">Create. Send. Get Paid.</p>
+        <Button href="https://app.invoicing.co/#/register" size="lg" variant="secondary" class="!bg-white !text-primary hover:!bg-gray-100">Test Drive!</Button>
+      </div>
+    </div>
+  </section>
+
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  // FAQ accordion toggle for download-apps page
+  document.querySelectorAll('.dl-faq-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.dl-faq-arrow');
+      const isOpen = content?.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      arrow?.classList.toggle('rotate-180', isOpen);
+    });
+  });
+</script>

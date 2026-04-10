@@ -4,24 +4,59 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 
-const enterpriseFeatures = [
-  { title: "Unlock Documents After Payment", desc: "Restrict document downloads until after invoice payment is received. Lock deliverables or project files behind payment requirements." },
-  { title: "User Activity Notifications", desc: "Create additional user accounts with customizable permissions and activity notifications when other team members take actions." },
-  { title: "Client & Vendor Document Upload", desc: "Permit clients and vendors to upload documents to their respective portals, centralizing document management and agreements." },
-  { title: "Banking Integration", desc: "Securely sync transactions from banks, credit cards, and PayPal via Yodlee. Includes autosync capability and transaction-to-invoice matching." },
-  { title: "Custom Domain URLs", desc: "Fully branded client portal URLs using your own custom domain (e.g. Billing.YourCompany.com) for a professional appearance." },
-  { title: "File Attachments", desc: "Attach third-party files (.doc, .ppt, .xls, .jpg, .png, .pdf) at company, client, or invoice/expense levels." },
-  { title: "Additional Users & Permissions", desc: "Create multiple user accounts, configure permission levels for what each user can view, create, or edit, and receive action notifications." },
+const features = [
+  "Legally binding e-signatures with single, multiple, co-signing, and sequential workflows",
+  "Real-time document status tracking -- know when documents are opened, viewed, and signed",
+  "Document analytics to track engagement and viewer activity",
+  "Seamless Invoice Ninja integration -- attach signed contracts to invoices and request payments upon signature",
+  "SOC 2, HIPAA, and GDPR compliance with data encryption and MFA",
+  "Team roles and permissions for signers, approvers, and viewers",
+  "Custom branding with your company logo, colors, and styling on every document",
+  "Custom fields including checkboxes, dates, and text fields",
 ];
 
-const faqs = [
+const enterpriseBlocks = [
   {
-    q: "What is free invoicing software?",
-    a: "Free invoicing software is an easier, faster, and smarter way to get paid, issuing professional, customized, and official invoice documentation to your clients in seconds -- leaving you free to concentrate on everything else.",
+    title: "Unlock Documents After Payment",
+    desc: "Restrict document downloads until after invoice payment is received. Lock deliverables or project files behind payment requirements, ensuring you get paid before clients access final assets.",
+    image: null,
+    reversed: false,
   },
   {
-    q: "Is invoicing software secure?",
-    a: "We take security seriously and provide invoicing software with the latest data protection and cybersecurity safeguards to protect your information, billing details, and client contact information. Issuing invoices through our secure portal is massively safer than attaching invoice files to emails, which are vulnerable to hacking and data breaches as they travel from one server to the next.",
+    title: "User Activity Notifications",
+    desc: "Create additional user accounts with customizable permissions and receive activity notifications when other team members take actions. Stay informed about every document interaction across your organization.",
+    image: null,
+    reversed: true,
+  },
+  {
+    title: "Client & Vendor Document Upload",
+    desc: "Permit clients and vendors to upload documents directly to their respective portals, centralizing document management and agreements in one place. Simplify collaboration and reduce email back-and-forth.",
+    image: null,
+    reversed: false,
+  },
+  {
+    title: "Banking Integration",
+    desc: "Securely sync transactions from banks, credit cards, and PayPal via Yodlee. Includes autosync capability and automatic transaction-to-invoice matching to streamline reconciliation.",
+    image: null,
+    reversed: true,
+  },
+  {
+    title: "Custom Domain URLs",
+    desc: "Fully branded client portal URLs using your own custom domain (e.g., Billing.YourCompany.com) for a professional appearance. Strengthen your brand identity across every client touchpoint.",
+    image: null,
+    reversed: false,
+  },
+  {
+    title: "File Attachments",
+    desc: "Attach third-party files (.doc, .ppt, .xls, .jpg, .png, .pdf) at company, client, or invoice/expense levels. Keep all relevant documentation organized alongside your financial records.",
+    image: null,
+    reversed: true,
+  },
+  {
+    title: "Additional Users & Permissions",
+    desc: "Create multiple user accounts and configure granular permission levels for what each user can view, create, or edit. Receive notifications when team members take specific actions.",
+    image: null,
+    reversed: false,
   },
 ];
 ---
@@ -29,78 +64,68 @@ const faqs = [
 <BaseLayout title="DocuNinja" description="E-signing and document management integrated with Invoice Ninja. Send. eSign. Manage." path="/documents/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">DocuNinja</h1>
+      <p class="text-xl text-gray-600 mb-4">Send. eSign. Manage. Without the hefty price tag.</p>
+      <p class="text-gray-600 max-w-2xl mx-auto">E-signing and document management fully integrated with Invoice Ninja. Streamline your document workflows, collect legally binding signatures, and keep everything organized in one place.</p>
+    </div>
+  </section>
+
+  <!-- Feature Highlights -->
+  <section class="py-16">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">DocuNinja</h1>
-        <p class="text-xl text-gray-600">Send. eSign. Manage. Without the hefty price tag.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        {[
-          { title: "E-Signatures", desc: "Legally binding e-signatures with single, multiple, co-signing, and sequential workflows." },
-          { title: "Document Analytics", desc: "Track who opens, views, and engages with your documents." },
-          { title: "Invoice Ninja Integration", desc: "Attach signed contracts to invoices and request payments upon signature." },
-          { title: "Real-Time Document Status Tracking", desc: "Monitor document progress in real time -- know exactly when documents are opened, viewed, and signed." },
-          { title: "Security & Compliance", desc: "SOC 2, HIPAA, and GDPR compliance. Data encryption & MFA." },
-          { title: "Team Roles & Permissions", desc: "Assign roles for signers, approvers, and viewers." },
-          { title: "Custom Branding", desc: "Add your company logo, colors, and branding to every document." },
-          { title: "Custom Fields", desc: "Add custom field options including checkboxes, dates, and text fields to your documents." },
-        ].map((f) => (
-          <div class="p-6 rounded-xl border border-gray-200">
-            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
-            <p class="text-sm text-gray-600">{f.desc}</p>
-          </div>
+      <h2 class="text-3xl font-bold text-dark mb-8">Everything You Need for Document Management</h2>
+      <ul class="space-y-4">
+        {features.map((feature) => (
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">{feature}</span>
+          </li>
         ))}
-      </div>
+      </ul>
+    </div>
+  </section>
 
-      <div class="prose prose-lg max-w-none">
-        <h2>Pre-Built Templates</h2>
-        <p>10 professional document templates included: Contractor Agreements, NDAs, Partnership Agreements, Sales Contracts, Scope of Work, Service Agreements, and more.</p>
-      </div>
-
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
+  <!-- CTA Banner -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center bg-primary rounded-xl py-12 px-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Start Invoicing Today!</h2>
+        <p class="text-lg text-white/90 mb-6">Invoice Clients, Get Paid Fast!</p>
+        <Button href="https://app.invoicing.co/#/register" size="lg">Test Drive!</Button>
       </div>
     </div>
   </section>
 
-  <!-- Enterprise Plan Callout -->
+  <!-- Enterprise Feature Detail Blocks -->
   <section class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-16">
         <h2 class="text-3xl font-bold text-dark mb-4">Enterprise Plan Features</h2>
         <p class="text-gray-600">DocuNinja is available in-app for Enterprise Plan accounts. Unlock additional powerful features with Enterprise.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {enterpriseFeatures.map((f) => (
-          <div class="p-6 rounded-xl border border-gray-200 bg-white">
-            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
-            <p class="text-sm text-gray-600">{f.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-dark text-center mb-4">Frequently Asked Questions</h2>
-      <p class="text-center text-gray-500 mb-10">Everything you need to know about DocuNinja and Invoice Ninja.</p>
-      <div class="space-y-4">
-        {faqs.map((faq) => (
-          <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
-            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-sm font-semibold text-dark hover:bg-gray-50 transition-colors">
-              {faq.q}
-              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div class="px-6 pb-4">
-              <p class="text-sm text-gray-600">{faq.a}</p>
+      <div class="space-y-16">
+        {enterpriseBlocks.map((block) => (
+          <div class={`grid md:grid-cols-2 gap-10 items-center ${block.reversed ? '' : ''}`}>
+            <div class={block.reversed ? 'md:order-2' : ''}>
+              <span class="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-4">Enterprise</span>
+              <h3 class="text-2xl font-bold text-dark mb-4">{block.title}</h3>
+              <p class="text-gray-600">{block.desc}</p>
             </div>
-          </details>
+            <div class={`bg-white rounded-xl border border-gray-200 p-8 flex items-center justify-center min-h-[200px] ${block.reversed ? 'md:order-1' : ''}`}>
+              <div class="text-center">
+                <svg class="w-16 h-16 text-primary/30 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                </svg>
+                <p class="text-sm text-gray-400">{block.title}</p>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </div>

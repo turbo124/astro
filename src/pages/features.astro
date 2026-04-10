@@ -3,6 +3,247 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const freeFeatures = [
+  {
+    title: "Unlimited Invoicing",
+    description: "Real-time PDF preview creation shows your invoice as you build it in real-time.",
+  },
+  {
+    title: "Upload Your Company Logo",
+    description: "Add your company logo and customize your invoice template colors to match your branding!",
+  },
+  {
+    title: "Online Payment Gateways",
+    description: "Stripe, PayPal, GoCardless, Braintree, PayFast, Authorize, Square, Mollie, and more!",
+  },
+  {
+    title: "Dynamic Dashboard Data",
+    description: "View revenue, invoices sent, recent activity data. Track upcoming invoices, invoices past due, and more!",
+  },
+  {
+    title: "Invoice Template Designs",
+    description: "4 free invoice templates. Pro and Enterprise members have 11 professional designs!",
+  },
+  {
+    title: "Track Inventory Levels",
+    description: "Inventory levels are reduced automatically as products are invoiced, with notifications for low inventory thresholds.",
+  },
+  {
+    title: "Recurring Invoicing & Auto-Billing",
+    description: "Save time by automatically billing long-term clients with recurring invoices.",
+  },
+  {
+    title: "Client-Side Portal & Payment History",
+    description: "Clients can view their invoices, quotes, payments, documents, and all transaction history.",
+  },
+  {
+    title: "Quotes Auto-Convert to Invoices",
+    description: "Turn an approved quote into an invoice with one click, or allow auto-conversion from client approval.",
+  },
+  {
+    title: "Accept Deposits & Partial Payments",
+    description: "Set up partial payment or deposit requests, and the invoice will update itself automatically!",
+  },
+  {
+    title: "Projects, Tasks & Track Time",
+    description: "Log every task, record every second. When completed, one click sends completed tasks to an invoice.",
+  },
+  {
+    title: "Client View & Payment Alerts",
+    description: "Receive notifications when a client views and/or pays their invoice.",
+  },
+  {
+    title: "Item & Product Library System",
+    description: "Quickly select from potentially thousands of predefined service and product descriptions.",
+  },
+  {
+    title: "Importing Expenses & Vendors",
+    description: "Automatically import your expenses data to your Invoice Ninja account.",
+  },
+  {
+    title: "Multiple Currencies & Languages",
+    description: "Dozens of languages and currencies. You can set different languages and currencies per client!",
+  },
+  {
+    title: "Multiple Shipping Addresses per Client",
+    description: "Define multiple locations or shipping addresses per client to show per invoice.",
+  },
+  {
+    title: "Bulk Emailing Invoices & Quotes",
+    description: "Save time by quickly selecting multiple invoices and emailing them out together.",
+  },
+  {
+    title: "Automatic Credit Card Gateway Fees",
+    description: "Automatically add credit card percentage or flat fees within predetermined price ranges you define!",
+  },
+  {
+    title: "Clone Recurring Invoices",
+    description: "Clone recurring invoices to a regular invoice, and vice versa!",
+  },
+  {
+    title: "Flexible Tax Configuration",
+    description: "Inclusive or exclusive taxation, invoice total or line-item taxation, up to 3 unique tax rates per invoice or line-item!",
+  },
+  {
+    title: "Enable/Disable Nav Modules",
+    description: "Show more or less menu navigation based on your work preference, in both your admin portal and client-portal.",
+  },
+  {
+    title: "Custom Payment Instructions",
+    description: "Have a unique method of receiving payment? Create custom payment instructions directly on the invoice and/or client-portal!",
+  },
+  {
+    title: "Multiple Contacts Per Client",
+    description: "Create multiple contacts within each client, to ensure the right people are notified for each invoice you send out!",
+  },
+  {
+    title: "Kanban Boards to Manage Projects",
+    description: "Organize and plan your client work with our visual project management tool.",
+  },
+  {
+    title: "Vendor Purchase Orders",
+    description: "Create Purchase Orders to email vendors. Approved POs convert into expenses to rebill or log for reporting.",
+  },
+  {
+    title: "Localization Settings",
+    description: "Define your currency code, customize language, set preferred currency formatting '.' vs ','.",
+  },
+  {
+    title: "Overpayment & Underpayment Settings",
+    description: "Enable clients to pay extra (tipping), or set a minimum payment required on an invoice to allow a payment schedule.",
+  },
+  {
+    title: "Invoice Payment Schedules",
+    description: "A Payment Schedule lets you split a single invoice into multiple scheduled payments.",
+  },
+  {
+    title: "Live PDF Invoice Preview",
+    description: "Enable a live PDF preview below or side-by-side the invoice edit page. PDF updates as you create!",
+  },
+];
+
+const proFeatures = [
+  {
+    title: "Link Multiple Companies (x10)",
+    description: "Manage invoicing for up to 10 business accounts all under one Invoice Ninja account.",
+  },
+  {
+    title: "Custom Fields & Invoice Designs",
+    description: "Create dynamic custom fields for your company, client details, invoice product columns, and more!",
+  },
+  {
+    title: "Send via Gmail & MSN Accounts",
+    description: "Email invoices, quotes, and payment reminders via your Gmail or MSN accounts!",
+  },
+  {
+    title: "Send via Your Custom SMTP Setup",
+    description: "Email invoices, quotes, and payment emails via your own SMTP server for a 100% branded experience.",
+  },
+  {
+    title: "Client Groups Workflow Settings",
+    description: "Create groups of custom settings: payment terms, designs and more, for different groups of clients.",
+  },
+  {
+    title: "Payment Links: Recurring & Auto-Billing",
+    description: "Create Payment Links for Products and Services: One-Off Products or Recurring Services.",
+  },
+  {
+    title: "Attach PDFs to Emails",
+    description: "Invoice and quote emails sent to clients include both a payment link and document PDF attachment.",
+  },
+  {
+    title: "Fully Customizable Invoice Templates",
+    description: "Match the look of your invoice with the design of your brand!",
+  },
+  {
+    title: "Customize Email Subjects & Body",
+    description: "Tailor your invoice email text for improved open rates and brand recognition.",
+  },
+  {
+    title: "Client Approval or Signature",
+    description: "Ensure clients understand your terms of agreement prior to payments.",
+  },
+  {
+    title: "Reports, Aging & Client Statements",
+    description: "Understand the bigger financial picture with our advanced report features.",
+  },
+  {
+    title: "Automatic Late Fees",
+    description: "Bill a client extra for unpaid invoices with automatic late payment fees.",
+  },
+  {
+    title: "Custom Invoice Number Sequencing",
+    description: "Use dynamic variables to create unique invoice sequencing.",
+  },
+  {
+    title: "BCC for Invoice & Quote Emails",
+    description: "Include additional company members in notifications.",
+  },
+  {
+    title: "Custom Invoice Email Design",
+    description: "Use light or dark templates, or create your own! Invoice emails are 100% customizable!",
+  },
+  {
+    title: "Custom Reminder Emails",
+    description: "Create unique templates for past-due reminder emails. Emails are automatically sent per date parameters you define!",
+  },
+  {
+    title: "Automated Workflow",
+    description: "Use the power of Zapier, Make, Pabbly, Integrately to integrate Invoice Ninja with hundreds of apps to automate workflow!",
+  },
+  {
+    title: "Storefront Functionality",
+    description: "Enable third-party apps to create invoices within your account.",
+  },
+  {
+    title: "Custom Client-Portal Subdomain",
+    description: "Customize your client portal URL to match your branding: YourBrand.Invoicing.co.",
+  },
+  {
+    title: "Scheduled Reports & Attachments",
+    description: "Configure auto-creation of reports and auto-email yourself on a regular basis with the report and send parameters you define.",
+  },
+  {
+    title: "Invoice Data Import Mapping",
+    description: "If you regularly import CSV file data into Invoice Ninja, the app will store your data format mapping to speed up imports!",
+  },
+];
+
+const enterpriseFeatures = [
+  {
+    title: "Attach Files to Invoices & Expenses",
+    description: "Attach important files for your client: .doc, .ppt, .xls, .jpg, .png, .pdf, and more, all together with your client's invoices and portal!",
+  },
+  {
+    title: 'Custom Domain "Billing.YourCompany.com"',
+    description: "100% branded experience! Your clients view invoices and pay on your custom company URL.",
+  },
+  {
+    title: "Banking Integration",
+    description: "With Yodlee and GoCardless (Nordigen) integrations, automatically import expenses and transactions from your bank accounts, credit cards, and PayPal.",
+  },
+  {
+    title: "Additional Users & Permissions",
+    description: "Add account users and set or limit access permissions per user on creating, editing, and viewing records.",
+  },
+  {
+    title: "Client & Vendor Document Upload",
+    description: "Allow clients and vendors to upload documents to their portal. Signed POs, receipts, and more!",
+  },
+  {
+    title: "User Activity Notifications",
+    description: "Enable or disable account activity and email notifications for different account users.",
+  },
+  {
+    title: "Unlock Documents After Payment",
+    description: 'Enable "locking" documents from being downloaded until after an invoice has been paid.',
+  },
+  {
+    title: "e-Invoicing (PEPPOL)",
+    description: "Start sending and receiving e-invoices immediately. All Enterprise Plans automatically receive 250 e-invoicing credits, free of charge!",
+  },
+];
 ---
 
 <BaseLayout title="Features" description="More than invoicing. Explore all Invoice Ninja features for freelancers and small businesses." path="/features/">
@@ -11,130 +252,124 @@ import Button from "../components/ui/Button.astro";
   <!-- Hero -->
   <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-6">Small Business Invoicing Features</h1>
-      <p class="text-xl text-gray-600 mb-8">Focus on doing what you love. We'll help with the invoicing.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
-        <Button href="https://react.invoicing.co/demo" variant="outline" size="lg">Try Demo</Button>
-      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Get Paid, Fast!</h1>
+      <p class="text-lg text-gray-600 mb-2">
+        Invoice Ninja is a leading free invoicing software for small business invoicing, online payments, tracking expenses & billable tasks.
+      </p>
+      <p class="text-lg text-gray-500 mb-8">Focus on doing what you love. We'll help with the invoicing :)</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Sign Up</Button>
     </div>
   </section>
 
-  <!-- Pricing Overview -->
+  <!-- Pricing Tier Cards -->
   <section class="py-16">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div class="text-center p-8 rounded-xl border border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Forever Free -->
+        <div class="text-center p-8 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition-shadow">
           <h3 class="text-lg font-bold text-dark mb-2">Forever Free</h3>
-          <p class="text-3xl font-bold text-primary mb-2">$0<span class="text-sm text-gray-500">/mo</span></p>
-          <p class="text-sm text-gray-500">Unlimited invoicing</p>
+          <p class="text-4xl font-bold text-primary mb-1">$0<span class="text-base font-normal text-gray-500">/mo</span></p>
+          <p class="text-sm text-gray-500 mb-4">Yes, it's really free :)</p>
+          <Button href="https://app.invoicing.co/#/register" size="sm">Create & Email Invoices in Real-Time</Button>
         </div>
-        <div class="text-center p-8 rounded-xl border-2 border-primary bg-primary/5">
+        <!-- Ninja Pro -->
+        <div class="text-center p-8 rounded-xl border-2 border-primary bg-primary/5 hover:shadow-lg transition-shadow">
           <h3 class="text-lg font-bold text-dark mb-2">Ninja Pro</h3>
-          <p class="text-3xl font-bold text-primary mb-2">$14<span class="text-sm text-gray-500">/mo</span></p>
-          <p class="text-sm text-gray-500">Billed annually</p>
+          <p class="text-4xl font-bold text-primary mb-1">$14<span class="text-base font-normal text-gray-500">/mo</span></p>
+          <p class="text-sm text-gray-500 mb-4">Pay annually for 10 months + 2 free!</p>
+          <p class="text-sm font-medium text-gray-700">Unlimited Everything</p>
         </div>
-        <div class="text-center p-8 rounded-xl border border-gray-200">
+        <!-- Enterprise -->
+        <div class="text-center p-8 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition-shadow">
           <h3 class="text-lg font-bold text-dark mb-2">Enterprise</h3>
-          <p class="text-3xl font-bold text-primary mb-2">$18<span class="text-sm text-gray-500">/mo</span></p>
-          <p class="text-sm text-gray-500">Billed annually</p>
+          <p class="text-4xl font-bold text-primary mb-1">$18<span class="text-base font-normal text-gray-500">/mo</span></p>
+          <p class="text-sm text-gray-500 mb-4">Pay annually for 10 months + 2 free!</p>
+          <p class="text-sm font-medium text-gray-700">Free + Pro + Enterprise Features</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Free Plan Features -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-dark mb-8 text-center">Free Plan — 30+ Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {[
-          "Real-time PDF invoice creation",
-          "Online payment gateways (Stripe, PayPal, GoCardless, Braintree, Square, Mollie)",
-          "Client portal with payment history",
-          "Recurring invoices and auto-billing",
-          "Project tracking & time logging",
-          "Task management with Kanban boards",
-          "Inventory tracking with low-stock alerts",
-          "Multi-currency & multi-language support",
-          "Vendor purchase orders",
-          "Expense importing & tracking",
-          "Overpayment/underpayment handling",
-          "Multiple contacts per client",
-          "Custom payment instructions",
-          "Deposit & partial payment support",
-          "Email delivery statistics",
-          "Automatic currency conversion",
-        ].map((feature) => (
-          <div class="flex items-start gap-3 p-3 bg-white rounded-lg">
-            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-sm text-gray-700">{feature}</span>
+  <!-- Tab / Anchor Navigation -->
+  <nav class="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 flex justify-center gap-2">
+      <a href="#features_free" class="px-5 py-3 text-sm font-semibold text-gray-600 hover:text-primary border-b-2 border-transparent hover:border-primary transition-colors">
+        Free
+      </a>
+      <a href="#features_pro" class="px-5 py-3 text-sm font-semibold text-gray-600 hover:text-primary border-b-2 border-transparent hover:border-primary transition-colors">
+        Pro
+      </a>
+      <a href="#features_enterprise" class="px-5 py-3 text-sm font-semibold text-gray-600 hover:text-primary border-b-2 border-transparent hover:border-primary transition-colors">
+        Enterprise
+      </a>
+    </div>
+  </nav>
+
+  <!-- Free Features -->
+  <section id="features_free" class="py-16 bg-gray-50 scroll-mt-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">Free Features</h2>
+        <p class="text-gray-600 text-lg">Everything you need to start invoicing, completely free.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {freeFeatures.map((feature) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+            <h3 class="font-semibold text-dark mb-2">{feature.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Pro Plan Features -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-dark mb-8 text-center">Pro Plan — Everything Free, Plus</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {[
-          "Up to 10 company accounts under one login",
-          "Custom fields & invoice design templates",
-          "Gmail/Outlook/SMTP email integration",
-          "Client grouping with workflow customization",
-          "Payment link generation",
-          "Automated workflows via Zapier, Make, Integrately",
-          "Advanced reporting & aging statements",
-          "Custom invoice numbering sequences",
-          "Late fees on unpaid invoices",
-          "11 professional invoice templates",
-          "Auto-reminder email setup",
-          "Client e-signature display",
-          "Branded URL (YourSite.invoicing.co)",
-          "Bulk email capabilities",
-          "Auto sales tax (US states)",
-          "Remove Invoice Ninja branding",
-        ].map((feature) => (
-          <div class="flex items-start gap-3 p-3 bg-primary/5 rounded-lg">
-            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-sm text-gray-700">{feature}</span>
+  <!-- Pro Features -->
+  <section id="features_pro" class="py-16 scroll-mt-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">Pro Features</h2>
+        <p class="text-gray-600 text-lg">Everything in Free, plus powerful tools to grow your business.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {proFeatures.map((feature) => (
+          <div class="bg-primary/5 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-primary/10">
+            <h3 class="font-semibold text-dark mb-2">{feature.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Enterprise Plan Features -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-dark mb-8 text-center">Enterprise — Everything Pro, Plus</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {[
-          "Banking integrations (Yodlee, GoCardless/Nordigen)",
-          "Custom branded domain (Billing.YourCompany.com)",
-          "Multiple user accounts with permission controls",
-          "Document upload capabilities",
-          "PEPPOL e-invoicing (250 credits included)",
-          "Lock documents until payment received",
-        ].map((feature) => (
-          <div class="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200">
-            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-sm text-gray-700">{feature}</span>
+  <!-- Enterprise Features -->
+  <section id="features_enterprise" class="py-16 bg-gray-50 scroll-mt-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">Enterprise Features</h2>
+        <p class="text-gray-600 text-lg">Everything in Pro, plus enterprise-grade capabilities.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {enterpriseFeatures.map((feature) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-200">
+            <h3 class="font-semibold text-dark mb-2">{feature.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
           </div>
         ))}
       </div>
       <div class="text-center mt-10">
-        <Button href="/pricing-plans/" size="lg">View Full Pricing</Button>
+        <Button href="/pricing-plans/" size="lg" variant="outline">View Full Pricing</Button>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-20 bg-gradient-to-r from-primary to-primary-dark">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Start Invoicing Today!</h2>
+      <p class="text-lg text-white/80 mb-8">Invoice Clients, Get Paid Fast!</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg" class="bg-white text-primary hover:bg-gray-100 shadow-lg">
+        Test Drive!
+      </Button>
     </div>
   </section>
 

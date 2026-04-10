@@ -2,84 +2,378 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Card from "../components/ui/Card.astro";
+import Button from "../components/ui/Button.astro";
+
+const testimonials = [
+  {
+    quote: "Robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day.",
+    source: "CardRates.com",
+    href: "https://www.cardrates.com/news/invoice-ninja-makes-getting-paid-seamless-for-smbs/",
+  },
+  {
+    quote: "Invoice Ninja is well on its way to becoming one of the greats of the invoicing world! A great option for small business owners!",
+    source: "Merchant Maverick",
+    href: "https://www.merchantmaverick.com/review-category/invoicing-software/?sortby=rating&pagen=0",
+  },
+  {
+    quote: "Best free invoice software is not only easy on the bank account but user-friendly and packed with features!",
+    source: "Forbes",
+    href: "https://www.forbes.com/advisor/business/software/best-free-invoice-software/",
+  },
+  {
+    quote: "2023 Best Invoicing for Freelancers. Invoice Ninja can give any other free invoicing and billing software a run for its money!",
+    source: "Money.com",
+    href: "https://money.com/best-free-invoice-and-billing-software/",
+  },
+];
+
+const faqs = [
+  {
+    question: "What platforms are the Invoice Ninja apps available on?",
+    answer: `Invoice Ninja is available on all major platforms. We offer native desktop apps for <strong>macOS</strong> (via the App Store), <strong>Windows</strong> (via the Microsoft Store), and <strong>Linux</strong> (via Flathub and Snapcraft). For mobile, we have apps on the <strong>iOS App Store</strong>, <strong>Google Play</strong>, and <strong>F-Droid</strong>. We also offer a <strong>Chrome Extension</strong> for time-tracking tasks and a <strong>WordPress Plugin</strong> for embedding client portals and payment links on your website.`,
+  },
+  {
+    question: "Do the apps sync data across devices?",
+    answer: `Yes! All Invoice Ninja desktop, mobile, and web apps auto-sync your data in real time. Create an invoice on your laptop, and it instantly appears on your phone. Our apps are built with <strong>Google Flutter</strong>, providing a fast, native experience on every platform while keeping all your data perfectly synchronized.`,
+  },
+  {
+    question: "Is Invoice Ninja really free?",
+    answer: `Yes! Our <strong>FREE Plan</strong> allows up to 5 clients with unlimited invoicing. You are never forced to upgrade your account. However, if you choose to upgrade to Pro or Enterprise, you gain access to unlimited clients and additional premium features. <a href="/pricing/" class="text-primary hover:underline">View pricing plans</a>.`,
+  },
+  {
+    question: "Can I self-host Invoice Ninja?",
+    answer: `Absolutely. Invoice Ninja is available as a traditional SaaS platform at invoiceninja.com, but we also offer a fully open-source, self-hosted version. When self-hosting, you manage your own installation on your own server and maintain complete control over your data. Visit <a href="https://www.invoiceninja.org/" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">invoiceninja.org</a> for more details, or check our <a href="/hosting-recommendations/" class="text-primary hover:underline">hosting recommendations</a>.`,
+  },
+  {
+    question: "How do clients pay invoices online?",
+    answer: `After integrating a payment gateway with your Invoice Ninja account, your clients will see a <strong>"Pay Now"</strong> button on their invoices. The payment gateway processes your client's payment directly within the Invoice Ninja client portal. Invoice Ninja supports dozens of payment gateways including Stripe, PayPal, GoCardless, and more. <a href="/payments/" class="text-primary hover:underline">View supported gateways</a>.`,
+  },
+  {
+    question: "What is the Chrome Extension for?",
+    answer: `The Invoice Ninja Chrome Extension lets you track time on tasks directly from your browser toolbar. Start and stop timers, switch between tasks, and all tracked time syncs back to your Invoice Ninja account automatically. It's perfect for freelancers and teams who bill by the hour.`,
+  },
+  {
+    question: "What does the WordPress Plugin do?",
+    answer: `The Invoice Ninja WordPress Plugin allows you to embed client-facing payment links, invoice portals, and payment buttons directly on your WordPress website. It integrates seamlessly with your Invoice Ninja account so clients can view and pay invoices without leaving your site. <a href="https://wordpress.org/plugins/invoiceninja/" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Download the plugin</a>.`,
+  },
+  {
+    question: "Do you offer an API?",
+    answer: `Yes! As part of the Pro & Enterprise plans you have full REST API access. This allows you to integrate Invoice Ninja with your existing systems and build custom workflows. <a href="https://invoiceninja.github.io/docs/developer-guide/" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">View the developer guide</a>.`,
+  },
+];
 ---
 
-<BaseLayout title="Mobile & Desktop Apps" description="Download Invoice Ninja for iOS, Android, macOS, Windows, and Linux. Available on all platforms." path="/apps/">
+<BaseLayout title="Mobile & Desktop Apps" description="Download Invoice Ninja for iOS, Android, macOS, Windows, and Linux. Run your business from any device." path="/apps/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
+  <!-- Hero Section -->
+  <section class="pt-16 pb-12 lg:pt-24 lg:pb-16 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-6xl font-bold text-dark mb-4">Download the apps</h1>
+        <p class="text-xl lg:text-2xl text-gray-600 mb-10">Run Your Business, Get Paid.</p>
+
+        <!-- Device screenshots -->
+        <div class="flex items-end justify-center gap-6 lg:gap-10 mb-12">
+          <img src="/images/download-apps/iPad-Pro.svg" alt="Invoice Ninja on iPad" class="hidden md:block w-64 lg:w-96 drop-shadow-xl" loading="lazy" />
+          <img src="/images/download-apps/Phone-2.png" alt="Invoice Ninja on iPhone" class="w-36 lg:w-48 drop-shadow-xl" loading="lazy" />
+        </div>
+
+        <!-- Download badges -->
+        <div class="flex flex-wrap items-center justify-center gap-4 max-w-3xl mx-auto">
+          <a href="https://apps.apple.com/app/id1503970375?platform=iphone" class="hover:opacity-80 transition-opacity">
+            <img src="/images/download-apps/Download-on-App-Store-pvpidybswa2ycc7n9s3diqnrb46c4pwgp7kua8e7cs.png" alt="Download on the App Store" class="h-11" loading="lazy" />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.invoiceninja.app" class="hover:opacity-80 transition-opacity">
+            <img src="/images/download-apps/Download-on-Google-Play-pvpiex3tx5ek9wt4mp4kkzvtadex1iqj5zpt1gymyk.png" alt="Get it on Google Play" class="h-11" loading="lazy" />
+          </a>
+          <a href="https://apps.apple.com/app/id1503970375?platform=mac" class="hover:opacity-80 transition-opacity">
+            <img src="/images/download-apps/Download-on-App-Store-1-pvpif3op8znkj6jkk9yykg81g2ihjegniwa7eeovr0.png" alt="Download on the Mac App Store" class="h-11" loading="lazy" />
+          </a>
+          <a href="https://apps.microsoft.com/store/detail/invoice-ninja/9N3F2BBCFDR6" class="hover:opacity-80 transition-opacity">
+            <img src="/images/download-apps/Download-on-Windows-App-Store-pvpieajpd4joj9pwafdix5kr14i3ws8z2w25itw33w.png" alt="Download on the Windows Store" class="h-11" loading="lazy" />
+          </a>
+          <a href="https://flathub.org/apps/com.invoiceninja.InvoiceNinja" class="hover:opacity-80 transition-opacity">
+            <img src="/images/download-apps/Download-on-Linux-pvpiekvxgaxu2zavm1uf6kytkd359ge0sb8hsvgr7g.png" alt="Download for Linux" class="h-11" loading="lazy" />
+          </a>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-4">
+          <a href="https://wordpress.org/plugins/invoiceninja/" class="px-4 py-2.5 rounded-lg bg-gray-100 hover:bg-primary/10 text-sm font-medium text-gray-700 hover:text-primary transition-colors">WordPress Plugin</a>
+          <a href="https://chromewebstore.google.com/detail/invoice-ninja-tasks/dlfcbfdpemfnjbjlladogijcchfmmaaf" class="px-4 py-2.5 rounded-lg bg-gray-100 hover:bg-primary/10 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Chrome Extension</a>
+          <a href="https://snapcraft.io/invoiceninja" class="px-4 py-2.5 rounded-lg bg-gray-100 hover:bg-primary/10 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Linux Snapcraft</a>
+          <a href="https://f-droid.org/en/packages/com.invoiceninja.app" class="px-4 py-2.5 rounded-lg bg-gray-100 hover:bg-primary/10 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Android F-Droid</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Overview: 2-column -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">Desktop & Mobile Apps, built with Google Flutter</h2>
+          <p class="text-lg text-gray-600 mb-8">Desktop, Mobile, and Web Apps Auto-Sync Data.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Invoicing & Quotes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Online Payments</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Tasks & Projects</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Vendors & Expenses</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Product Library</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Full persistence (saves work in progress)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-700">Supports 2FA and Google Login</span>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-6">
+          <img src="/images/apps/image-3-1.png" alt="Invoice Ninja desktop app" class="w-full rounded-xl shadow-lg" loading="lazy" />
+          <div class="grid grid-cols-2 gap-4">
+            <img src="/images/apps/image-4.png" alt="Invoice Ninja mobile app" class="w-full rounded-xl shadow-lg" loading="lazy" />
+            <img src="/images/apps/image-2.png" alt="Invoice Ninja app on phone" class="w-full rounded-xl shadow-lg" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Create Invoices Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-16">Create Invoices in Seconds</h2>
+
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div>
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-dark mb-3">Intuitive business dashboard</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                View revenue, invoices sent, recent activity data.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Track upcoming invoices, invoices past due, more.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-dark mb-3">Invoice Clients in seconds</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Create clients and send invoices in seconds.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Subscriptions, recurring invoices, payment profiles.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Send invoices directly via Gmail/MSN accounts.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Product library to quickly populate invoices & quotes.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <img src="/images/apps/image-1.png" alt="Invoice Ninja dashboard" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+
+      <!-- Client Payment & Notifications -->
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <img src="/images/apps/image-2.png" alt="Client payment portal" class="w-full rounded-xl shadow-lg md:order-first" loading="lazy" />
+        <div>
+          <div class="mb-8">
+            <h3 class="text-xl font-bold text-dark mb-3">Clients pay faster</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Credit cards, ACH payments, PayPal, & much more.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Clients pay directly from their invoice with 1-click.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-dark mb-3">Notifications keep you up-to-date</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Receive app/email notifications when clients view/pay.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                View instant data updates when payments are made.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">&#8226;</span>
+                Automate payment reminders & past due notifications.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Time-Tracking -->
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h3 class="text-xl font-bold text-dark mb-3">Time-tracking, Tasks, Kanban Boards</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start gap-2">
+              <span class="text-primary mt-1">&#8226;</span>
+              The feel of desktop software but with the power of a web-based app.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary mt-1">&#8226;</span>
+              Create projects, time billable-tasks, monitor progress in kanban boards.
+            </li>
+          </ul>
+          <div class="mt-6">
+            <Button href="/projects/" variant="secondary" size="md">Learn More</Button>
+          </div>
+        </div>
+        <img src="/images/apps/image-3.png" alt="Time tracking and kanban boards" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Apps & Platforms</h1>
-        <p class="text-xl text-gray-600">Invoice Ninja is available everywhere you work.</p>
+        <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Testimonials</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark">200,000+ users trust Invoice Ninja.</h2>
       </div>
 
-      <!-- Desktop -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-        <Card padding="lg">
-          <h3 class="text-lg font-bold text-dark mb-4">Desktop</h3>
-          <ul class="space-y-3">
-            <li><a href="https://apps.apple.com/app/id1503970375?platform=mac" class="text-primary hover:underline">macOS — App Store</a></li>
-            <li><a href="https://apps.microsoft.com/store/detail/invoice-ninja/9N3F2BBCFDR6" class="text-primary hover:underline">Windows — Microsoft Store</a></li>
-            <li><a href="https://flathub.org/apps/com.invoiceninja.InvoiceNinja" class="text-primary hover:underline">Linux — Flathub</a></li>
-            <li><a href="https://snapcraft.io/invoiceninja" class="text-primary hover:underline">Linux — Snapcraft</a></li>
-          </ul>
-        </Card>
-        <img src="/images/apps/image-1.png" alt="Invoice Ninja desktop application" loading="lazy" class="rounded-xl shadow-lg w-full" />
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map((t) => (
+          <a href={t.href} target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+            <div class="flex gap-0.5 mb-4">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-gray-600 leading-relaxed mb-5 text-sm">
+              &ldquo;{t.quote}&rdquo;
+            </blockquote>
+            <div class="text-sm font-semibold text-primary">{t.source}</div>
+          </a>
+        ))}
       </div>
+    </div>
+  </section>
 
-      <!-- Mobile -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-        <img src="/images/apps/image-2.png" alt="Invoice Ninja mobile application" loading="lazy" class="rounded-xl shadow-lg w-full md:order-first" />
-        <Card padding="lg">
-          <h3 class="text-lg font-bold text-dark mb-4">Mobile</h3>
-          <ul class="space-y-3">
-            <li><a href="https://apps.apple.com/app/id1503970375?platform=iphone" class="text-primary hover:underline">iOS — App Store</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.invoiceninja.app" class="text-primary hover:underline">Android — Google Play</a></li>
-            <li><a href="https://f-droid.org/en/packages/com.invoiceninja.app" class="text-primary hover:underline">Android — F-Droid</a></li>
-          </ul>
-        </Card>
-      </div>
+  <!-- Let's Connect -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-dark text-center mb-14">Let's Connect!</h2>
 
-      <!-- Browser & Web -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-        <Card padding="lg">
-          <h3 class="text-lg font-bold text-dark mb-4">Browser & Web</h3>
-          <ul class="space-y-3">
-            <li><a href="https://app.invoicing.co" class="text-primary hover:underline">Web App</a></li>
-            <li><a href="https://chromewebstore.google.com/detail/invoice-ninja-tasks/dlfcbfdpemfnjbjlladogijcchfmmaaf" class="text-primary hover:underline">Chrome Extension</a></li>
-          </ul>
-        </Card>
-        <img src="/images/apps/browser-extansions-apps.png" alt="Invoice Ninja browser extensions" loading="lazy" class="rounded-xl shadow-lg w-full" />
-      </div>
-
-      <!-- Integrations -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-        <img src="/images/apps/wordpress-plugin-apps.png" alt="Invoice Ninja WordPress plugin" loading="lazy" class="rounded-xl shadow-lg w-full md:order-first" />
-        <Card padding="lg">
-          <h3 class="text-lg font-bold text-dark mb-4">Integrations</h3>
-          <ul class="space-y-3">
-            <li><a href="https://wordpress.org/plugins/invoiceninja/" class="text-primary hover:underline">WordPress Plugin</a></li>
-            <li><a href="/software/" class="text-primary hover:underline">View All Integrations</a></li>
-          </ul>
-        </Card>
-      </div>
-
-      <!-- Feature Highlights -->
-      <h2 class="text-2xl lg:text-3xl font-bold text-dark text-center mt-16 mb-8">Built-In Communication</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="text-center">
-          <img src="/images/apps/email-1024x582.png" alt="Email integration" loading="lazy" class="rounded-xl shadow-lg w-full mb-4" />
-          <p class="text-sm font-semibold text-gray-700">Email</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Forums -->
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <img src="/images/apps/chat-1024x580.png" alt="Support Forums" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-dark mb-2">Support Forums</h3>
+            <p class="text-sm text-gray-600 mb-4">Connect with thousands of Invoice Ninja users on our community forums.</p>
+            <a href="https://forum.invoiceninja.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Community Forums &rarr;</a>
+          </div>
         </div>
-        <div class="text-center">
-          <img src="/images/apps/chat-1024x580.png" alt="Chat feature" loading="lazy" class="rounded-xl shadow-lg w-full mb-4" />
-          <p class="text-sm font-semibold text-gray-700">Chat</p>
+
+        <!-- Email -->
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <img src="/images/apps/email-1024x582.png" alt="Contact Email" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-dark mb-2">Contact Email</h3>
+            <p class="text-sm text-gray-600 mb-4">We want to hear from you! Questions? We're here to help!</p>
+            <a href="mailto:Contact@InvoiceNinja.com" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Contact@InvoiceNinja.com</a>
+          </div>
         </div>
-        <div class="text-center">
-          <img src="/images/apps/slack-1024x582.png" alt="Slack integration" loading="lazy" class="rounded-xl shadow-lg w-full mb-4" />
-          <p class="text-sm font-semibold text-gray-700">Slack</p>
+
+        <!-- Slack -->
+        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <img src="/images/apps/slack-1024x582.png" alt="Slack Community" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-dark mb-2">Slack Community</h3>
+            <p class="text-sm text-gray-600 mb-4">Join over 5,000 Invoice Ninja members on our community Slack channel!</p>
+            <a href="https://slack.invoiceninja.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Join Slack &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="bg-white py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark">Frequently asked questions</h2>
+      </div>
+
+      <div class="space-y-3" id="apps-faq-list">
+        {faqs.map((faq, index) => (
+          <div class={`apps-faq-item border border-gray-200 rounded-xl overflow-hidden ${index >= 5 ? 'apps-faq-extra hidden' : ''}`}>
+            <button
+              class="apps-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+              aria-expanded="false"
+            >
+              <span class="text-base font-semibold text-dark pr-4">{faq.question}</span>
+              <svg class="apps-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="apps-faq-content hidden px-6 pb-6">
+              <div class="text-sm text-gray-600 leading-relaxed space-y-3" set:html={faq.answer} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-8" id="apps-faq-show-more-wrap">
+        <button
+          id="apps-faq-show-more"
+          class="px-6 py-3 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors"
+        >
+          Show More
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center bg-primary rounded-2xl py-14 px-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Find out why small businesses around the world trust Invoice Ninja.</h2>
+        <p class="text-lg text-white/90 mb-8">You can focus on doing what you love, we'll help with the invoicing.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <Button href="https://app.invoicing.co/#/register" size="lg" class="bg-white !text-primary hover:bg-gray-100">Start for Free</Button>
+          <Button href="/features/" size="lg" variant="outline" class="!text-white !border-white/40 hover:!bg-white/10">Explore Features</Button>
         </div>
       </div>
     </div>
@@ -87,3 +381,27 @@ import Card from "../components/ui/Card.astro";
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  // FAQ accordion toggle
+  document.querySelectorAll('.apps-faq-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.apps-faq-arrow');
+      const isOpen = content?.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      arrow?.classList.toggle('rotate-180', isOpen);
+    });
+  });
+
+  // Show more FAQs
+  const showMoreBtn = document.getElementById('apps-faq-show-more');
+  const showMoreWrap = document.getElementById('apps-faq-show-more-wrap');
+
+  showMoreBtn?.addEventListener('click', () => {
+    document.querySelectorAll('.apps-faq-extra').forEach((el) => {
+      el.classList.remove('hidden');
+    });
+    showMoreWrap?.classList.add('hidden');
+  });
+</script>

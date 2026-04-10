@@ -5,45 +5,187 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Bank Integration" description="Connect your bank accounts and automatically import transactions. Powered by Yodlee & GoCardless." path="/banking/">
+<BaseLayout title="Bank Integration" description="Sync banking & transactions. Automatically import bank, credit card, and PayPal transactions with Invoice Ninja." path="/banking/">
   <Header slot="header" />
 
+  <!-- Hero: 2-column -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Integrate Your Banks</p>
+          <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-6">Sync Banking & Transactions</h1>
+          <p class="text-lg text-gray-600 mb-8">We understand that automating transaction imports are a huge asset when it comes to getting paid and staying organized. Invoice Ninja has partnered with Yodlee and/or GoCardless 'Bank Account Data' (formally Nordigen), specialist providers of secure bank data connections, to offer bank, credit cards, and PayPal transaction data syncing.</p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Import Bank & Card Transactions
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Match Deposits to [Multiple] Invoices
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Match Withdrawals/Expenses to Vendors
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Enable "Autosync" download transactions
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Support Exporting Expenses & Vendors
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Bulk Assign Expense Categories
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Bulk Create Expenses from Transactions
+            </li>
+          </ul>
+        </div>
+        <img src="/images/banking/integrate-your-bank.jpg" alt="Integrate your bank with Invoice Ninja" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- How Bank Feeds Work: 2-column -->
   <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Bank Integration</h1>
-        <p class="text-xl text-gray-600">Automate transaction imports from your bank accounts, credit cards, and PayPal.</p>
-        <p class="mt-2 text-sm text-primary font-medium">Enterprise Plan feature</p>
-        <img src="/images/banking/integrate-your-bank.jpg" alt="Integrate your bank with Invoice Ninja" loading="lazy" class="mt-8 rounded-xl shadow-lg mx-auto" />
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">How Bank Feeds Work</h2>
+          <p class="text-lg text-gray-600 mb-6">Set up Yodlee or GoCardless 'Bank Account Data' bank feeds in your Invoice Ninja account! Yodlee and/or GoCardless then retrieve your bank transactions for import into Invoice Ninja.</p>
+          <a href="https://invoiceninja.github.io/en/banking/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">More Info & Support Docs &rarr;</a>
+        </div>
+        <img src="/images/banking/bank-feeds.jpg" alt="Bank feeds integration" class="w-full rounded-xl shadow-lg" loading="lazy" />
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        {[
-          { title: "Import Transactions", desc: "Automatically sync bank, credit card, and PayPal transactions." },
-          { title: "Match Deposits", desc: "Match incoming deposits against multiple invoices simultaneously." },
-          { title: "Reconcile Withdrawals", desc: "Link withdrawals and expenses to vendors for clean bookkeeping." },
-          { title: "Autosync", desc: "Enable automated transaction downloads — no manual refreshing." },
-          { title: "Bulk Categorize", desc: "Bulk assign expense categories across transactions." },
-          { title: "Export Data", desc: "Export expenses and vendors for external reporting." },
-        ].map((f) => (
-          <div class="p-6 rounded-xl border border-gray-200">
-            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
-            <p class="text-sm text-gray-600">{f.desc}</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-bold text-dark mb-3">"Autosync" to Import Bank Feeds or Enter Transactions Manually</h3>
+          <p class="text-sm text-gray-600">Manually or automate your banks data being pulled into Invoice Ninja for later matching against invoices & vendors.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-bold text-dark mb-3">Match Transactions to Invoices & Expenses</h3>
+          <p class="text-sm text-gray-600">Match your daily deposits as payments across multiple invoices.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-bold text-dark mb-3">Match Withdrawals to Vendors</h3>
+          <p class="text-sm text-gray-600">Match bank withdrawals to Vendors in your Invoice Ninja account. Then rebill expenses to clients or run expense reports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-12 text-center">Frequently Asked Questions</h2>
+
+      <div class="space-y-4" id="faq-accordion">
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-dark hover:text-primary transition-colors">
+            Does Invoice Ninja offer an API?
+            <svg class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">Yes! As part of the Pro & Enterprise plans you have REST API access.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-dark hover:text-primary transition-colors">
+            How do my clients pay their invoices online?
+            <svg class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">After integrating a 'payment gateway' to your Invoice Ninja account, your clients will see a 'Pay Now' button on their invoices. The payment gateway processes the payment and your clients never leave their Invoice Ninja client-side portal. Subsequently deposits the money to your bank account. Invoice Ninja supports dozens of payment gateways, <a href="/payments/" class="text-primary hover:text-primary-dark underline">click here for the full list</a>.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-dark hover:text-primary transition-colors">
+            How do I upload my company logo on invoices?
+            <svg class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">Navigate to Settings > Company Details, and click 'Logo' to upload or change your logo. This is available to all plans, including free :)</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-dark hover:text-primary transition-colors">
+            Do you offer a client-side portal for my clients?
+            <svg class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">Yes, all your clients have access to a client-side portal to view their invoices, payment history, documents, and more. Your clients can also update their payment details on file for recurring invoices with auto-billing.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-dark hover:text-primary transition-colors">
+            Can I add more users but limit what they see or do?
+            <svg class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">Yes, the Enterprise plans allow you to add up to 50 additional account users! You can adjust user permissions to create/edit/view only.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-dark hover:text-primary transition-colors">
+            Can I run reports & year-end P&L's?
+            <svg class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">Yes, as part of the Pro & Enterprise plans you have access to a robust reporting module to create custom reports within calendar/date parameters you define.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-dark hover:text-primary transition-colors">
+            How do I integrate with Zapier?
+            <svg class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">After upgrading to Pro or Enterprise, navigate to Settings > Account Management, and click 'Zapier'.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Let's Connect: 3-column cards -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-12 text-center">Let's Connect!</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="https://forum.invoiceninja.com" target="_blank" rel="noopener noreferrer" class="group block rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+          <img src="/images/banking/unsplash_DUmFLtMeAbQ.jpg" alt="Support Forums" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">Support Forums</h3>
+            <p class="text-sm text-gray-600">Connect with thousands of Invoice Ninja users on our community forums.</p>
           </div>
-        ))}
+        </a>
+
+        <a href="mailto:Contact@InvoiceNinja.com" class="group block rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+          <img src="/images/banking/unsplash_kUqqaRjJuw0.jpg" alt="Contact Email" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">Contact Email</h3>
+            <p class="text-sm text-gray-600">We want to hear from you! Questions? We're here to help!</p>
+          </div>
+        </a>
+
+        <a href="https://slack.invoiceninja.com" target="_blank" rel="noopener noreferrer" class="group block rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+          <img src="/images/banking/unsplash_DUmFLtMeAbQ.jpg" alt="Slack Community" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">Slack Community</h3>
+            <p class="text-sm text-gray-600">Join over 5,000 Invoice Ninja members on our community Slack channel!</p>
+          </div>
+        </a>
       </div>
+    </div>
+  </section>
 
-      <div class="prose prose-lg max-w-none">
-        <h2>Powered by Yodlee & GoCardless</h2>
-        <p>Invoice Ninja does NOT access your bank directly. We use secure third-party bank data integrators — Yodlee and GoCardless Bank Account Data (formerly Nordigen) — with read-only access. Neither Invoice Ninja nor these partners can make payments or move money in your accounts.</p>
-        <img src="/images/banking/bank-feeds.jpg" alt="Bank feeds integration" loading="lazy" class="mt-6 rounded-xl shadow-lg" />
-
-        <h2>Setup</h2>
-        <p>Navigate to <strong>Settings &gt; Bank Account &gt; Connect Accounts</strong> to get started. Invoice Ninja does NOT store or use your online banking credentials in any capacity.</p>
-      </div>
-
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
+  <!-- CTA Banner -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center bg-primary rounded-xl py-12 px-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Start Invoicing Today!</h2>
+        <p class="text-lg text-white/90 mb-6">Create. Send. Get Paid.</p>
+        <Button href="https://app.invoicing.co/#/register" size="lg">Test Drive!</Button>
       </div>
     </div>
   </section>

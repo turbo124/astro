@@ -8,28 +8,131 @@ import Button from "../components/ui/Button.astro";
 <BaseLayout title="Make (Integromat) Integration" description="Visual automation platform connecting Invoice Ninja with hundreds of apps." path="/make-integrations/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-3xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Make Integration</h1>
-        <p class="text-xl text-gray-600">Design, build, and automate workflows visually with Make (formerly Integromat).</p>
-      </div>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Make + Invoice Ninja</h1>
+      <p class="text-xl text-gray-600 mb-10">Design, build, and automate workflows visually with Make (formerly Integromat).</p>
+      <img
+        src="/images/make/Make-logo.png"
+        alt="Make (formerly Integromat) logo"
+        class="mx-auto max-w-xs"
+        loading="lazy"
+      />
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+  <!-- Integration Logos Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-12">Popular Integrations</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center">
         {[
-          { title: "Visual Builder", desc: "Drag-and-drop scenario builder for complex workflows." },
-          { title: "Real-time Execution", desc: "Workflows run instantly when triggered." },
-          { title: "Error Handling", desc: "Built-in error handling and retry logic." },
-          { title: "Data Transformation", desc: "Transform and map data between apps." },
-        ].map((f) => (
-          <div class="p-6 rounded-xl border border-gray-200">
-            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
-            <p class="text-sm text-gray-600">{f.desc}</p>
+          { src: "/images/zapier/sheets.png", name: "Google Sheets" },
+          { src: "/images/zapier/gmail.png", name: "Gmail" },
+          { src: "/images/zapier/gdrive.png", name: "Google Drive" },
+          { src: "/images/zapier/air.png", name: "Airtable" },
+          { src: "/images/zapier/slack.png", name: "Slack" },
+          { src: "/images/zapier/gcalendar.png", name: "Google Calendar" },
+          { src: "/images/zapier/woo.png", name: "WooCommerce" },
+          { src: "/images/zapier/dropbox.png", name: "Dropbox" },
+          { src: "/images/zapier/mailchimp.png", name: "Mailchimp" },
+          { src: "/images/zapier/hubspot.png", name: "HubSpot" },
+          { src: "/images/zapier/discord.png", name: "Discord" },
+          { src: "/images/zapier/trello.png", name: "Trello" },
+          { src: "/images/zapier/google-forms.png", name: "Google Forms" },
+          { src: "/images/zapier/shopify.png", name: "Shopify" },
+          { src: "/images/zapier/monda.png", name: "Monday.com" },
+          { src: "/images/zapier/pipedrive.png", name: "Pipedrive" },
+          { src: "/images/zapier/telegram.png", name: "Telegram" },
+          { src: "/images/zapier/gdocs.png", name: "Google Docs" },
+        ].map((app) => (
+          <div class="flex flex-col items-center gap-3 p-4">
+            <img
+              src={app.src}
+              alt={app.name}
+              class="w-16 h-16 object-contain"
+              loading="lazy"
+            />
+            <span class="text-sm text-gray-600 text-center font-medium">{app.name}</span>
           </div>
         ))}
       </div>
+    </div>
+  </section>
 
-      <div class="text-center">
+  <!-- Do More Section -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Do More! Make + Invoice Ninja</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Make lets you visually create, build, and automate workflows. Connect Invoice Ninja with hundreds of other apps using Make's intuitive drag-and-drop scenario builder. Each scenario can include multiple steps, conditional logic, and data transformations -- all without writing a single line of code.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Automate the creation of invoices from form submissions, sync clients across platforms, trigger notifications when payments are received, and much more. Make's visual interface makes it easy to see exactly how your data flows between apps.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-3" id="make-faq-list">
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button
+            class="make-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-base font-semibold text-dark pr-4">What is Make?</span>
+            <svg class="make-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="make-faq-content hidden px-6 pb-6">
+            <p class="text-sm text-gray-600 leading-relaxed">Make (formerly Integromat) is a visual automation platform that lets you design, build, and automate workflows connecting your apps and services. With its drag-and-drop interface, you can create complex multi-step scenarios without any coding knowledge.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button
+            class="make-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-base font-semibold text-dark pr-4">How do I connect Invoice Ninja with Make?</span>
+            <svg class="make-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="make-faq-content hidden px-6 pb-6">
+            <p class="text-sm text-gray-600 leading-relaxed">Create a free Make account, then add the Invoice Ninja module to your scenario. Authenticate using your Invoice Ninja API key and base URL. You can then use Invoice Ninja as a trigger (e.g., new invoice created) or as an action (e.g., create a client) in your automated workflows.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">
+          <button
+            class="make-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="text-base font-semibold text-dark pr-4">What can I automate with Make and Invoice Ninja?</span>
+            <svg class="make-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="make-faq-content hidden px-6 pb-6">
+            <p class="text-sm text-gray-600 leading-relaxed">You can automate a wide range of tasks including: creating invoices from Google Sheets data, syncing clients between Invoice Ninja and your CRM, sending Slack or email notifications on payment, generating invoices from e-commerce orders, and building multi-step approval workflows with conditional logic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center bg-primary rounded-xl py-12 px-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Start Automating Today!</h2>
+        <p class="text-lg text-white/90 mb-6">Connect Invoice Ninja with your favorite apps using Make.</p>
         <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
       </div>
     </div>
@@ -37,3 +140,15 @@ import Button from "../components/ui/Button.astro";
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('.make-faq-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.make-faq-arrow');
+      const isOpen = content?.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      arrow?.classList.toggle('rotate-180', isOpen);
+    });
+  });
+</script>

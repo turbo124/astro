@@ -3,45 +3,114 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const features = [
+  {
+    title: "Document Audit Trail",
+    desc: "Gain full visibility into your document interactions. Track who opens, views, and engages with your documents, including timestamps and duration of viewing. Optimize follow-ups based on recipient activity insights.",
+    icon: "/images/e-signatures/memo_3d-1.png",
+  },
+  {
+    title: "E-Signatures",
+    desc: "Sign documents securely from anywhere with legally binding e-signatures. Enable single or multiple signers, co-signing, and sequential signing workflows. With robust authentication and audit trails, ensure every document is tamper-proof and compliant with global e-signature laws.",
+    icon: "/images/e-signatures/handshake_3d-1.png",
+  },
+  {
+    title: "Invoice Ninja Integration",
+    desc: "Seamlessly connect with Invoice Ninja to streamline invoicing and payment processes. Automatically attach signed contracts to invoices, request payments upon signature completion, and track financial transactions within a single interface.",
+    icon: "/images/e-signatures/money_bag_3d-1.png",
+  },
+  {
+    title: "Security & Compliance",
+    desc: "DocuNinja is built with industry-leading security protocols, ensuring SOC 2, HIPAA, and GDPR compliance. Data encryption, multi-factor authentication, and detailed audit logs provide top-tier security for sensitive documents.",
+    icon: "/images/e-signatures/crossed_swords_3d-1.png",
+  },
+  {
+    title: "Team Roles",
+    desc: "Assign specific roles to participants in the document signing process. Set permissions for signers, approvers, and viewers to ensure smooth workflow automation and control over document access.",
+    icon: "/images/e-signatures/office_worker_3d_default-1.png",
+  },
+  {
+    title: "Branding",
+    desc: "Maintain a professional and cohesive brand identity with custom branding options. Add your company's logo, colors, and branding elements to every document, ensuring consistency in client-facing communications.",
+    icon: "/images/e-signatures/bookmark_tabs_3d-1.png",
+  },
+];
+
+const templates = [
+  { title: "Non-Disclosure Agreement (NDA)", desc: "Protects confidential information shared between parties. Essential when discussing sensitive data, partnerships, or new business ideas.", icon: "/images/e-signatures/scroll_3d-1.png" },
+  { title: "Service Agreement", desc: "A formal contract between a service provider and a client. It sets expectations for services, fees, timelines, and responsibilities to avoid disputes.", icon: "/images/e-signatures/receipt_3d-1.png" },
+  { title: "Consulting Agreement", desc: "Defines the terms of a consulting engagement including scope, compensation, confidentiality, and deliverables between consultant and client.", icon: "/images/e-signatures/speech_balloon_3d-1.png" },
+  { title: "Freelance Contract", desc: "A clear agreement between a company and a freelancer. It defines project scope, deliverables, timelines, and payment terms to protect both parties.", icon: "/images/e-signatures/scroll_3d-1.png" },
+  { title: "Independent Contractor Agreement", desc: "A clear agreement between a company and an independent contractor. It defines project scope, deliverables, timelines, and payment terms to protect both parties.", icon: "/images/e-signatures/receipt_3d-1.png" },
+  { title: "Photography Contract", desc: "Outlines the terms of a photography engagement including session details, usage rights, deliverables, and payment terms.", icon: "/images/e-signatures/speech_balloon_3d-1.png" },
+  { title: "Non-Compete Agreement", desc: "Prevents employees or contractors from starting or joining a competing business for a set time and region. Helps safeguard your company's market position.", icon: "/images/e-signatures/scroll_3d-1.png" },
+  { title: "Statement of Work", desc: "Defines the exact tasks, milestones, and deliverables of a project. Ensures everyone understands what is included and what isn't.", icon: "/images/e-signatures/receipt_3d-1.png" },
+  { title: "Sales Contract", desc: "A binding agreement between a buyer and seller. It specifies product details, pricing, delivery terms, and payment conditions for smooth transactions.", icon: "/images/e-signatures/speech_balloon_3d-1.png" },
+  { title: "Employment Offer", desc: "A formal offer of employment outlining position details, compensation, benefits, start date, and terms of employment.", icon: "/images/e-signatures/scroll_3d-1.png" },
+  { title: "Scope of Work", desc: "Defines the exact tasks, milestones, and deliverables of a project. Ensures everyone understands what is included and what isn't.", icon: "/images/e-signatures/receipt_3d-1.png" },
+];
 ---
 
-<BaseLayout title="E-Signatures" description="Legally binding e-signatures with DocuNinja. Sign documents securely from anywhere." path="/e-signatures/">
+<BaseLayout title="E-Signatures" description="DocuNinja E-signatures: legally binding e-signatures, document management, and online payments." path="/e-signatures/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">E-Signatures</h1>
-        <p class="text-xl text-gray-600">Sign documents securely from anywhere with legally binding e-signatures.</p>
-        <img src="/images/e-signatures/image-34.png" alt="E-Signatures in Invoice Ninja" class="mt-10 mx-auto rounded-2xl shadow-lg max-w-full" loading="lazy" />
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">DocuNinja E-signatures</h1>
+          <p class="text-xl text-gray-600">e-signatures, document management, online payments</p>
+          <div class="mt-8">
+            <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+          </div>
+        </div>
+        <div>
+          <img src="/images/e-signatures/image-34.png" alt="DocuNinja E-Signatures" class="w-full rounded-2xl shadow-lg" loading="lazy" />
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        {[
-          { title: "Document Audit Trail", desc: "Track all document interactions with timestamps. Monitor who opens, views, and engages.", icon: "/images/e-signatures/scroll_3d-1.png" },
-          { title: "Flexible Signing", desc: "Single or multiple signers, co-signing, and sequential signing workflows.", icon: "/images/e-signatures/memo_3d-1.png" },
-          { title: "Invoice Ninja Integration", desc: "Attach signed contracts to invoices. Request payments upon signature completion.", icon: "/images/e-signatures/money_bag_3d-1.png" },
-          { title: "Security & Compliance", desc: "SOC 2, HIPAA, and GDPR compliance. Data encryption and multi-factor authentication.", icon: "/images/e-signatures/crossed_swords_3d-1.png" },
-          { title: "Team Roles", desc: "Assign roles for signers, approvers, and viewers with controlled permissions.", icon: "/images/e-signatures/office_worker_3d_default-1.png" },
-          { title: "Custom Branding", desc: "Add your company logo, colors, and branding to every document.", icon: "/images/e-signatures/handshake_3d-1.png" },
-        ].map((f) => (
-          <div class="p-6 rounded-xl border border-gray-200 flex items-start gap-4">
-            <img src={f.icon} alt="" class="w-10 h-10 flex-shrink-0 mt-1" loading="lazy" />
-            <div>
-              <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
-              <p class="text-sm text-gray-600">{f.desc}</p>
-            </div>
+  <!-- Feature Grid: 6 cards, 3 columns -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((f) => (
+          <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <img src={f.icon} alt="" class="w-16 h-16 mx-auto mb-5" loading="lazy" />
+            <h3 class="text-xl font-bold text-dark mb-3">{f.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
           </div>
         ))}
       </div>
+    </div>
+  </section>
 
-      <div class="prose prose-lg max-w-none mb-12">
-        <h2>Pre-Built Templates</h2>
-        <p>10 professional templates: Contractor Agreements, NDAs, Partnership Agreements, Power of Attorney, Sales Contracts, Scope of Work, Service Agreements, Liability Agreements, Non-Compete, and Non-Solicitation Agreements.</p>
+  <!-- Document Templates Grid -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-16 text-center">Document templates</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {templates.map((t) => (
+          <div class="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <img src={t.icon} alt="" class="w-14 h-14 mx-auto mb-5" loading="lazy" />
+            <h3 class="text-lg font-bold text-dark mb-3">{t.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
       </div>
+    </div>
+  </section>
 
-      <div class="text-center">
-        <Button href="/documents/" variant="primary" size="lg">Learn More About DocuNinja</Button>
+  <!-- CTA Banner -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center bg-primary rounded-xl py-12 px-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Start Invoicing Today!</h2>
+        <p class="text-lg text-white/90 mb-6">Invoice Clients, Get Paid Fast!</p>
+        <Button href="https://app.invoicing.co/#/register" size="lg">Test Drive!</Button>
       </div>
     </div>
   </section>

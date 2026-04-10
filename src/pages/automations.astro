@@ -4,30 +4,45 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 
+const integrations = [
+  { name: "Zapier", desc: "Connect Invoice Ninja with 5,000+ apps. Automate invoicing, payments, and client management with easy-to-build Zaps.", logo: "/images/software/zapier.svg", href: "/zapier/" },
+  { name: "Make", desc: "Build powerful visual automations with Make (formerly Integromat). Create multi-step workflows connecting Invoice Ninja to hundreds of apps.", logo: "/images/software/make.svg", href: "/make-integrations/" },
+  { name: "n8n", desc: "Self-hosted, open-source automation. Build complex workflows with full control over your data and infrastructure.", logo: "/images/software/n8n.svg", href: "/software/n8n/" },
+  { name: "Integrately", desc: "One-click automations with 8 million+ ready-to-use integrations. Connect Invoice Ninja in minutes, no coding required.", logo: "/images/software/integrately.svg", href: "/software/integrately/" },
+  { name: "Pabbly Connect", desc: "Affordable, lifetime-deal automation platform. Connect Invoice Ninja with hundreds of apps at a one-time cost.", logo: "/images/software/pabbly.svg", href: "/software/pabbly/" },
+  { name: "Boost.space", desc: "Centralize and synchronize your data across apps. Keep Invoice Ninja data in sync with your entire tech stack.", logo: "/images/software/boost-space.svg", href: "https://boost.space/integrations/invoiceninja/" },
+  { name: "Pipedream", desc: "Developer-friendly automation with 2,000+ app integrations. Build workflows using code, pre-built actions, or both.", logo: "/images/software/pipedream.svg", href: "https://pipedream.com/apps/invoice-ninja" },
+  { name: "SureTriggers", desc: "WordPress-native automation platform. Connect Invoice Ninja with 890+ apps using an intuitive visual builder.", logo: "/images/software/suretriggers.svg", href: "https://ottokit.com/integrations/invoice_ninja" },
+];
+
 const faqs = [
   {
-    q: "What are the benefits of using invoice templates?",
-    a: "Businesses require invoices to be clear, legally valid, timely, and professional. A hastily prepared Word document or email fails to create the right impression and can be mistaken for spam. Templates provide pre-formatted structures where you upload your logo and company details to generate professional invoices quickly and simply. Templates prevent common mistakes when creating invoices manually, ensuring important elements like sales tax, payment due dates, and contact information aren't overlooked.",
+    q: "What automation platforms does Invoice Ninja support?",
+    a: "Invoice Ninja integrates with all major automation platforms including Zapier, Make (Integromat), n8n, Integrately, Pabbly Connect, Boost.space, Pipedream, and SureTriggers/OttoKit. Each platform offers unique strengths for connecting Invoice Ninja with thousands of other business apps.",
   },
   {
-    q: "Which invoice template formats should I use?",
-    a: "Template selection is flexible. The free plan includes four freelance invoice templates; upgrading to Pro unlocks eleven formats. All plans allow logo uploads so every invoice reflects your branding. Pro and Enterprise plans enable advanced customization of invoice designs.",
+    q: "Do I need coding skills to set up automations?",
+    a: "No coding skills are required for most platforms. Zapier, Make, Integrately, and Pabbly Connect all offer visual drag-and-drop builders. For developers who prefer code-based workflows, Pipedream and n8n provide advanced scripting capabilities.",
   },
   {
-    q: "How do I make an invoice for my small business?",
-    a: "The process involves three straightforward steps: create an account and upload your logo, select your preferred template and enter customer information, then send the invoice to clients. Payment integration is optional. Support resources include community Slack groups with 5,000+ members, online forums, and direct team assistance.",
+    q: "What can I automate with Invoice Ninja?",
+    a: "Common automations include creating invoices from form submissions, syncing clients with your CRM, sending Slack notifications for payments, updating spreadsheets when invoices are paid, creating tasks from project management tools, and triggering email sequences based on invoice status changes.",
   },
   {
-    q: "Which are the best invoice templates?",
-    a: "Invoice Ninja offers varied, scalable pricing starting with a free option supporting up to five clients with unlimited invoicing, four templates, branded documents, and auto-billing. Pro and Enterprise solutions scale with business growth, all supported by friendly customer service. Desktop and mobile apps enable remote invoicing management.",
+    q: "Is there a cost to use these integrations?",
+    a: "Invoice Ninja's API is available on all plans, including the free plan. However, each automation platform has its own pricing. Many offer free tiers -- Zapier, Make, n8n (self-hosted), and Pipedream all have free plans to get you started.",
   },
   {
-    q: "How do I start invoicing online?",
-    a: "Follow these four steps: create a free account, upload your logo and select an invoice design, integrate your preferred payment gateway, then create clients and invoices to get paid.",
+    q: "How do I connect Invoice Ninja to an automation platform?",
+    a: "Most platforms require your Invoice Ninja API key and URL. Navigate to Settings > Account Management in Invoice Ninja to find your API tokens. Then add Invoice Ninja as a connection in your chosen automation platform and authenticate using these credentials.",
   },
   {
-    q: "How do my clients pay their invoices online?",
-    a: "A payment gateway processes client payments. After integration, clients see a 'Pay Now' button on invoices within their client portal, and funds deposit into your business account. Invoice Ninja supports numerous payment gateways.",
+    q: "Can I use automations with the self-hosted version?",
+    a: "Yes! All automation platforms work with both the hosted and self-hosted versions of Invoice Ninja. For self-hosted installations, you'll use your own domain URL when configuring the API connection in your automation platform.",
+  },
+  {
+    q: "What triggers and actions are available?",
+    a: "Invoice Ninja provides triggers for events like new invoices, payments received, client creation, and quote approvals. Actions include creating invoices, adding clients, recording payments, sending invoices, and updating records. The exact triggers and actions vary slightly by platform.",
   },
 ];
 
@@ -41,59 +56,61 @@ const connectCards = [
 <BaseLayout title="Automations" description="Integrate Invoice Ninja with hundreds of apps via Zapier, Make, n8n, Integrately, Pabbly and more." path="/automations/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Automations</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Integrate Invoice Ninja with hundreds of apps via Zapier, Make, n8n, Integrately, Pabbly and more.</p>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Automations</h1>
+          <p class="text-xl text-gray-600 mb-6">Integrate Invoice Ninja with hundreds of apps via Zapier, Make, n8n, Integrately, Pabbly and more.</p>
+          <p class="text-gray-600 mb-8">Streamline your invoicing workflows by connecting Invoice Ninja to the tools you already use. Automate repetitive tasks, sync data across platforms, and focus on growing your business.</p>
+          <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+        </div>
+        <div>
+          <img src="/images/home/Frame-37210.png" alt="Invoice Ninja automations dashboard" class="w-full rounded-xl shadow-lg" loading="lazy" />
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
-        <a href="/zapier/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">Zapier</h3>
-          <p class="text-sm text-gray-500">5,000+ app integrations</p>
-        </a>
-        <a href="/make-integrations/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">Make</h3>
-          <p class="text-sm text-gray-500">Visual automation builder</p>
-        </a>
-        <a href="/software/n8n/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">n8n</h3>
-          <p class="text-sm text-gray-500">Open-source automation</p>
-        </a>
-        <a href="/software/integrately/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">Integrately</h3>
-          <p class="text-sm text-gray-500">One-click automations</p>
-        </a>
-        <a href="/software/pabbly/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">Pabbly Connect</h3>
-          <p class="text-sm text-gray-500">Affordable automation</p>
-        </a>
-        <a href="https://boost.space/integrations/invoiceninja/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">Boost.space</h3>
-          <p class="text-sm text-gray-500">Centralize & sync your data</p>
-        </a>
-        <a href="https://pipedream.com/apps/invoice-ninja" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">Pipedream</h3>
-          <p class="text-sm text-gray-500">2,000+ app workflows</p>
-        </a>
-        <a href="https://ottokit.com/integrations/invoice_ninja" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">OttoKit</h3>
-          <p class="text-sm text-gray-500">890+ app integrations</p>
-        </a>
-        <a href="/software/" class="p-5 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all bg-white">
-          <h3 class="font-bold text-dark mb-1">View All</h3>
-          <p class="text-sm text-gray-500">All integrations &rarr;</p>
-        </a>
+  <!-- Integration Platforms Grid -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-4">Integration Platforms</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Connect Invoice Ninja with your favorite tools through these powerful automation platforms.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {integrations.map((item) => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6 hover:border-primary/30 hover:shadow-lg transition-all">
+            <img src={item.logo} alt={`${item.name} logo`} class="h-10 w-auto mb-4" loading="lazy" />
+            <h3 class="text-lg font-bold text-dark mb-2">{item.name}</h3>
+            <p class="text-sm text-gray-600 mb-4">{item.desc}</p>
+            <a href={item.href} class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more &rarr;</a>
+          </div>
+        ))}
       </div>
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+    </div>
+  </section>
+
+  <!-- Let's Connect -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-10">Let's Connect!</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {connectCards.map((card) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200 text-center hover:border-primary/30 hover:shadow-lg transition-all">
+            <h3 class="text-lg font-bold text-dark mb-2">{card.title}</h3>
+            <p class="text-sm text-gray-500 mb-4">{card.desc}</p>
+            <a href={card.href} class="inline-block px-5 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+              {card.cta}
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-dark text-center mb-4">Frequently Asked Questions</h2>
       <p class="text-center text-gray-500 mb-10">Everything you need to know about Invoice Ninja automations.</p>
@@ -115,20 +132,13 @@ const connectCards = [
     </div>
   </section>
 
-  <!-- Community & Support -->
+  <!-- CTA Banner -->
   <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-dark text-center mb-10">Let's Connect!</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        {connectCards.map((card) => (
-          <div class="bg-white rounded-xl p-6 border border-gray-200 text-center hover:border-primary/30 hover:shadow-lg transition-all">
-            <h3 class="text-lg font-bold text-dark mb-2">{card.title}</h3>
-            <p class="text-sm text-gray-500 mb-4">{card.desc}</p>
-            <a href={card.href} class="inline-block px-5 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-              {card.cta}
-            </a>
-          </div>
-        ))}
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center bg-primary rounded-xl py-12 px-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Start Invoicing Today!</h2>
+        <p class="text-lg text-white/90 mb-6">Invoice Clients, Get Paid Fast!</p>
+        <Button href="https://app.invoicing.co/#/register" size="lg">Test Drive!</Button>
       </div>
     </div>
   </section>
