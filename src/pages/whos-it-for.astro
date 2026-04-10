@@ -9,16 +9,19 @@ const audiences = [
     subtitle: "Serving freelancers, service providers & SMB's",
     title: "Freelancers, tradesmen, consultants, coaches, business services, 'gig economy' providers",
     description: "Impress clients with professionally designed invoices that match your brand. Accept credit cards, ACH payments, and send automated late-payment reminders. With Invoice Ninja, getting paid is effortless.",
+    image: "/images/home/image.jpg",
   },
   {
     subtitle: "A suite of tools to advance your business",
     title: "IT experts, developers, web designers, media & digital marketers, tech services",
     description: "Your clients can access their client-side portal to view all invoices, payment history, documents, and much more. With every dollar, every invoice, every task accounted for, you and your clients will always know where business stands.",
+    image: "/images/home/image-1.jpg",
   },
   {
     subtitle: "Invoice Ninja is incredibly easy to use",
     title: "Wholesalers, transportation, construction, manufacturing, logistics, non-profits",
-    description: "Ditch the spreadsheets and disconnected tools. Invoice Ninja brings invoicing, expenses, time-tracking, and payments into one incredibly easy-to-use platform — so you can focus on running your business.",
+    description: "Every feature is geared toward getting you paid. Instead of using Word and Excel docs or overpriced software, with Invoice Ninja you can send beautiful branded invoices with minimum of effort and maximum professionalism.",
+    image: "/images/home/image-4.jpg",
   },
 ];
 
@@ -36,18 +39,18 @@ const testimonials = [
     source: "Forbes",
   },
   {
-    quote: "Invoice Ninja is an excellent alternative for small businesses that want a free, full-featured invoicing solution.",
+    quote: "2023 Best Invoicing for Freelancers. Invoice Ninja can give any other free invoicing and billing software a run for its money!",
     source: "Money.com",
   },
 ];
 
 const userTestimonials = [
-  { name: "Alberto O.", quote: "I love this app! It's simple and easy to use." },
-  { name: "Aslan C.", quote: "Best invoicing software I've ever used." },
-  { name: "Aaron L.", quote: "Great tool for freelancers. Highly recommended!" },
-  { name: "Kyle G.", quote: "Saves me hours every week on invoicing." },
-  { name: "Joseph S.", quote: "The client portal is a game changer." },
-  { name: "Robbe D.", quote: "Perfect for small businesses. Love the recurring invoices." },
+  { name: "Alberto O.", quote: "Easy of use - Customization of the software to better serve the needs of the customer - Integration with the most popular Payment Gateways - Portal for the customer" },
+  { name: "Aslan C.", quote: "Invoice Ninja is the best invoicing app for freelancers and small business. I can manage invoices, proposals and expenses with it." },
+  { name: "Aaron L.", quote: "Invoice Ninja has incredible features for invoice management. Being able to track and automate my invoices as a small business owner is fantastic!" },
+  { name: "Kyle G.", quote: "I love how easy it is to customize the client portal and invoices. Great experience." },
+  { name: "Joseph S.", quote: "Affordable and feature packed. Perfect for my freelance business." },
+  { name: "Robbe D.", quote: "The recurring invoicing and auto-billing features save me hours every month." },
 ];
 
 const enterpriseFeatures = [
@@ -101,7 +104,7 @@ const freeFeatures = [
 const connectCards = [
   { title: "Ninja Support Forums", desc: "Get help from the community and our support team.", cta: "Launch Forums!", href: "https://forum.invoiceninja.com" },
   { title: "Contact Email", desc: "Reach us directly at Contact@invoiceninja.com", cta: "Email Us", href: "mailto:contact@invoiceninja.com" },
-  { title: "Slack Community", desc: "Join 5,000+ members in our Slack community.", cta: "Join Slack", href: "https://invoiceninja.slack.com" },
+  { title: "Slack Community", desc: "Join 5,000+ members in our Slack community.", cta: "Join Slack", href: "https://slack.invoiceninja.com/" },
 ];
 ---
 
@@ -113,7 +116,7 @@ const connectCards = [
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Who's it for?</h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Do you have clients you need to invoice? Invoice Ninja is your solution to get paid.</p>
-      <Button href="https://react.invoicing.co/demo" size="lg">Test Drive!</Button>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Test Drive!</Button>
     </div>
   </section>
 
@@ -129,7 +132,7 @@ const connectCards = [
             <Button href="https://app.invoicing.co/#/register">Get Started Free</Button>
           </div>
           <div class={`bg-gray-50 rounded-2xl p-8 aspect-square flex items-center justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`}>
-            <img src="/images/home/Frame-37210.png" alt={audience.subtitle} class="w-full rounded-lg" loading="lazy" />
+            <img src={audience.image} alt={audience.subtitle} class="w-full rounded-lg" loading="lazy" />
           </div>
         </div>
       ))}
@@ -198,7 +201,7 @@ const connectCards = [
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold text-white mb-4">Start Invoicing Today!</h2>
       <p class="text-lg text-white/80 mb-8">Invoice Clients, Get Paid Fast!</p>
-      <a href="https://react.invoicing.co/demo" class="inline-block px-10 py-4 text-lg font-semibold text-primary bg-white rounded-xl hover:bg-gray-50 transition-all shadow-lg">
+      <a href="https://app.invoicing.co/#/register" class="inline-block px-10 py-4 text-lg font-semibold text-primary bg-white rounded-xl hover:bg-gray-50 transition-all shadow-lg">
         Test Drive!
       </a>
     </div>
