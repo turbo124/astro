@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Card from '../../components/ui/Card.astro';
+
+const perks = (await getCollection('partnerPerks'))
+  .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<BaseLayout
+  title="Partner Perks"
+  description="Exclusive discounts and perks from Invoice Ninja partners."
+  path="/partner-perks/"
+>
+  <Header slot="header" />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    <header class="mb-12 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-dark mb-3">Partner Perks</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Exclusive discounts and special offers from our partners.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {perks.map((perk) => (
+        <Card href={`/partner-perks/${perk.id}/`}>
+          <div class="flex items-center gap-4 mb-4">
+            {perk.data.logo && (
+              <img src={perk.data.logo} alt={perk.data.title} class="h-10 w-10 object-contain" />
+            )}
+            <h3 class="text-lg font-bold text-dark">{perk.data.title}</h3>
+          </div>
+          <p class="text-sm text-gray-500 mb-3">{perk.data.description}</p>
+          <span class="inline-block px-3 py-1 text-sm font-medium text-green-700 bg-green-100 rounded-full">
+            {perk.data.discount}
+          </span>
+        </Card>
+      ))}
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

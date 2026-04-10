@@ -1,0 +1,48 @@
+---
+import { locales, localeNames, getLocalizedPath, type Locale } from '../../i18n/utils';
+
+interface Props {
+  currentLocale?: Locale;
+  currentPath?: string;
+}
+
+const {
+  currentLocale = 'en',
+  currentPath = '/',
+} = Astro.props;
+
+const basePath = currentPath.replace(/^\/(en|es|de|fr|be)/, '') || '/';
+---
+
+<div class="relative group">
+  <button
+    class="flex items-center gap-1.5 px-2 py-1.5 text-sm text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
+    aria-label="Switch language"
+  >
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+    </svg>
+    <span class="uppercase text-xs font-medium">{currentLocale}</span>
+    <svg class="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <div class="absolute right-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+    <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-[140px]">
+      {locales.map((locale) => (
+        <a
+          href={getLocalizedPath(basePath, locale)}
+          class:list={[
+            'block px-4 py-2 text-sm transition-colors',
+            locale === currentLocale
+              ? 'text-primary font-medium bg-primary/5'
+              : 'text-gray-600 hover:text-primary hover:bg-gray-50',
+          ]}
+        >
+          {localeNames[locale]}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>

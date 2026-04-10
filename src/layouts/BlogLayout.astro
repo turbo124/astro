@@ -1,0 +1,130 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  updatedDate?: Date;
+  author?: string;
+  image?: string;
+  imageAlt?: string;
+  tags?: string[];
+  locale?: Locale;
+}
+
+const {
+  title,
+  description,
+  publishDate,
+  updatedDate,
+  author = 'Invoice Ninja',
+  image,
+  imageAlt,
+  tags = [],
+  locale = 'en',
+} = Astro.props;
+
+const formattedDate = publishDate.toLocaleDateString(locale === 'be' ? 'nl-BE' : locale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const formattedUpdateDate = updatedDate?.toLocaleDateString(locale === 'be' ? 'nl-BE' : locale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Organization', name: author },
+  datePublished: publishDate.toISOString(),
+  ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+  ...(image && { image }),
+  publisher: {
+    '@type': 'Organization',
+    name: 'Invoice Ninja',
+    logo: { '@type': 'ImageObject', url: 'https://invoiceninja.com/images/logo-circle.png' },
+  },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={image}
+  ogType="article"
+  locale={locale}
+  path={`/blog/`}
+>
+  <Header slot="header" />
+
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm text-gray-500">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-700">{title}</span>
+    </nav>
+
+    <!-- Header -->
+    <header class="mb-10">
+      {tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag) => (
+            <span class="px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark leading-tight mb-4">
+        {title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <span>{author}</span>
+        <span>&middot;</span>
+        <time datetime={publishDate.toISOString()}>{formattedDate}</time>
+        {formattedUpdateDate && (
+          <>
+            <span>&middot;</span>
+            <span>Updated {formattedUpdateDate}</span>
+          </>
+        )}
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    {image && (
+      <img
+        src={image}
+        alt={imageAlt ?? title}
+        class="w-full rounded-xl mb-10 aspect-video object-cover"
+      />
+    )}
+
+    <!-- Content -->
+    <div class="prose prose-lg prose-gray max-w-none
+      prose-headings:font-bold prose-headings:text-dark
+      prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+      prose-img:rounded-xl">
+      <slot />
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

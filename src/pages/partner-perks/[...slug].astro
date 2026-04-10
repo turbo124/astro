@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('partnerPerks');
+  return items.map((item) => ({
+    params: { slug: item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+
+<CollectionLayout
+  title={item.data.title}
+  description={item.data.description}
+  logo={item.data.logo}
+  website={item.data.link}
+  backLink="/partner-perks/"
+  backLabel="Partner Perks"
+  path={`/partner-perks/${item.id}/`}
+>
+  <Content />
+</CollectionLayout>

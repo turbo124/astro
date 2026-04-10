@@ -1,0 +1,61 @@
+---
+import { getAlternateLinks, type Locale } from '../../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  ogImage?: string;
+  ogType?: string;
+  locale?: Locale;
+  path?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalURL,
+  ogImage = '/images/og-default.png',
+  ogType = 'website',
+  locale = 'en',
+  path,
+  noindex = false,
+} = Astro.props;
+
+const siteTitle = title === 'Home' ? 'Invoice Ninja' : `${title} | Invoice Ninja`;
+const siteURL = Astro.site?.toString().replace(/\/$/, '') ?? 'https://invoiceninja.com';
+const canonical = canonicalURL ?? Astro.url.href;
+const ogImageURL = ogImage.startsWith('http') ? ogImage : `${siteURL}${ogImage}`;
+const alternateLinks = path ? getAlternateLinks(path) : [];
+---
+
+<title>{siteTitle}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImageURL} />
+<meta property="og:site_name" content="Invoice Ninja" />
+<meta property="og:locale" content={locale} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={siteTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageURL} />
+
+<!-- Hreflang alternate links -->
+{alternateLinks.map(({ locale: altLocale, href }) => (
+  <link
+    rel="alternate"
+    hreflang={altLocale === 'be' ? 'nl-BE' : altLocale}
+    href={`${siteURL}${href}`}
+  />
+))}
+{path && <link rel="alternate" hreflang="x-default" href={`${siteURL}${path}`} />}

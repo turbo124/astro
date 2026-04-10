@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Card from '../../components/ui/Card.astro';
+
+const hosts = (await getCollection('hosting'))
+  .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<BaseLayout
+  title="Hosting Partners"
+  description="Recommended hosting providers for self-hosting Invoice Ninja."
+  path="/hosting/"
+>
+  <Header slot="header" />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    <header class="mb-12 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-dark mb-3">Hosting Partners</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Recommended hosting providers for running your self-hosted Invoice Ninja instance.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {hosts.map((host) => (
+        <Card href={`/hosting/${host.id}/`}>
+          <div class="flex items-center gap-4 mb-4">
+            <img src={host.data.logo} alt={host.data.title} class="h-10 w-10 object-contain" />
+            <div>
+              <h3 class="text-lg font-bold text-dark">{host.data.title}</h3>
+              {host.data.pricing && (
+                <span class="text-xs text-primary font-medium">{host.data.pricing}</span>
+              )}
+            </div>
+          </div>
+          <p class="text-sm text-gray-500 mb-4">{host.data.description}</p>
+          {host.data.features.length > 0 && (
+            <div class="flex flex-wrap gap-1.5">
+              {host.data.features.slice(0, 3).map((feature) => (
+                <span class="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 rounded-full">{feature}</span>
+              ))}
+            </div>
+          )}
+        </Card>
+      ))}
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

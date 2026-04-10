@@ -1,0 +1,32 @@
+{
+  "nav.products": "Productos",
+  "nav.whyUs": "¿Por qué nosotros?",
+  "nav.eInvoicing": "Facturación electrónica",
+  "nav.pricing": "Precios",
+  "nav.howItWorks": "Cómo funciona",
+  "nav.login": "Iniciar sesión",
+  "nav.signUp": "Registrarse",
+
+  "footer.products": "Productos",
+  "footer.whyUs": "¿Por qué Invoice Ninja?",
+  "footer.resources": "Recursos",
+  "footer.legal": "Legal",
+  "footer.copyright": "Invoice Ninja",
+  "footer.pricing": "Precios",
+  "footer.login": "Iniciar sesión",
+
+  "cta.getStarted": "Comienza gratis",
+  "cta.learnMore": "Más información",
+
+  "blog.readMore": "Leer más",
+  "blog.publishedOn": "Publicado el",
+  "blog.by": "por",
+  "blog.backToBlog": "Volver al blog",
+  "blog.nextPage": "Siguiente",
+  "blog.prevPage": "Anterior",
+
+  "common.features": "Funciones",
+  "common.pricing": "Precios",
+  "common.contact": "Contacto",
+  "common.support": "Soporte"
+}

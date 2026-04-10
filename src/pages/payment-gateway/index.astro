@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Card from '../../components/ui/Card.astro';
+
+const gateways = (await getCollection('paymentGateways'))
+  .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<BaseLayout
+  title="Payment Gateways"
+  description="Accept payments from clients worldwide with Invoice Ninja's payment gateway integrations."
+  path="/payment-gateway/"
+>
+  <Header slot="header" />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    <header class="mb-12 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-dark mb-3">Payment Gateway Integrations</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Connect your favorite payment processor and start accepting payments from clients worldwide.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {gateways.map((gateway) => (
+        <Card href={`/payment-gateway/${gateway.id}/`}>
+          <div class="flex items-center gap-4 mb-4">
+            <img src={gateway.data.logo} alt={gateway.data.title} class="h-10 w-10 object-contain" />
+            <h3 class="text-lg font-bold text-dark">{gateway.data.title}</h3>
+          </div>
+          <p class="text-sm text-gray-500 mb-4">{gateway.data.description}</p>
+          {gateway.data.features.length > 0 && (
+            <div class="flex flex-wrap gap-1.5">
+              {gateway.data.features.slice(0, 3).map((feature) => (
+                <span class="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 rounded-full">{feature}</span>
+              ))}
+            </div>
+          )}
+        </Card>
+      ))}
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

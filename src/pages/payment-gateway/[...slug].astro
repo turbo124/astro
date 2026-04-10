@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+
+export async function getStaticPaths() {
+  const gateways = await getCollection('paymentGateways');
+  return gateways.map((gateway) => ({
+    params: { slug: gateway.id },
+    props: { gateway },
+  }));
+}
+
+const { gateway } = Astro.props;
+const { Content } = await render(gateway);
+---
+
+<CollectionLayout
+  title={gateway.data.title}
+  description={gateway.data.description}
+  logo={gateway.data.logo}
+  website={gateway.data.website}
+  backLink="/payment-gateway/"
+  backLabel="Payment Gateways"
+  path={`/payment-gateway/${gateway.id}/`}
+>
+  <Content />
+</CollectionLayout>

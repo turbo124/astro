@@ -1,0 +1,32 @@
+{
+  "nav.products": "Producten",
+  "nav.whyUs": "Waarom wij?",
+  "nav.eInvoicing": "e-Facturatie",
+  "nav.pricing": "Prijzen",
+  "nav.howItWorks": "Hoe het werkt",
+  "nav.login": "Inloggen",
+  "nav.signUp": "Registreren",
+
+  "footer.products": "Producten",
+  "footer.whyUs": "Waarom Invoice Ninja?",
+  "footer.resources": "Bronnen",
+  "footer.legal": "Juridisch",
+  "footer.copyright": "Invoice Ninja",
+  "footer.pricing": "Prijzen",
+  "footer.login": "Account inloggen",
+
+  "cta.getStarted": "Gratis beginnen",
+  "cta.learnMore": "Meer informatie",
+
+  "blog.readMore": "Lees meer",
+  "blog.publishedOn": "Gepubliceerd op",
+  "blog.by": "door",
+  "blog.backToBlog": "Terug naar blog",
+  "blog.nextPage": "Volgende",
+  "blog.prevPage": "Vorige",
+
+  "common.features": "Functies",
+  "common.pricing": "Prijzen",
+  "common.contact": "Contact",
+  "common.support": "Ondersteuning"
+}
