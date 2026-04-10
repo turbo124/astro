@@ -16,7 +16,7 @@ Then there’s money, or lack of it, which can cause anxiety and negative thinki
 
 ## Motivation needs fueling
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2018/09/Fuel-Motivation.jpeg)](http://invoiceninja.com/wp-content/uploads/2018/09/Fuel-Motivation.jpeg)
+[![](/images/blog/Fuel-Motivation.jpeg)](/images/blog/Fuel-Motivation.jpeg)
 
 Zig Ziglar once said, “People often say that motivation doesn't last. Well, neither does bathing – that's why we recommend it daily”.
 

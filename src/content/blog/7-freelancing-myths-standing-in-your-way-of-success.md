@@ -8,7 +8,7 @@ draft: false
 oldSlug: "7-freelancing-myths-standing-in-your-way-of-success"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-andrea-piacquadio-3768894-1024x682-1.jpg)
+![](/images/blog/pexels-andrea-piacquadio-3768894-1024x682-1.jpg)
 
 **7 Freelancing Myths Standing in Your Way of Success**
 

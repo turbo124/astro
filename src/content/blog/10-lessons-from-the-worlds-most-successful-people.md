@@ -12,7 +12,7 @@ Great business lessons provide freelancers and solopreneurs with both inspiratio
 
 As with anything in life, when you’re suffering from information overload, it’s always wise to listen to the insights of those who have achieved what you want to achieve. In business, it’s the most successful people who are renowned for having created thriving multinational companies completely from scratch.
 
-![](http://invoiceninja.com/wp-content/uploads/2018/07/Success.jpg)
+![](/images/blog/Success.jpg)
 
 They’ve been where you are now, wondering what the heck to do. They’ve faced similar challenges and overcome the same fears that might keep you awake at night. They have also forged their own paths and gained extremely valuable business insights from their own mistakes and successes, which you can learn from today.
 

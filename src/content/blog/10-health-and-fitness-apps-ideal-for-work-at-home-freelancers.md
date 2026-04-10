@@ -8,7 +8,7 @@ draft: false
 oldSlug: "10-health-and-fitness-apps-ideal-for-work-at-home-freelancers"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2019/11/Runkeeper-Map-2.jpg)](https://www.invoiceninja.com/wp-content/uploads/2019/11/Runkeeper-Map-2.jpg)
+[![](/images/blog/Runkeeper-Map-2.jpg)](/images/blog/Runkeeper-Map-2.jpg)
 
 Working from home is one of the great perks of a freelance lifestyle. It’s why many freelancers decide to pursue self-employment in the first place. No more tiring commutes or complicated office politics! Yet while a work-at-home life has many benefits, it also has its drawbacks, and one of these potentially includes getting lazy when it comes to health and fitness. 
 

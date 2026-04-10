@@ -8,7 +8,7 @@ draft: false
 oldSlug: "freelancers-using-bitcoin"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2017/12/What-Freelancers-Need-to-Know-About-Bitcoin.jpg)](http://invoiceninja.com/wp-content/uploads/2017/12/What-Freelancers-Need-to-Know-About-Bitcoin.jpg)
+[![](/images/blog/What-Freelancers-Need-to-Know-About-Bitcoin.jpg)](/images/blog/What-Freelancers-Need-to-Know-About-Bitcoin.jpg)
 
 What on earth is Bitcoin? This is the initial reaction of many people when first learning of the virtual currency as a viable payment method for freelance services. Nearly everyone has heard of Bitcoin by name but few really understand what it is, what it does, and how it can be used.
 

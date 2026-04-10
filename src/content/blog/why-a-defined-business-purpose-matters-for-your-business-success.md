@@ -8,7 +8,7 @@ draft: false
 oldSlug: "why-a-defined-business-purpose-matters-for-your-business-success"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-magda-ehlers-4116640-1024x674.jpeg)
+![](/images/blog/pexels-magda-ehlers-4116640-1024x674.jpeg)
 
 Purpose matters in business. 
 

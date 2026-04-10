@@ -32,7 +32,7 @@ So what are some of the ways to modify an invoice to better match your brand?
 
 Improving the design of your invoice is best achieved with templates that are already advanced when it comes to functional elements and aesthetic features. At Invoice Ninja we have a variety of templates to choose from, which in themselves are better than the majority of templates you’ll find online, and can be used almost immediately.
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2017/08/Invoice-Ninja-Template-Designs.jpg)](https://www.invoiceninja.com/wp-content/uploads/2017/08/Invoice-Ninja-Template-Designs.jpg)
+[![](/images/blog/Invoice-Ninja-Template-Designs.jpg)](/images/blog/Invoice-Ninja-Template-Designs.jpg)
 
 A good template allows you to improve on what’s already there by adjusting various features to match your brand’s appearance. Here are just 5 ways to achieve a more personalised look for your invoices:
 

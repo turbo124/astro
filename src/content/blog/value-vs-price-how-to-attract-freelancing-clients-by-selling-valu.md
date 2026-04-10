@@ -8,7 +8,7 @@ draft: false
 oldSlug: "value-vs-price-how-to-attract-freelancing-clients-by-selling-valu"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-pixabay-262470-1024x683.jpg)
+![](/images/blog/pexels-pixabay-262470-1024x683.jpg)
 
 “What are your rates?”
 

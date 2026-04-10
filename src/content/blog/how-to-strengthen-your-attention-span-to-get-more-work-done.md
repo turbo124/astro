@@ -8,7 +8,7 @@ draft: false
 oldSlug: "how-to-strengthen-your-attention-span-to-get-more-work-done"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-andrea-piacquadio-941555-1024x682.jpg)
+![](/images/blog/pexels-andrea-piacquadio-941555-1024x682.jpg)
 
 As a freelancer or small business owner, you might consider your most important skill as being the one for which your clients pay you. Yet there’s a particular skill that is even more essential. It has a significant impact on your career’s destiny. The skill? A strong attention span.  
 

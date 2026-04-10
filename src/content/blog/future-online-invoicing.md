@@ -16,7 +16,7 @@ The biggest innovation in invoicing has come relatively recently with the develo
 
 So how have electronic and online invoices evolved over the last few decades and what does the future hold for this incredible innovation? We provide some of the answers in this article as well as what we predict will be the next invoicing step forward.
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2018/04/HistoryFutureOnlineInvoicing-1.jpg)](http://invoiceninja.com/wp-content/uploads/2018/04/HistoryFutureOnlineInvoicing-1-scaled.jpg)
+[![](/images/blog/HistoryFutureOnlineInvoicing-1.jpg)](/images/blog/HistoryFutureOnlineInvoicing-1-scaled.jpg)
 
 ### The History of Online Invoicing
 

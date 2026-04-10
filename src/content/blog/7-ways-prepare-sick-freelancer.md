@@ -12,7 +12,7 @@ One of the biggest drawbacks to being a freelancer is the damage sickness can do
 
 Everyone will get sick at some stage in their [freelance career](https://www.invoiceninja.com/15-unusual-freelance-careers/) and it’s wise to prepare for this eventuality in advance. This can be achieved by developing emergency contingency plans, starting now, and which can be quickly deployed on the day sickness strikes. Doing so will allow you to take the time needed to recover and avoid added stress which will just prolong the illness.
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2018/04/Freelancing-Rest-Days.jpg)](https://www.invoiceninja.com/wp-content/uploads/2018/04/Freelancing-Rest-Days.jpg)
+[![](/images/blog/Freelancing-Rest-Days.jpg)](/images/blog/Freelancing-Rest-Days.jpg)
 
 ## So what are these contingency plans?
 

@@ -10,7 +10,7 @@ oldSlug: "ninja-profiles-virginia-fuentes"
 
 Welcome to another Invoice Ninja Story! This series profiles Invoice Ninja all around the world!
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2018/09/VirginiaFuentes-1024x1024.jpg)](http://invoiceninja.com/wp-content/uploads/2018/09/VirginiaFuentes.jpg)
+[![](/images/blog/VirginiaFuentes-1024x1024.jpg)](/images/blog/VirginiaFuentes.jpg)
 
 **BIO**
 

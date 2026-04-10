@@ -8,7 +8,7 @@ draft: false
 oldSlug: "7-reasons-you-might-be-letting-your-intelligence-destroy-your-business"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2020/04/person-playing-chess-1040157-1.jpg)](https://www.invoiceninja.com/wp-content/uploads/2020/04/person-playing-chess-1040157-1.jpg)
+[![](/images/blog/person-playing-chess-1040157-1.jpg)](/images/blog/person-playing-chess-1040157-1.jpg)
 
 Intelligent people are successful. This is how we assume the world works. Smart people have the intellect to spot opportunities and make the most of them using the right resources and skills. As a result, these people rise to the top. 
 

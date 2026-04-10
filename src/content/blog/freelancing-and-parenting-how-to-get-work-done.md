@@ -8,7 +8,7 @@ draft: false
 oldSlug: "freelancing-and-parenting-how-to-get-work-done"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2018/10/FreelancingParenting-1-1024x656-1.jpg)
+![](/images/blog/FreelancingParenting-1-1024x656-1.jpg)
 
  
 

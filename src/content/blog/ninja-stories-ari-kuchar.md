@@ -16,7 +16,7 @@ This is the second article profiling our Invoice Ninja users all around the worl
 
 The second Invoice Ninja to be interviewed is Ari Kuchar, Australian filmmaker & producer.
 
-![](http://invoiceninja.com/wp-content/uploads/2018/08/Ari-Kuchar-Invoice-Ninja.jpg)
+![](/images/blog/Ari-Kuchar-Invoice-Ninja.jpg)
 
 ## Ari Kuchar Productions / Cre8
 

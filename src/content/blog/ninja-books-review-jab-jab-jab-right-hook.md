@@ -12,7 +12,7 @@ oldSlug: "ninja-books-review-jab-jab-jab-right-hook"
 
 ### *Jab, Jab, Jab, Right Hook by Gary Vaynerchuk*
 
-![](http://invoiceninja.com/wp-content/uploads/2018/08/Ninj-Books-Review-2.jpg)
+![](/images/blog/Ninj-Books-Review-2.jpg)
 
 ## 5 out of 5 NINJA STARS
 

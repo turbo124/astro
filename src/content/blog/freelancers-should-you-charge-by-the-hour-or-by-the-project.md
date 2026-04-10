@@ -8,7 +8,7 @@ draft: false
 oldSlug: "freelancers-should-you-charge-by-the-hour-or-by-the-project"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-karolina-grabowska-4386341-1.jpg)
+![](/images/blog/pexels-karolina-grabowska-4386341-1.jpg)
 
 A common dilemma faced by freelancers in every industry is whether to charge by the hour or by the project. Both strategies have their benefits and drawbacks depending on your freelancing services, ability, and audience. 
 

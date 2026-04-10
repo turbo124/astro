@@ -8,4 +8,4 @@ draft: false
 oldSlug: "thank-you-to-the-invoice-ninja-community"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/2021-Year-End-Summary-841x1024.png)
+![](/images/blog/2021-Year-End-Summary-841x1024.png)

@@ -8,7 +8,7 @@ draft: false
 oldSlug: "how-to-overcome-the-illusion-of-fear-when-building-your-business"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2019/12/Screenshot-2019-12-24T112252.173.png)](https://www.invoiceninja.com/wp-content/uploads/2019/12/Screenshot-2019-12-24T112252.173.png)
+[![](/images/blog/Screenshot-2019-12-24T112252.173.png)](/images/blog/Screenshot-2019-12-24T112252.173.png)
 
 The biggest enemy we face when building a business is often ourselves. We’re professionals at imagining worse case scenarios and true experts in consistently fueling fear and anxiety about our work. Even when things are going well in our careers, there’s a tendency to assume the good times won’t last. 
 

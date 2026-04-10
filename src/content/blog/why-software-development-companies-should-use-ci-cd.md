@@ -16,7 +16,7 @@ Let’s take a closer look at each of these terms to understand their roles with
 
 ### CI Explained
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/CodeMagic-40-of-179-300x200-1.png)
+![](/images/blog/CodeMagic-40-of-179-300x200-1.png)
 
 While the “D” in the acronym can mean two different things, the “I” always stands for “integration.”
 
@@ -30,7 +30,7 @@ However, if the changes are sent to the repository more frequently, sometimes ev
 
 ### CD Explained
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/CodeMagic-300x200-1.png)
+![](/images/blog/CodeMagic-300x200-1.png)
 
 As we’ve already mentioned, the “D” in the “CI/CD” acronym can stand for two different terms; “delivery” and “deployment.” These are obviously two different terms, although there are situations in which using them interchangeably may not necessarily be erroneous. They both pick up where continuous integration ends and they both involve further automation of the pipeline.
 
@@ -48,7 +48,7 @@ Fortunately, there are excellent tools out there that specialize in CI and CD pr
 
 ### The Main Benefits of CI/CD
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/CodeMagic-33-of-179-300x200-1.png)
+![](/images/blog/CodeMagic-33-of-179-300x200-1.png)
 
 The traditional software model, in which several months pass between major releases, is perhaps still the right model for some, but more and more companies are switching to the CI/CD model because of the many benefits that it can have for dev teams. From better code quality to faster deployment of new features for users to enjoy, the benefits are many, so let’s take a look at some of the most significant ones.
 

@@ -8,7 +8,7 @@ draft: false
 oldSlug: "7-business-ideas-for-people-looking-to-minimize-face-to-face-meetings"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2020/07/small.jpg)](https://www.invoiceninja.com/wp-content/uploads/2020/07/small.jpg)
+[![](/images/blog/small.jpg)](/images/blog/small.jpg)
 
 At the beginning of 2020, we all assumed the year would be like any other. Then the COVID-19 pandemic struck, and the world changed. As lockdowns went into effect, countless businesses in just about every industry suffered. All this led to more and more people looking for new business ideas that minimize face-to-face meetings.  
 

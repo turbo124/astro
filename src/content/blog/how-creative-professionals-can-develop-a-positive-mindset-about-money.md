@@ -8,7 +8,7 @@ draft: false
 oldSlug: "how-creative-professionals-can-develop-a-positive-mindset-about-money"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-lukas-928184.jpg)
+![](/images/blog/pexels-lukas-928184.jpg)
 
 Do you have a positive or a negative attitude toward money? 
 

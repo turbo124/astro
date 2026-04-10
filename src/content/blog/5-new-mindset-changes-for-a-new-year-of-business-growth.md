@@ -8,7 +8,7 @@ draft: false
 oldSlug: "5-new-mindset-changes-for-a-new-year-of-business-growth"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-gerd-altmann-21696-1024x574.jpeg)
+![](/images/blog/pexels-gerd-altmann-21696-1024x574.jpeg)
 
 A new year marks a new beginning. It’s the perfect time to adopt mindset changes that positively impact both your private life and career. After the pandemic struggles of 2020, cultivating resilience and wellbeing has never been more critical. 
 

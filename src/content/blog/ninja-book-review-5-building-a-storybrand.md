@@ -16,7 +16,7 @@ Short & Sweet reviews of our favorite books for entrepreneurs. This weeks review
 
 ### by Donald Miller
 
-### [![](https://www.invoiceninja.com/wp-content/uploads/2018/09/Building-a-Storybrand-invoice-ninja-1024x768.jpeg)](http://invoiceninja.com/wp-content/uploads/2018/09/Building-a-Storybrand-invoice-ninja.jpeg)
+### [![](/images/blog/Building-a-Storybrand-invoice-ninja-1024x768.jpeg)](/images/blog/Building-a-Storybrand-invoice-ninja.jpeg)
 
 ## 5 out of 5 NINJA STARS
 

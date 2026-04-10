@@ -8,7 +8,7 @@ draft: false
 oldSlug: "7-ways-freelancers-can-reduce-their-money-anxiety"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2019/11/man-with-hand-on-temple-looking-at-laptop-842554-1024x674-1.jpg)
+![](/images/blog/man-with-hand-on-temple-looking-at-laptop-842554-1024x674-1.jpg)
 
 Money anxiety is one of the biggest stressors freelancers face. With the unpredictable nature of freelancing – including its feast and famine cycles – it’s no wonder money fears are prevalent. 
 

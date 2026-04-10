@@ -10,7 +10,7 @@ oldSlug: "venmo"
 
 ****
 
-# [**![](https://invoiceninja.com/wp-content/uploads/2023/12/Venmo-1-1024x189.png)**](https://app.invoicing.co/#/settings/gateways/create)
+# [**![](/images/blog/Venmo-1-1024x189.png)**](https://app.invoicing.co/#/settings/gateways/create)
 
 ****
 

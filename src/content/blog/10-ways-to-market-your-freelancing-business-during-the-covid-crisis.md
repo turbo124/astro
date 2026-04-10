@@ -8,7 +8,7 @@ draft: false
 oldSlug: "10-ways-to-market-your-freelancing-business-during-the-covid-crisis"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/09/pexels-taryn-elliott-4112283-2-1024x576-1.jpg)
+![](/images/blog/pexels-taryn-elliott-4112283-2-1024x576-1.jpg)
 
 Marketing your freelancing business during a global crisis is challenging. Many of your ideal clients are reducing spending, shifting focus, and even going out of business altogether. Everyone is facing hardships during the COVID-19 era. 
 

@@ -8,7 +8,7 @@ draft: false
 oldSlug: "1000-integrations"
 ---
 
-### [![](https://www.invoiceninja.com/wp-content/uploads/2018/01/Zapier-1000-INtegrations.jpg)](https://www.invoiceninja.com/wp-content/uploads/2018/01/Zapier-1000-INtegrations.jpg)
+### [![](/images/blog/Zapier-1000-INtegrations.jpg)](/images/blog/Zapier-1000-INtegrations.jpg)
 
 We know that getting your work done requires many different web tools. In fact, the average business uses between 10 and 16 apps. You have your email app, CRM, note-taking tool, cloud storage tool, team communication app, along with project management tools and various to-do lists. Sometimes, it can be a struggle to get them all working in tandem. Now that Invoice Ninja has 1,000 integrations, you can choose your favorite tools and easily [integrate them with Invoice Ninja](https://zapier.com/apps/invoice-ninja/integrations).
 

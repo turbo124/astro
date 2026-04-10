@@ -8,7 +8,7 @@ draft: false
 oldSlug: "6-ways-to-successfully-pivot-as-a-freelancer-during-a-crisis"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2020/08/pexels-alexas-fotos-2277784.jpg)](https://www.invoiceninja.com/wp-content/uploads/2020/08/pexels-alexas-fotos-2277784.jpg)
+[![](/images/blog/pexels-alexas-fotos-2277784.jpg)](/images/blog/pexels-alexas-fotos-2277784.jpg)
 
 As the COVID-19 pandemic reshapes the world, business owners are left wondering how they can survive, let alone thrive. For so many freelancers, 2020 has brought financial hardships and fears for the future. Yet its during crisis moments like these that the most successful professionals do something extraordinary.
 

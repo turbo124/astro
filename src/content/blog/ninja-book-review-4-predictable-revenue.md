@@ -14,7 +14,7 @@ Short & Sweet reviews of our favorite books for entrepreneurs. This weeks revie
 
 ### by Aaron Ross & Marylou Tyler
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-09-05-at-09.19.54-1024x768.jpeg)](http://invoiceninja.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-09-05-at-09.19.54.jpeg)
+[![](/images/blog/WhatsApp-Image-2018-09-05-at-09.19.54-1024x768.jpeg)](/images/blog/WhatsApp-Image-2018-09-05-at-09.19.54.jpeg)
 
 ## 4 out of 5 NINJA STARS
 

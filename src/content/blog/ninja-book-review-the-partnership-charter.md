@@ -14,7 +14,7 @@ Short & Sweet reviews of our favorite books for entrepreneurs. This weeks review
 
 ### by David Cage
 
-![](http://invoiceninja.com/wp-content/uploads/2018/08/Invoice-Ninja-Book-Review-3.jpg)
+![](/images/blog/Invoice-Ninja-Book-Review-3.jpg)
 
 ## 4 out of 5 NINJA STARS
 

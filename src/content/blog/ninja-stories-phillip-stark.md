@@ -16,7 +16,7 @@ This is the first article in our new series profiling our Invoice Ninja users al
 
 The first Invoice Ninja to be interviewed is Phillip Stark, an American creative director, content producer, and entrepreneur based in Madrid, Spain.
 
-![](http://invoiceninja.com/wp-content/uploads/2018/07/Solopreneur-Pic-Stark-Crew.jpg)
+![](/images/blog/Solopreneur-Pic-Stark-Crew.jpg)
 
 After graduating film school in Ohio, Phillip moved to Spain in 2004, advertising himself on Craigslist Madrid as “An American Producer in Spain – I speak English!” At the time, very few people in Spain spoke English, so Phillip immediately got calls from American and British television shows, corporations, and communication agencies. His customers were desperate to find and manage English-speaking video crews across Spain. After successfully helping these clients to complete their video projects, they would ask Phillip if he could source  English-speaking video crews for them in other countries. They would ask, “Phil, is there anyone like you in Beijing, Buenos Aires, Berlin…” So like a good entrepreneur, Phillip answered “yes” to everyone and then went out and found the best people for the jobs.
 

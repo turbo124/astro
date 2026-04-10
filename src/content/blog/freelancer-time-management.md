@@ -8,7 +8,7 @@ draft: false
 oldSlug: "freelancer-time-management"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2018/04/Time-is-Money.jpg)](http://invoiceninja.com/wp-content/uploads/2018/04/Time-is-Money-scaled.jpg)
+[![](/images/blog/Time-is-Money.jpg)](/images/blog/Time-is-Money-scaled.jpg)
 
 Speed is of the essence when you’re a freelancer. The more billable hours you can fit into a day, the more you’ll earn. Good time management is therefore an important skill to develop if you want to succeed in your freelancing career.
 

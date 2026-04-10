@@ -8,7 +8,7 @@ draft: false
 oldSlug: "10-signs-youre-meant-to-be-an-entrepreneur"
 ---
 
-![](http://invoiceninja.com/wp-content/uploads/2022/06/Rectangle-23-2.jpg)
+![](/images/blog/Rectangle-23-2.jpg)
 
 # Are you cut out to be an entrepreneur? 
 

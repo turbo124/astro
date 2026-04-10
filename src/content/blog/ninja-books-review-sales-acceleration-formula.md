@@ -12,7 +12,7 @@ oldSlug: "ninja-books-review-sales-acceleration-formula"
 
 ### *The Sales Acceleration Formula by Mark Roberge*
 
-![](http://invoiceninja.com/wp-content/uploads/2018/07/Ninj-Books-Review-1.jpeg)
+![](/images/blog/Ninj-Books-Review-1.jpeg)
 
 ## 3.8 out of 5 NINJA STARS:
 

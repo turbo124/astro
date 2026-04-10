@@ -16,7 +16,7 @@ oldSlug: "ninja-book-review-fanatical-prospecting"
 
 ### by Jeb Blount
 
-![](https://invoiceninja.com/wp-content/uploads/2019/07/Fanatical-Prospecting-300x225.jpeg)
+![](/images/blog/Fanatical-Prospecting-300x225.jpeg)
 
 ## 5 out of 5 NINJA STARS
 

@@ -16,7 +16,7 @@ oldSlug: "getting-to-yes-book-review"
 
 ### by Roger Fisher, William Ury, and Bruce Patton
 
-![](http://invoiceninja.com/wp-content/uploads/2018/09/GETTING-TO-yES-2.jpeg)
+![](/images/blog/GETTING-TO-yES-2.jpeg)
 
 ## 5 out of 5 NINJA STARS
 

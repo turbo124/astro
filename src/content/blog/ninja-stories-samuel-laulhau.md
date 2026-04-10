@@ -14,7 +14,7 @@ oldSlug: "ninja-stories-samuel-laulhau"
 
 Our third Invoice Ninja to be interviewed is Samuel Laulhau, a France-based full stack developer
 
-![](http://invoiceninja.com/wp-content/uploads/2018/08/SamuelLaulhau-1.jpg)
+![](/images/blog/SamuelLaulhau-1.jpg)
 
 ### Samuel Laulhau, an old school full stack web developer
 

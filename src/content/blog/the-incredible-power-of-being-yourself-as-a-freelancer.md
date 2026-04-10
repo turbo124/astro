@@ -8,7 +8,7 @@ draft: false
 oldSlug: "the-incredible-power-of-being-yourself-as-a-freelancer"
 ---
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2020/08/pexels-andrea-piacquadio-3799115.jpg)](https://www.invoiceninja.com/wp-content/uploads/2020/08/pexels-andrea-piacquadio-3799115.jpg)
+[![](/images/blog/pexels-andrea-piacquadio-3799115.jpg)](/images/blog/pexels-andrea-piacquadio-3799115.jpg)
 
 “Just be yourself” is standard advice for those who are nervous about an upcoming date, speech, or event. It’s usually a sensible suggestion, especially when meeting people for the first time. Yet when it comes to business, and especially freelancing, is being yourself a powerful asset?
 

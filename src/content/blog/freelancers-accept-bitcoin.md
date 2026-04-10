@@ -14,7 +14,7 @@ As covered in our previous article, [Bitcoin is a cryptocurrency](https://www.in
 
 Its decentralized system means no one authority has control over Bitcoin, meaning no single person or group can determine monetary policy or take money away from someone. Payments cannot be blocked. You can send or receive Bitcoin payments from anyone based anywhere in the world.
 
-[![](https://www.invoiceninja.com/wp-content/uploads/2017/12/How-Freelancers-Can-Accept-Bitcoin-Payments.jpg)](https://www.invoiceninja.com/wp-content/uploads/2017/12/How-Freelancers-Can-Accept-Bitcoin-Payments.jpg)
+[![](/images/blog/How-Freelancers-Can-Accept-Bitcoin-Payments.jpg)](/images/blog/How-Freelancers-Can-Accept-Bitcoin-Payments.jpg)
 
 ### Benefits of using bitcoin for freelancers and business owners
 
