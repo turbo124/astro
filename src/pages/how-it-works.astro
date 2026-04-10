@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Steps from "../components/home/Steps.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
@@ -15,75 +16,98 @@ import Button from "../components/ui/Button.astro";
     </div>
   </section>
 
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="space-y-12">
-        <div class="flex gap-6">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">1</div>
-          <div>
-            <h2 class="text-2xl font-bold text-dark mb-3">Create a Free Account</h2>
-            <p class="text-gray-600 mb-3">Sign up, confirm your email, log in and customize your settings. No credit card required.</p>
-            <Button href="https://app.invoicing.co/#/register" size="sm">Create Account</Button>
-          </div>
-        </div>
+  <!-- Reuse the same Steps component from the homepage -->
+  <Steps />
 
-        <div class="flex gap-6">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">2</div>
-          <div>
-            <h2 class="text-2xl font-bold text-dark mb-3">Upload Your Logo</h2>
-            <p class="text-gray-600 mb-3">Add your company branding, enter business info, and choose from our professional invoice designs.</p>
-            <Button href="/invoice-templates/" variant="outline" size="sm">View Templates</Button>
-          </div>
-        </div>
-
-        <div class="flex gap-6">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">3</div>
-          <div>
-            <h2 class="text-2xl font-bold text-dark mb-3">Setup Online Payments</h2>
-            <p class="text-gray-600 mb-3">Connect a payment gateway so clients can pay with one click. Stripe, PayPal, GoCardless, Square, and many more.</p>
-            <Button href="/payments/" variant="outline" size="sm">View Gateways</Button>
-          </div>
-        </div>
-
-        <div class="flex gap-6">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">4</div>
-          <div>
-            <h2 class="text-2xl font-bold text-dark mb-3">Create Invoices, Get Paid</h2>
-            <p class="text-gray-600 mb-3">Email invoices and quotes, track time and projects, manage expenses and vendors, sync bank accounts.</p>
-            <Button href="/features/" variant="outline" size="sm">View All Features</Button>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-16 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
-      </div>
-    </div>
-  </section>
-
+  <!-- Additional detail sections -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-dark mb-8 text-center">Core Features Included Free</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {[
-          "Create & email invoices in seconds",
-          "Recurring invoicing & auto-billing",
-          "Convert tasks to invoices",
-          "Accept deposits & partial payments",
-          "Multi-currency & multi-language",
-          "Expense & vendor management",
-          "Time tracking & projects",
-          "Kanban boards",
-          "Client portal access",
-          "PDF invoice preview",
-          "Product library",
-          "Custom payment instructions",
-        ].map((f) => (
-          <div class="flex items-start gap-2 p-3 bg-white rounded-lg border border-gray-100">
-            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-            <span class="text-sm text-gray-700">{f}</span>
-          </div>
-        ))}
+      <h2 class="text-2xl font-bold text-dark mb-8 text-center">Core Invoicing Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="p-6 bg-white rounded-xl border border-gray-100">
+          <h3 class="text-lg font-bold text-dark mb-3">Invoicing</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Create & email professional invoices in seconds
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Recurring invoicing with auto-billing
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Convert billable tasks to invoices with one click
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Accept deposits & partial payments
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Multi-currency & multi-language per client
+            </li>
+          </ul>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-gray-100">
+          <h3 class="text-lg font-bold text-dark mb-3">Expenses & Vendors</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Track all expenses in a unified system
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Categorize vendors & re-invoice expenses
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Generate expense reports
+            </li>
+          </ul>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-gray-100">
+          <h3 class="text-lg font-bold text-dark mb-3">Time Tracking & Projects</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Record hours on individual tasks
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Transfer tracked time directly to invoices
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Kanban board project management
+            </li>
+          </ul>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-gray-100">
+          <h3 class="text-lg font-bold text-dark mb-3">Free Plan Extras</h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              PDF invoice preview
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Vendor purchase orders
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Product library & inventory
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Client notifications for views & payments
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
       </div>
     </div>
   </section>
