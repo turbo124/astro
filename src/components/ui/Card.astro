@@ -11,17 +11,22 @@ const {
   padding = 'md',
 } = Astro.props;
 
-const Tag = href ? 'a' : 'div';
-
 const paddings: Record<string, string> = {
   sm: 'p-4',
   md: 'p-6',
   lg: 'p-8',
 };
 
-const classes = `block bg-white rounded-xl border border-gray-200 ${paddings[padding]} ${href ? 'hover:border-primary/30 hover:shadow-md transition-all' : ''} ${className}`;
+const base = `rounded-xl border border-gray-200 bg-white ${paddings[padding]} ${className}`;
+const interactive = 'hover:border-primary/30 hover:shadow-lg transition-all duration-200';
 ---
 
-<Tag href={href} class={classes}>
-  <slot />
-</Tag>
+{href ? (
+  <a href={href} class={`block ${base} ${interactive}`}>
+    <slot />
+  </a>
+) : (
+  <div class={base}>
+    <slot />
+  </div>
+)}
