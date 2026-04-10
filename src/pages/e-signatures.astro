@@ -13,20 +13,24 @@ import Button from "../components/ui/Button.astro";
       <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">E-Signatures</h1>
         <p class="text-xl text-gray-600">Sign documents securely from anywhere with legally binding e-signatures.</p>
+        <img src="/images/e-signatures/image-34.png" alt="E-Signatures in Invoice Ninja" class="mt-10 mx-auto rounded-2xl shadow-lg max-w-full" loading="lazy" />
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {[
-          { title: "Document Audit Trail", desc: "Track all document interactions with timestamps. Monitor who opens, views, and engages." },
-          { title: "Flexible Signing", desc: "Single or multiple signers, co-signing, and sequential signing workflows." },
-          { title: "Invoice Ninja Integration", desc: "Attach signed contracts to invoices. Request payments upon signature completion." },
-          { title: "Security & Compliance", desc: "SOC 2, HIPAA, and GDPR compliance. Data encryption and multi-factor authentication." },
-          { title: "Team Roles", desc: "Assign roles for signers, approvers, and viewers with controlled permissions." },
-          { title: "Custom Branding", desc: "Add your company logo, colors, and branding to every document." },
+          { title: "Document Audit Trail", desc: "Track all document interactions with timestamps. Monitor who opens, views, and engages.", icon: "/images/e-signatures/scroll_3d-1.png" },
+          { title: "Flexible Signing", desc: "Single or multiple signers, co-signing, and sequential signing workflows.", icon: "/images/e-signatures/memo_3d-1.png" },
+          { title: "Invoice Ninja Integration", desc: "Attach signed contracts to invoices. Request payments upon signature completion.", icon: "/images/e-signatures/money_bag_3d-1.png" },
+          { title: "Security & Compliance", desc: "SOC 2, HIPAA, and GDPR compliance. Data encryption and multi-factor authentication.", icon: "/images/e-signatures/crossed_swords_3d-1.png" },
+          { title: "Team Roles", desc: "Assign roles for signers, approvers, and viewers with controlled permissions.", icon: "/images/e-signatures/office_worker_3d_default-1.png" },
+          { title: "Custom Branding", desc: "Add your company logo, colors, and branding to every document.", icon: "/images/e-signatures/handshake_3d-1.png" },
         ].map((f) => (
-          <div class="p-6 rounded-xl border border-gray-200">
-            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
-            <p class="text-sm text-gray-600">{f.desc}</p>
+          <div class="p-6 rounded-xl border border-gray-200 flex items-start gap-4">
+            <img src={f.icon} alt="" class="w-10 h-10 flex-shrink-0 mt-1" loading="lazy" />
+            <div>
+              <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
+              <p class="text-sm text-gray-600">{f.desc}</p>
+            </div>
           </div>
         ))}
       </div>

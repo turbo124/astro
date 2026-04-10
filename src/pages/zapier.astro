@@ -9,10 +9,50 @@ import Button from "../components/ui/Button.astro";
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
-    <div class="max-w-3xl mx-auto px-4">
+    <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Zapier Integration</h1>
-        <p class="text-xl text-gray-600">Connect Invoice Ninja with 5,000+ apps. No coding required.</p>
+        <p class="text-xl text-gray-600 mb-10">Connect Invoice Ninja with 5,000+ apps. No coding required.</p>
+        <img
+          src="/images/zapier/connect.png"
+          alt="Invoice Ninja + Zapier"
+          class="mx-auto max-w-full rounded-lg shadow-lg"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold text-dark text-center mb-8">Popular Integrations</h2>
+        <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-6 justify-items-center">
+          {[
+            { src: "/images/zapier/sheets.png", name: "Google Sheets" },
+            { src: "/images/zapier/gmail.png", name: "Gmail" },
+            { src: "/images/zapier/gdrive.png", name: "Google Drive" },
+            { src: "/images/zapier/air.png", name: "Airtable" },
+            { src: "/images/zapier/slack.png", name: "Slack" },
+            { src: "/images/zapier/gcalendar.png", name: "Google Calendar" },
+            { src: "/images/zapier/woo.png", name: "WooCommerce" },
+            { src: "/images/zapier/dropbox.png", name: "Dropbox" },
+            { src: "/images/zapier/mailchimp.png", name: "Mailchimp" },
+            { src: "/images/zapier/hubspot.png", name: "HubSpot" },
+            { src: "/images/zapier/discord.png", name: "Discord" },
+            { src: "/images/zapier/trello.png", name: "Trello" },
+            { src: "/images/zapier/google-forms.png", name: "Google Forms" },
+            { src: "/images/zapier/shopify.png", name: "Shopify" },
+            { src: "/images/zapier/monda.png", name: "Monday.com" },
+            { src: "/images/zapier/pipedrive.png", name: "Pipedrive" },
+          ].map((app) => (
+            <div class="flex flex-col items-center gap-2">
+              <img
+                src={app.src}
+                alt={app.name}
+                class="w-12 h-12 object-contain"
+                loading="lazy"
+              />
+              <span class="text-xs text-gray-600 text-center">{app.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div class="space-y-6 mb-12">

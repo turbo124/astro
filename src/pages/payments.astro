@@ -40,8 +40,25 @@ import Card from "../components/ui/Card.astro";
 
       <h2 class="text-2xl font-bold text-dark mb-8 text-center">All Payment Gateways</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        {["BTCPay", "Braintree", "Payfast", "Mollie", "Square", "CSG Forte", "PayTrace", "eWAY", "Alipay", "Apple Pay", "Razorpay", "Authorize.net", "Checkout.com"].map((name) => (
-          <div class="p-4 rounded-lg border border-gray-200 text-center text-sm font-medium text-gray-700">{name}</div>
+        {[
+          { name: "BTCPay", img: "/images/gateways-logos/BTCPay.png", href: "/payment-gateway/btcpay/" },
+          { name: "Braintree", img: "/images/gateways-logos/BRAINTREE.png", href: "/payment-gateway/braintree/" },
+          { name: "Payfast", img: "/images/gateways-logos/Payfast-By-Network_dark-1024x541.png", href: "/payment-gateway/payfast/" },
+          { name: "Mollie", img: "/images/gateways-logos/MollieLogo23-Black-1024x302.png", href: "/payment-gateway/mollie/" },
+          { name: "Square", img: "/images/gateways-logos/SQUARE-1024x576.jpg", href: "/payment-gateway/square/" },
+          { name: "CSG Forte", img: "/images/gateways-logos/MicrosoftTeams-image-4.png", href: "/payment-gateway/csg-forte/" },
+          { name: "PayTrace", img: "/images/gateways-logos/paytrace.png", href: "/payment-gateway/paytrace/" },
+          { name: "eWAY", img: "/images/gateways-logos/EWAY-1024x298.png", href: "/payment-gateway/eway/" },
+          { name: "Alipay", img: "/images/gateways-logos/ALIPAY.jpg", href: "/payment-gateway/alipay-com/" },
+          { name: "Apple Pay", img: "/images/gateways-logos/APPLE-AY.png", href: "/payment-gateway/apple-pay/" },
+          { name: "Razorpay", img: "/images/gateways-logos/Razorpay-1024x1024.png", href: "/payment-gateway/razorpay/" },
+          { name: "Authorize.net", img: "/images/gateways-logos/AUTHORIZE-1024x235.png", href: "/payment-gateway/authorize-net/" },
+          { name: "Checkout.com", img: "/images/gateways-logos/CHECKOUT-1-1024x538.png", href: "/payment-gateway/checkout-com/" },
+        ].map((gw) => (
+          <a href={gw.href} class="p-4 rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all flex flex-col items-center justify-center gap-2">
+            <img src={gw.img} alt={gw.name} class="h-10 object-contain" loading="lazy" />
+            <span class="text-xs text-gray-500">{gw.name}</span>
+          </a>
         ))}
       </div>
 

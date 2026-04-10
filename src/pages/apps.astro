@@ -15,7 +15,8 @@ import Card from "../components/ui/Card.astro";
         <p class="text-xl text-gray-600">Invoice Ninja is available everywhere you work.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Desktop -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
         <Card padding="lg">
           <h3 class="text-lg font-bold text-dark mb-4">Desktop</h3>
           <ul class="space-y-3">
@@ -25,7 +26,12 @@ import Card from "../components/ui/Card.astro";
             <li><a href="https://snapcraft.io/invoiceninja" class="text-primary hover:underline">Linux — Snapcraft</a></li>
           </ul>
         </Card>
+        <img src="/images/apps/image-1.png" alt="Invoice Ninja desktop application" loading="lazy" class="rounded-xl shadow-lg w-full" />
+      </div>
 
+      <!-- Mobile -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+        <img src="/images/apps/image-2.png" alt="Invoice Ninja mobile application" loading="lazy" class="rounded-xl shadow-lg w-full md:order-first" />
         <Card padding="lg">
           <h3 class="text-lg font-bold text-dark mb-4">Mobile</h3>
           <ul class="space-y-3">
@@ -34,7 +40,10 @@ import Card from "../components/ui/Card.astro";
             <li><a href="https://f-droid.org/en/packages/com.invoiceninja.app" class="text-primary hover:underline">Android — F-Droid</a></li>
           </ul>
         </Card>
+      </div>
 
+      <!-- Browser & Web -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
         <Card padding="lg">
           <h3 class="text-lg font-bold text-dark mb-4">Browser & Web</h3>
           <ul class="space-y-3">
@@ -42,7 +51,12 @@ import Card from "../components/ui/Card.astro";
             <li><a href="https://chromewebstore.google.com/detail/invoice-ninja-tasks/dlfcbfdpemfnjbjlladogijcchfmmaaf" class="text-primary hover:underline">Chrome Extension</a></li>
           </ul>
         </Card>
+        <img src="/images/apps/browser-extansions-apps.png" alt="Invoice Ninja browser extensions" loading="lazy" class="rounded-xl shadow-lg w-full" />
+      </div>
 
+      <!-- Integrations -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+        <img src="/images/apps/wordpress-plugin-apps.png" alt="Invoice Ninja WordPress plugin" loading="lazy" class="rounded-xl shadow-lg w-full md:order-first" />
         <Card padding="lg">
           <h3 class="text-lg font-bold text-dark mb-4">Integrations</h3>
           <ul class="space-y-3">
@@ -50,6 +64,23 @@ import Card from "../components/ui/Card.astro";
             <li><a href="/software/" class="text-primary hover:underline">View All Integrations</a></li>
           </ul>
         </Card>
+      </div>
+
+      <!-- Feature Highlights -->
+      <h2 class="text-2xl lg:text-3xl font-bold text-dark text-center mt-16 mb-8">Built-In Communication</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <img src="/images/apps/email-1024x582.png" alt="Email integration" loading="lazy" class="rounded-xl shadow-lg w-full mb-4" />
+          <p class="text-sm font-semibold text-gray-700">Email</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/apps/chat-1024x580.png" alt="Chat feature" loading="lazy" class="rounded-xl shadow-lg w-full mb-4" />
+          <p class="text-sm font-semibold text-gray-700">Chat</p>
+        </div>
+        <div class="text-center">
+          <img src="/images/apps/slack-1024x582.png" alt="Slack integration" loading="lazy" class="rounded-xl shadow-lg w-full mb-4" />
+          <p class="text-sm font-semibold text-gray-700">Slack</p>
+        </div>
       </div>
     </div>
   </section>

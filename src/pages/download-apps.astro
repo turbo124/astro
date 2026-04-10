@@ -11,24 +11,38 @@ import Footer from "../components/Footer.astro";
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Download Invoice Ninja</h1>
-        <p class="text-xl text-gray-600">Available on every platform. Auto-syncing across all devices.</p>
+        <p class="text-xl text-gray-600 mb-10">Available on every platform. Auto-syncing across all devices.</p>
+        <div class="flex items-center justify-center gap-8">
+          <img src="/images/download-apps/iPad-Pro.svg" alt="Invoice Ninja on iPad" class="hidden md:block w-72 lg:w-96 drop-shadow-xl" loading="lazy" />
+          <img src="/images/download-apps/Phone-2.png" alt="Invoice Ninja on iPhone" class="w-40 lg:w-52 drop-shadow-xl" loading="lazy" />
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="p-8 rounded-2xl border border-gray-200 text-center">
           <h3 class="text-xl font-bold text-dark mb-6">Mobile</h3>
-          <div class="space-y-4">
-            <a href="https://apps.apple.com/app/id1503970375?platform=iphone" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">iOS — App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.invoiceninja.app" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Android — Google Play</a>
+          <div class="space-y-4 flex flex-col items-center">
+            <a href="https://apps.apple.com/app/id1503970375?platform=iphone" class="block hover:opacity-80 transition-opacity">
+              <img src="/images/download-apps/Download-on-App-Store-pvpidybswa2ycc7n9s3diqnrb46c4pwgp7kua8e7cs.png" alt="Download on the App Store" class="h-12" loading="lazy" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.invoiceninja.app" class="block hover:opacity-80 transition-opacity">
+              <img src="/images/download-apps/Download-on-Google-Play-pvpiex3tx5ek9wt4mp4kkzvtadex1iqj5zpt1gymyk.png" alt="Get it on Google Play" class="h-12" loading="lazy" />
+            </a>
             <a href="https://f-droid.org/en/packages/com.invoiceninja.app" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Android — F-Droid</a>
           </div>
         </div>
         <div class="p-8 rounded-2xl border border-gray-200 text-center">
           <h3 class="text-xl font-bold text-dark mb-6">Desktop</h3>
-          <div class="space-y-4">
-            <a href="https://apps.apple.com/app/id1503970375?platform=mac" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">macOS — App Store</a>
-            <a href="https://apps.microsoft.com/store/detail/invoice-ninja/9N3F2BBCFDR6" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Windows — Microsoft Store</a>
-            <a href="https://flathub.org/apps/com.invoiceninja.InvoiceNinja" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Linux — Flathub</a>
+          <div class="space-y-4 flex flex-col items-center">
+            <a href="https://apps.apple.com/app/id1503970375?platform=mac" class="block hover:opacity-80 transition-opacity">
+              <img src="/images/download-apps/Download-on-App-Store-pvpidybswa2ycc7n9s3diqnrb46c4pwgp7kua8e7cs.png" alt="Download on the Mac App Store" class="h-12" loading="lazy" />
+            </a>
+            <a href="https://apps.microsoft.com/store/detail/invoice-ninja/9N3F2BBCFDR6" class="block hover:opacity-80 transition-opacity">
+              <img src="/images/download-apps/Download-on-Windows-App-Store-pvpieajpd4joj9pwafdix5kr14i3ws8z2w25itw33w.png" alt="Download on the Windows Store" class="h-12" loading="lazy" />
+            </a>
+            <a href="https://flathub.org/apps/com.invoiceninja.InvoiceNinja" class="block hover:opacity-80 transition-opacity">
+              <img src="/images/download-apps/Download-on-Linux-pvpiekvxgaxu2zavm1uf6kytkd359ge0sb8hsvgr7g.png" alt="Download for Linux (Flathub)" class="h-12" loading="lazy" />
+            </a>
             <a href="https://snapcraft.io/invoiceninja" class="block p-3 rounded-lg bg-gray-50 hover:bg-primary/5 text-sm font-medium text-gray-700 hover:text-primary transition-colors">Linux — Snapcraft</a>
           </div>
         </div>

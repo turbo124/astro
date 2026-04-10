@@ -18,20 +18,37 @@ import Button from "../components/ui/Button.astro";
       <div class="mb-16">
         <h2 class="text-2xl font-bold text-dark mb-6">Free Plan — 4 Designs</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {["Bold", "Creative", "Business", "Hipster"].map((name) => (
-            <div class="p-6 rounded-xl border border-gray-200 text-center">
-              <div class="w-full aspect-[3/4] bg-gray-100 rounded-lg mb-3"></div>
-              <p class="text-sm font-medium text-gray-700">{name}</p>
+          {[
+            { name: "Bold", img: "/images/templates/V5-BOLDNESS-page-001-1.jpg" },
+            { name: "Creative", img: "/images/templates/Invoice_0525-CREATIVE-page-001-1.jpg" },
+            { name: "Business", img: "/images/templates/v5-BUSINESS-page-001-1.jpg" },
+            { name: "Hipster", img: "/images/templates/Invoice_0523-HIPSTER-page-001-1.jpg" },
+          ].map((t) => (
+            <div class="p-4 rounded-xl border border-gray-200 text-center">
+              <img src={t.img} alt={`${t.name} invoice template`} class="w-full rounded-lg mb-3" loading="lazy" />
+              <p class="text-sm font-medium text-gray-700">{t.name}</p>
             </div>
           ))}
         </div>
 
         <h2 class="text-2xl font-bold text-dark mb-6">Pro & Enterprise — 11 Designs</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {["Elegant", "Tech", "Playful", "Modern", "Plain", "Clean", "Bold"].map((name) => (
-            <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 text-center">
-              <div class="w-full aspect-[3/4] bg-primary/10 rounded-lg mb-3"></div>
-              <p class="text-sm font-medium text-gray-700">{name}</p>
+          {[
+            { name: "Elegant", img: "/images/templates/Invoice_0522-ELEGANT-page-001-1.jpg" },
+            { name: "Tech", img: "/images/templates/Invoice_0519-TECH-page-001-1.jpg" },
+            { name: "Playful", img: "/images/templates/Invoice_0520-PLAYFUL-page-001-1.jpg" },
+            { name: "Modern", img: "/images/templates/Invoice_0527-MODERN-page-001.jpg" },
+            { name: "Plain", img: "/images/templates/Invoice_0526-PLAIN-page-001.jpg" },
+            { name: "Clean", img: "/images/templates/v5-CLEAN-page-001.jpg" },
+            { name: "Business (New)", img: "/images/templates/Invoice-09136-C-Business-new-page-001-scaled.jpg" },
+            { name: "Playful (New)", img: "/images/templates/Invoice-B-0191-Playful-page-001-scaled.jpg" },
+            { name: "Tech (New)", img: "/images/templates/Tech-Invoice_03982022-page-001.jpg" },
+            { name: "Hipster (New)", img: "/images/templates/Invoice-208027-Hipster-New-page-001-scaled.jpg" },
+            { name: "Elegant (New)", img: "/images/templates/Invoice-20802-Elegant-New-page-001-scaled.jpg" },
+          ].map((t) => (
+            <div class="p-4 rounded-xl border border-primary/20 bg-primary/5 text-center">
+              <img src={t.img} alt={`${t.name} invoice template`} class="w-full rounded-lg mb-3" loading="lazy" />
+              <p class="text-sm font-medium text-gray-700">{t.name}</p>
             </div>
           ))}
         </div>
