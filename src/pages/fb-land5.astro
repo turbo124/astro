@@ -3,34 +3,736 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const registerUrl = "https://app.invoicing.co/#/register?utm_source=facebook&utm_campaign=c1&utm_term=focus&utm_content=fbc5";
 ---
 
-<BaseLayout title="Invoice Ninja" description="Professional invoicing made simple and free." path="/fb-land5/">
+<BaseLayout title="Free Invoicing Software - Invoice Ninja" description="Create beautiful professional invoices and let your clients pay you faster with 1-click!" path="/fb-land5/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-blue-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-6">Free Invoicing Software<br/>Get paid faster with Invoice Ninja.</h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Create beautiful professional invoices and let your clients pay you faster with 1-click!</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href={registerUrl} size="lg">Get Started!</Button>
+        <Button href="https://invoiceninja.com/compare/" variant="outline" size="lg">Learn more</Button>
+      </div>
+      <p class="mt-6 text-sm text-gray-500">Check out our FREE Plan!</p>
+    </div>
+  </section>
+
+  <!-- Forever Free Features -->
+  <section class="py-16 lg:py-20">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Invoice Ninja</h1>
-        <p class="text-xl text-gray-600">Professional invoicing made simple and free.</p>
-      </div>
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-4">Forever Free Features</h2>
+      <p class="text-center text-gray-600 mb-12">Everything you need to invoice your clients and get paid -- completely free.</p>
 
-      <div class="max-w-xl mx-auto text-center not-prose">
-        <p class="text-2xl font-bold text-dark mb-4">Professional Invoicing Made Simple</p>
-        <p class="text-gray-600 mb-8">Join 200,000+ freelancers and small businesses using Invoice Ninja to get paid faster.</p>
-        <div class="grid grid-cols-2 gap-4 mb-8">
-          <div class="p-4 rounded-lg bg-gray-50"><p class="font-bold text-dark">Invoicing</p><p class="text-xs text-gray-500">Create & send in seconds</p></div>
-          <div class="p-4 rounded-lg bg-gray-50"><p class="font-bold text-dark">Payments</p><p class="text-xs text-gray-500">Accept online payments</p></div>
-          <div class="p-4 rounded-lg bg-gray-50"><p class="font-bold text-dark">Expenses</p><p class="text-xs text-gray-500">Track & categorize</p></div>
-          <div class="p-4 rounded-lg bg-gray-50"><p class="font-bold text-dark">Time Tracking</p><p class="text-xs text-gray-500">Bill for your time</p></div>
-        </div>
-      </div>
+      <div class="space-y-4">
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Create & Email Invoices & Quotes in Real-Time</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Real-time PDF preview creation shows your invoice review as you build it in real-time. Utilize the product library to quickly populate invoices with 1-click, view the invoice .PDF preview to ensure everything looks awesome, and send it out!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Live .PDF Invoice Preview</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>View your invoice PDF's as they are created in real-time! Ensure that everything looks amazing before emailing them out for payment!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Invoice Template Designs</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Beautiful well formatted invoices are critical to show clients that you mean business! Invoice Ninja offers 11 invoice template designs. Free users have 4 free invoice templates, Pro & Enterprise users have all 11 invoice template designs. Each invoice template can be customized with your company logo, color scheme to match your brand, and detailed formatting customizations are also offered! Give your clients a truly branded experience with your company by customizing your invoice templates to match your company branding!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Online Payment Gateways</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Integrating your Invoice Ninja account with a payment gateway allows clients to pay their invoices with 1-click! The payment gateway processes the transaction in the background while your client never leaves their Invoice Ninja client-side portal. Seamless!</p>
+            <ul class="mt-3 list-disc list-inside space-y-1">
+              <li>Stripe Payments</li>
+              <li>WePay Payments</li>
+              <li>PayPal Payments</li>
+              <li>Checkout.com Payments</li>
+              <li>Braintree Payments</li>
+              <li>PayFast Invoice Payments</li>
+              <li>Authorize.net Payments</li>
+              <li>Square Payments</li>
+              <li>Mollie Invoice Payments</li>
+              <li>Many more!</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Recurring Invoicing & Auto-Billing Clients</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>If you have clients that need to be billed again & again on a fixed schedule (weekly, monthly, etc...), Invoice Ninja offers auto-billing via the world's favorite payment gateways:</p>
+            <ul class="mt-3 list-disc list-inside space-y-1 columns-2">
+              <li>Stripe</li>
+              <li>WePay</li>
+              <li>Braintree</li>
+              <li>Authorize.net</li>
+              <li>Mollie</li>
+              <li>GoCardless</li>
+              <li>Square</li>
+              <li>Eway Rapid</li>
+              <li>PayFast</li>
+              <li>Checkout.com</li>
+              <li>Paytrace</li>
+              <li>Forte</li>
+            </ul>
+            <p class="mt-3">Auto-billing (AKA 'token billing') is a feature that enables the payments system to capture your clients' credit card details and store them for billing at a future date. Token billing enables auto-billing, which means future invoices can be issued automatically. Invoice Ninja integrates seamlessly so you can enjoy all the advantages of token billing via your Invoice Ninja account.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Client-Side Portal & Invoices/Payments History</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Every action your clients take is recorded and viewed into their client-side portal. Invoices, quotes, payments and more are tracked. Uploaded documents, payment methods, client-profile -- everything is accessible and recorded to ensure a smooth experience for you & your clients! Your clients also have dynamic functionality to run their balance statements with custom date & data parameters!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Projects, Tasks & Track Time</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Task time-tracking allows you to accurately record every second spent on each individual task and quickly transfer timed data to the relevant invoice.</p>
+            <ul class="mt-3 list-disc list-inside space-y-1">
+              <li>Create Projects, Tasks, and Track Billable-Work</li>
+              <li>Convert Timed-Tasks to Invoices with 1-Click</li>
+              <li>Easily Categorize to Search Tasks & Projects</li>
+            </ul>
+            <p class="mt-3">When you're done with a task or series of tasks within a project, simply click and send your work-time to an invoice with 1-click!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Accept Deposits & Partial Payments</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Do you require a deposit or down-payment from clients to commence your work? Set partial payments/deposits with unique due dates for partial payments/deposits! After your client pays the partial payment the invoice will automatically update itself with the balance due and set the new final invoice due date.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Approved Quotes Auto-Convert to Payable Invoices</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Automate your workflow! When you email out quotations to your clients, they can 'Click to Approve' the quotation which then converts the quote into a payable invoice! Invoices can then be paid online with 1-click, and your account documents all steps!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Item & Product Library System</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Why waste time typing? Create products & services in your Product Library! When creating invoices simply click from the line-item selector to quickly populate invoices and email them out! Your product library also works (optionally) together with the Inventory feature! You can define the # of inventory stock available and when creating invoices the product library will reduce inventory levels and notify when you're running low!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Track Inventory Levels</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>The inventory management feature works together with your 'product library'! Set inventory stock within your product library with threshold notifications. When you create invoices and populate invoice line-items, the inventory stock levels will reduce automatically! When your stock runs low the system will email you a notification reminder to stock up!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Alerts When Client Views & Pays Invoices</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Want to know when your client clicks to view their invoice? Set up notifications when clients view quotes, invoices, make payments, and also if a client's payment fails. If you have additional account users, you can also be notified when your Users are creating and sending out quotes & invoices! Many notification options to keep you informed of all actions taking place within your account!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Multiple Currencies & Languages</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Invoice Ninja supports dozens of languages & currencies! You can set different languages & currencies per client! Is your account in English, but it would be nice if your French speaking clients saw their client portal in French or Spanish speaking clients seeing payment instructions in Spanish? We have you covered! Languages and currencies can be set per individual client!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Localization of Language & Currency Settings</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Invoice Ninja supports dozens of languages, currencies, time & date formatting options, and much more. You can also customize any labels/wording used within your account. Examples of common changes are 'Invoice' to read 'Tax Invoice' and 'Quotation' to read 'Proforma'. You can customize everything within your account!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Create Taxes per Invoice Total or per Invoice Line-Item</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Powerful tax settings. Create up to 3 separate tax rates per invoice total. Create up to 3 separate tax rates per individual invoice line-item! You may have line-items (services or products) that are tax exempt, others that require taxation. You can create multiple tax situations per client or invoice!</p>
+            <p class="mt-2">Invoice Ninja also supports creating inclusive & exclusive taxes per client as needed:</p>
+            <ul class="mt-2 list-disc list-inside space-y-1">
+              <li>Exclusive taxation: $100 + 10% = $110</li>
+              <li>Inclusive taxation: $100 + 10% = $100 ($90.91 + tax $9.09)</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Kanban Boards to Manage Projects</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>A Kanban board is a project management tool which provides a visualization of single or multiple tasks & workflows. It's a tool based on a work philosophy originating in Japan which emphasizes focus on one particular task at a time over a multitask approach, as well as the benefits of collaboration. Kanban boards are designed to make planning, managing, and completing tasks easier thanks to a visual overview of the entire work process. You get to see what needs to be done, when it needs to be done, who needs to do it, and how much is left to do, all on one color-coded board.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Bulk Emailing Invoices & Quotations</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>If you wish to semi-automate emailing out invoices & quotes to your clients, utilize the bulk send feature! Simply select all the invoices & quotes and click 'Send' and your account will automatically queue them up to go out!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Overpayment & Underpayment Settings</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Enable ability to overpay/underpay an invoice. 'Underpaying': Set a minimum amount that you will accept and your clients can underpay an invoice with an amount they choose, within your defined minimum limit. 'Overpaying' allows clients to send a tip!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Vendor Purchase Orders</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Create Purchase Orders to email out to your Vendors. When PO's are approved they are then converted into Expenses! Expenses can be rebilled to clients or used to run reports!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Multiple Contacts Per Client</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>When quoting or invoicing your client, you may need to include multiple contacts to receive your quotes & invoices. Sales, billing, management teams? You can create multiple contacts per client to ensure all emails sent are seen by the correct people to get you paid!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Custom Payment Instructions</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>If you don't wish to integrate with our existing payment gateway integrations for online payments, you can create custom instructions for your clients to see! The most common is providing bank details/wire instructions.</p>
+            <ul class="mt-3 list-disc list-inside space-y-1">
+              <li>Navigate to Settings > Online Payments, click 'Configure Gateways'</li>
+              <li>Click the '+' and select 'Custom' under the option of providers</li>
+              <li>You can then put into place instructions for your clients</li>
+            </ul>
+            <p class="mt-2">With this option, when your clients click 'Pay Now' on the invoice, your custom payment instructions will pop-up!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Enabling/Disabling Nav Modules</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Add or remove 'modules' from your account navigation & client-side portal:</p>
+            <ul class="mt-3 list-disc list-inside space-y-1 columns-2">
+              <li>Invoices</li>
+              <li>Recurring Invoices</li>
+              <li>Quotes</li>
+              <li>Credits</li>
+              <li>Projects</li>
+              <li>Tasks</li>
+              <li>Vendors</li>
+              <li>Purchase Orders</li>
+              <li>Expenses</li>
+              <li>Recurring Expenses</li>
+              <li>Bank Transactions</li>
+            </ul>
+            <p class="mt-3">Only add those modules to the navigation that you're using, to increase efficiency and streamline your account navigation!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Enable/Disable Recurring When Cloning</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Save time by cloning invoices within a client, or clone an existing invoice to a new client! You may wish to clone an invoice from one client to another and set up the new invoice as recurring with auto-billing, or vice versa!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Setup Automatic Credit Card Gateway Fees</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>You may wish to pass along your credit processing fee to your clients if they pay by credit card, or simply to encourage your clients to pay by ACH bank transfer! Set up automatic fees at your discretion or enable the fee to auto-match your gateway fee!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Importing Expenses & Vendors</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Keep all records up to date & run accurate reports by importing Expenses. Expense importing can be done manually anytime, or you can automate it with our new banking Yodlee integration!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Upload your Company Logo</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Providing your clients a branded experience is critical for professionalism and building trust. Upload your company logo to your preferred invoice template design. All accounts, Free & Pro/Enterprise, are able to upload logos and customize their invoice colors to match their logo & company brand theme.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Dynamic Dashboard Data</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>View revenue, invoices sent, recent activity data. Track upcoming invoices, invoices past due, and more!</p>
+          </div>
+        </details>
+
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Break -->
+  <section class="py-12 bg-blue-50">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="text-xl font-semibold text-dark mb-2">Free Invoicing Software for Small Business.</p>
+      <p class="text-gray-600 mb-6">Focus on doing what you love. We'll help with the invoicing :)</p>
+      <Button href={registerUrl} size="lg">Create a Free Account!</Button>
+    </div>
+  </section>
+
+  <!-- Pro Features -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-4">Ninja Pro Features</h2>
+      <p class="text-center text-gray-600 mb-12">Unlock powerful tools to streamline your invoicing workflow.</p>
+
+      <div class="space-y-4">
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Custom Reminder Emails</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>The Invoice Ninja Pro Plan allows you to create custom email reminders based on the invoice date or invoice due date. Define date parameters to remind your clients before or after invoices are due to ensure you GET PAID! Set 'First, Second, Third' or 'Endless' reminders to ensure invoices are not overlooked and you get paid faster!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Custom Invoice Email Design</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Email our great looking invoice emails by using existing 'Light', 'Dark', or 'Plain' invoice email design templates, or create your own! Invoice emails are 100% customizable! Use dozens of available variable options to ensure your emails are customized per client with custom values!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Automatic Late Fees on Unpaid Invoices</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Looking to motivate clients to pay on-time? Set up invoice late fees that apply automatically when invoices pass their due dates. You can set up late fees as a percentage % of the invoice or as a flat $$$ value.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Create Reports, Accounts Aging & Client Statements</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>The Invoice Ninja Pro & Enterprise Plans offer extremely robust reporting options:</p>
+            <ul class="mt-3 list-disc list-inside space-y-1 columns-2">
+              <li>Client Reports</li>
+              <li>Contact Reports</li>
+              <li>Document Reports</li>
+              <li>Invoice Reports</li>
+              <li>Invoice Items Reports</li>
+              <li>Payments Reports</li>
+              <li>Product Library Reports</li>
+              <li>Profit & Loss (P&L) Reports</li>
+              <li>Tasks Reports</li>
+              <li>Transactions Reports</li>
+            </ul>
+            <p class="mt-3">Each report's data can be grouped in various methods with custom date parameters defined. Reports can then be exported as a CSV file for further review/use.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Enable Invoice Approval Checkbox or Client Signature</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Ensure that you document client agreements! With the Invoice Ninja Pro & Enterprise plans you can require an 'Approve Terms of Business' checkbox or enable an e-signature in order for your clients to approve quotations or access to the payment page from invoices.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Attach Invoice & Quotation PDFs to Emails</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Many clients want their invoice PDF with the first email! Enable attaching quotation & invoice PDF's to all client emails sent out!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Create Client Subscriptions: Recurring & Auto-Billing</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Create Client Subscriptions: Recurring & Auto-Billing Subscriptions. Set up automated billing cycles so your clients are charged on schedule without manual intervention.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Create "Client Groups" Workflow Settings</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Show different company logos & contact details to different client groups, configure different payment terms to different client groups, use different languages to different client groups, many use cases!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Send Invoices & Quotes via Gmail & MSN Accounts</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>You can email invoices, quotes, & payment reminders via your Gmail or MSN accounts! This ensures that your clients experience a truly branded experience and see your company name only!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Create Custom Fields & Invoice Designs</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Create custom fields on your quotes & invoices!</p>
+            <ul class="mt-3 list-disc list-inside space-y-1">
+              <li>Single line of text</li>
+              <li>Calendar date-selector</li>
+              <li>Paragraphs of text</li>
+              <li>Drop-down options selector</li>
+            </ul>
+            <p class="mt-2">Up to 4 custom fields per section: Client fields, Product table columns, Invoice data, more!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Link Multiple Companies (x10) with 1 Login</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Interlink up to 10 companies! With 1 log-in you can access your accounts and move between companies with 1-click!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Custom Client-Portal Subdomain</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Customize your client portal URL to match your branding YourBrand.Invoicing.co. Build trust by showing your branding when clients click to view their invoices & client-side portal online!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Storefront Functionality</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Enable third-party apps to create invoices within your account.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Automated Workflow</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Use the power of Zapier, Make, Pabbly, Integrately to integrate Invoice Ninja with hundreds of apps to automate workflow! With Zapier you can integrate your Invoice Ninja with thousands of other apps and streamline your cross-app workflow with smooth automated functions. With Make you can connect Invoice Ninja to your favorite apps & services. Just create a scenario that will watch for new data being created in a specified app and it will automatically trigger actions in Invoice Ninja, or vice-versa!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Set a 'BCC' Address for Invoice & Quote Emails</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Do you need others in your company to get notified that invoices were sent out, but don't need everyone to see? Include additional company members for email 'BCC' notifications when invoice emails are sent to clients.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Custom Invoice & Quote Number Sequencing</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>The Invoice Ninja Pro Plan allows you to create custom invoice number sequencing for invoices, quotations, payments, and clients by using dozens of available dynamic variables provided in your account! Custom number sequencing, include date formatting, custom client ID's, more!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Customize Email Subjects & Body Text</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Ensure that your emails are opened! The Invoice Ninja Pro & Enterprise Plans allow you to create custom email subject lines & body templates for every aspect of your account:</p>
+            <ul class="mt-3 list-disc list-inside space-y-1">
+              <li>Invoice emails</li>
+              <li>Payment emails</li>
+              <li>Partial Payment emails</li>
+              <li>First, Second, Third Reminder Invoice Due emails</li>
+              <li>Custom emails!</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Fully Customizable Invoice Template Designs</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Pro & Enterprise Accounts have 11 invoice template designs to start with! You can then create custom designs based on any template giving you true creative freedom!</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Break -->
+  <section class="py-12 bg-blue-50">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="text-xl font-semibold text-dark mb-2">Free Invoicing Software for Small Business.</p>
+      <p class="text-gray-600 mb-6">Focus on doing what you love. We'll help with the invoicing :)</p>
+      <Button href={registerUrl} size="lg">Create a Free Account!</Button>
+    </div>
+  </section>
+
+  <!-- Enterprise Features -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-4">Enterprise Ninja Features</h2>
+      <p class="text-center text-gray-600 mb-12">Advanced features for growing teams and businesses.</p>
+
+      <div class="space-y-4">
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Unlock Documents After Payment</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>As part of the Invoice Ninja Enterprise plan you can enable 'locking' documents from being downloaded until after an invoice has been paid. This is a great feature for delivering project files or other deliverables to clients, but only after payment!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Additional Users & Set Permissions</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>As part of the Invoice Ninja Enterprise plan you can create additional account users, set permissions of what additional account users can view/create/edit, and receive notifications for actions taken by users!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Client-Portal & Vendor Document Upload</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Allow your clients & vendors to upload documents in their client/vendor-side portal to keep all agreements organized and accessible!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Banking Integration</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>We understand that automating transaction imports are a huge asset when it comes to getting paid and staying organized. Invoice Ninja has partnered with Yodlee, a specialist provider of secure bank data connections, to offer bank, credit cards, and PayPal transaction data syncing.</p>
+            <ul class="mt-3 list-disc list-inside space-y-1">
+              <li>Import Bank & Card Transactions</li>
+              <li>Match Deposits to [Multiple] Invoices</li>
+              <li>Match Withdrawals/Expenses to Vendors</li>
+              <li>Enable 'Autosync' download transactions</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Custom Domain "Billing.YourCompany.com"</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Looking for a fully branded experience? The Invoice Ninja Enterprise Plan allows you to create a custom URL 'Invoicing.YourCompany.com' for your clients portal to view & pay invoices online!</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Attach 3rd Party Files to Invoices & Expenses</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>The Invoice Ninja Enterprise Plan allows you to attach proposal files, agreements, design work files, all types of documents to your invoices & client-side portal! Upload & attach .doc, .ppt, .xls, .jpg, .png, .pdf files, and more, all together with your client's invoices & client-side portal! Files can be attached to your company for all clients to see, attached individually per client, or attached individually per invoice &/or expense!</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Break -->
+  <section class="py-12 bg-blue-50">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="text-xl font-semibold text-dark mb-2">Free Invoicing Software for Small Business.</p>
+      <p class="text-gray-600 mb-6">Focus on doing what you love. We'll help with the invoicing :)</p>
+      <Button href={registerUrl} size="lg">Create a Free Account!</Button>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-12">Frequently Asked Questions</h2>
+
+      <div class="space-y-4">
+        <details class="group border border-gray-200 rounded-lg" open>
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>What is free invoicing software?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>Free invoicing software is an easier, faster, and smarter way to get paid, issuing professional, customized, and official invoice documentation to your clients in seconds -- leaving you free to concentrate on everything else.</p>
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-dark hover:bg-gray-50 rounded-lg">
+            <span>Is invoicing software secure?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600">
+            <p>We take security seriously and provide invoicing software with the latest data protection and cybersecurity safeguards to protect your information, billing details, and client contact information. Issuing invoices through our secure portal is massively safer than attaching invoice files to emails, which are vulnerable to hacking and data breaches as they travel from one server to the next.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-white to-blue-50">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Ready to get paid faster?</h2>
+      <p class="text-lg text-gray-600 mb-8">Check out our FREE Plan! Create beautiful professional invoices and let your clients pay you faster with 1-click.</p>
+      <Button href={registerUrl} size="lg">Get Started!</Button>
     </div>
   </section>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  details summary {
+    list-style: none;
+  }
+</style>

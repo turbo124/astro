@@ -9,15 +9,99 @@ import Button from "../components/ui/Button.astro";
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
+    <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-12">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Hosting Recommendations</h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">Recommended hosting providers for self-hosting Invoice Ninja on your own server.</p>
       </div>
 
-      <div class="mt-12 text-center">
-        <a href="/hosting/" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary rounded-lg hover:bg-primary-dark transition-colors">View Hosting Partners</a>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {[
+          {
+            name: "FireMultimedia",
+            desc: "Reliable and fast hosting with 1-click install for Invoice Ninja. Operating in the Netherlands and Belgium for 15+ years.",
+            href: "https://www.firemultimedia.nl/invoiceninja-hosting/",
+          },
+          {
+            name: "Knownhost",
+            desc: "Outstanding, fully managed web hosting services since 2006. Shared, cloud, VPS, and dedicated options available.",
+            href: "https://www.knownhost.com/invoiceninja-hosting.html",
+          },
+          {
+            name: "Glowhost",
+            desc: "Trusted solutions provider with nearly two decades of experience. 24/7 in-house technical support.",
+            href: "https://apps.glowhost.com/ecommerce/invoice-ninja",
+          },
+          {
+            name: "Cloud68.co",
+            desc: "Reliable open-source digital infrastructure with human support from active FLOSS contributors.",
+            href: "https://cloud68.co/instances/invoiceninja",
+          },
+          {
+            name: "Hostripples",
+            desc: "Friendly 24/7 real support with multiple hosting options including shared, reseller, and VPS.",
+            href: "https://hostripples.in/Invoice-Ninja-hosting.php",
+          },
+          {
+            name: "Rose Hosting",
+            desc: "Popular choice for developers and industry professionals. Enables per-customer cPanel logins.",
+            href: "https://www.rosehosting.com/blog/how-to-install-invoice-ninja-on-debian-9/",
+          },
+          {
+            name: "Interserver",
+            desc: "Optimized for Invoice Ninja, targeting freelancers and business owners with reliable infrastructure.",
+            href: "https://www.interserver.net/apps/invoice_ninja-hosting.html",
+          },
+          {
+            name: "Kualo",
+            desc: "Renewable energy-powered hosting with fast 24/7 support and eco-friendly infrastructure.",
+            href: "https://www.kualo.com/webhosting/invoice-ninja-hosting",
+          },
+          {
+            name: "AspirationHosting",
+            desc: "Specializes in performance-based private cloud for e-commerce and invoicing applications.",
+            href: "https://www.aspirationhosting.com/invoice-ninja",
+          },
+          {
+            name: "AltusHost",
+            desc: "European cloud hosting with Swiss data centers and proactive security measures.",
+            href: "https://www.altushost.com/invoice-ninja-hosting",
+          },
+          {
+            name: "Infiniroot",
+            desc: "Swiss-based hosting with strict privacy laws and dedicated security management.",
+            href: "https://www.infiniroot.com/dedicated-hosting/invoiceninja-billing.php",
+          },
+          {
+            name: "Accu Web Hosting",
+            desc: "Operating 16 years across 10+ regions with 24/7 technical support.",
+            href: "https://www.accuwebhosting.com/web-hosting/invoiceninja-hosting",
+          },
+          {
+            name: "A2 Hosting",
+            desc: "Solutions for all traffic levels, from beginners to professional developers.",
+            href: "https://www.a2hosting.com/invoice-ninja-hosting",
+          },
+        ].map((provider) => (
+          <a href={provider.href} target="_blank" rel="noopener noreferrer" class="block p-6 rounded-xl border border-gray-200 bg-white hover:border-primary/30 hover:shadow-lg transition-all duration-200">
+            <h3 class="text-lg font-bold text-dark mb-2">{provider.name}</h3>
+            <p class="text-sm text-gray-600 mb-3">{provider.desc}</p>
+            <span class="text-primary text-sm font-medium">Visit Provider &rarr;</span>
+          </a>
+        ))}
       </div>
+
+      <!-- Community Section -->
+      <div class="mt-16 p-8 rounded-xl bg-gray-50 border border-gray-200">
+        <h2 class="text-2xl font-bold text-dark mb-4 text-center">Community & Support</h2>
+        <p class="text-gray-600 text-center mb-6">Need help choosing a host or setting up your self-hosted instance? Our community is here to help.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://forum.invoiceninja.com/" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Community Forums</a>
+          <a href="https://slack.invoiceninja.com/" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Slack Community</a>
+          <a href="mailto:Contact@InvoiceNinja.com" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Email Support</a>
+        </div>
+      </div>
+
       <div class="mt-12 text-center">
         <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
       </div>

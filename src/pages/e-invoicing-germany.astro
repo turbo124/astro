@@ -5,11 +5,12 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="e-Invoicing Germany" description="Invoice Ninja e-invoicing compliance for Germany. Support for ZUGFeRD / XRechnung." path="/e-invoicing-germany/">
+<BaseLayout title="e-Invoicing Germany - ZUGFeRD & PEPPOL" description="Invoice Ninja e-invoicing compliance for Germany. Support for ZUGFeRD, XRechnung, PEPPOL, and all major EU e-invoice standards." path="/e-invoicing-germany/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-3xl mx-auto px-4">
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
       <nav class="mb-8 text-sm text-gray-500">
         <a href="/" class="hover:text-primary">Home</a>
         <span class="mx-2">/</span>
@@ -17,20 +18,93 @@ import Button from "../components/ui/Button.astro";
         <span class="mx-2">/</span>
         <span class="text-gray-700">Germany</span>
       </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">e-Invoicing in Germany</h1>
+      <p class="text-xl text-gray-600 mb-4">If you're based in the EU, it's time to learn about electronic invoicing!</p>
+      <p class="text-lg text-gray-600 mb-8">Mandatory electronic invoicing in the EU is coming soon! With our PEPPOL integration, you can start sending and receiving electronic invoices immediately.</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
+    </div>
+  </section>
 
-      <h1 class="text-4xl font-bold text-dark mb-4">e-Invoicing in Germany</h1>
-      <p class="text-xl text-gray-600 mb-8">Invoice Ninja supports ZUGFeRD / XRechnung for Germany-based businesses.</p>
+  <!-- What is e-Invoicing? -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">What is e-Invoicing?</h2>
+      <p class="text-lg text-gray-600 mb-4">Electronic invoicing adoption is expanding rapidly across jurisdictions worldwide. Instead of sending PDF invoices by email, e-invoicing uses structured data formats that can be automatically processed by accounting systems on both ends of a transaction.</p>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja supports the UBL (Universal Business Language) format and various electronic invoice standards, including ZUGFeRD and XRechnung for Germany. Our platform enables direct invoice delivery through the PEPPOL network, ensuring your invoices reach their recipients in a compliant, machine-readable format.</p>
+      <p class="text-lg text-gray-600">All <strong>Enterprise Plan</strong> subscribers automatically receive <strong>250 e-invoicing credits at no additional cost</strong>.</p>
+    </div>
+  </section>
 
-      <div class="prose prose-lg max-w-none">
-        <h2>Supported Standard: ZUGFeRD / XRechnung</h2>
-        <p>Invoice Ninja enables compliant e-invoicing for businesses operating in Germany. All Enterprise Plan subscribers receive 250 e-invoicing credits at no additional cost.</p>
+  <!-- ZUGFeRD Focus -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">ZUGFeRD / XRechnung for Germany</h2>
+      <p class="text-lg text-gray-600 mb-4">ZUGFeRD (Zentraler User Guide des Forums elektronische Rechnung Deutschland) is Germany's standard for electronic invoicing. It combines a human-readable PDF with embedded structured XML data, making it compatible with both manual review and automated processing.</p>
+      <p class="text-lg text-gray-600 mb-4">XRechnung is the German government's mandatory e-invoicing standard for B2G (business-to-government) transactions. Invoice Ninja supports both ZUGFeRD and XRechnung formats, ensuring you can meet compliance requirements for both public and private sector invoicing in Germany.</p>
+      <p class="text-lg text-gray-600">Invoice Ninja handles the technical complexity so you can focus on your business -- simply create your invoice and we generate the compliant output automatically.</p>
+    </div>
+  </section>
 
-        <h2>Getting Started</h2>
-        <p>Ensure your Invoice Ninja account has the required jurisdiction-specific fields populated for successful e-invoice delivery and validation.</p>
+  <!-- PEPPOL Network -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">The PEPPOL Network</h2>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja has deployed a PEPPOL access point, enabling you to send and receive e-invoices across a vast international network.</p>
+      <p class="text-lg text-gray-600 mb-4">PEPPOL is like working with a telecommunications provider. When you make a phone call, you just dial the number and your provider works with the recipient's provider to establish the connection. You don't need to worry about the technical details -- it just works.</p>
+      <p class="text-lg text-gray-600">PEPPOL functions as an extremely secure international network that allows your company to exchange critical business documents electronically with any registered participant -- currently hundreds of thousands of public and private companies across borders.</p>
+    </div>
+  </section>
+
+  <!-- All Supported Standards -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">All Supported e-Invoice Standards</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">PEPPOL</h3>
+          <p class="text-gray-600">Universal, cross-industry and cross-border standard.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">ZUGFeRD / XRechnung</h3>
+          <p class="text-gray-600">Germany's electronic invoicing standard.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">Facturae</h3>
+          <p class="text-gray-600">Spain's mandatory electronic invoice format.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">FatturaPA</h3>
+          <p class="text-gray-600">Italy's electronic invoicing format via SDI.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">FACT1</h3>
+          <p class="text-gray-600">Romania's electronic invoicing standard.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">EN16931</h3>
+          <p class="text-gray-600">Generic EU electronic invoicing standard.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="mt-12">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
+  <!-- Getting Started -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Getting Started with e-Invoicing in Germany</h2>
+      <p class="text-lg text-gray-600 mb-4">Each jurisdiction requires specific mandatory fields for electronic invoice validation. For Germany, ensure your Invoice Ninja account has the following properly configured:</p>
+      <ul class="text-lg text-gray-600 mb-4 list-disc list-inside space-y-2">
+        <li>Company VAT identification number (USt-IdNr.)</li>
+        <li>Complete company address details</li>
+        <li>Correct tax rates and categories for your line items</li>
+        <li><strong>Payment Means field with IBAN and bank account data</strong></li>
+      </ul>
+      <div class="p-4 rounded-lg bg-amber-50 border border-amber-200 mb-6">
+        <p class="text-amber-800"><strong>Important:</strong> Germany requires the Payment Means field to include IBAN and financial account metadata. Invoices missing this bank data will fail validation and cannot be delivered through the PEPPOL network.</p>
+      </div>
+      <p class="text-lg text-gray-600 mb-8">Our support team can help validate your account data to ensure successful ZUGFeRD/XRechnung invoice generation and delivery.</p>
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
       </div>
     </div>
   </section>

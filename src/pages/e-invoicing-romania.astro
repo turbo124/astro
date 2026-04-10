@@ -5,11 +5,12 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="e-Invoicing Romania" description="Invoice Ninja e-invoicing compliance for Romania. Support for FACT1." path="/e-invoicing-romania/">
+<BaseLayout title="e-Invoicing Romania - FACT1 & PEPPOL" description="Invoice Ninja e-invoicing compliance for Romania. Support for FACT1, PEPPOL, and all major EU e-invoice standards." path="/e-invoicing-romania/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-3xl mx-auto px-4">
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
       <nav class="mb-8 text-sm text-gray-500">
         <a href="/" class="hover:text-primary">Home</a>
         <span class="mx-2">/</span>
@@ -17,20 +18,90 @@ import Button from "../components/ui/Button.astro";
         <span class="mx-2">/</span>
         <span class="text-gray-700">Romania</span>
       </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">e-Invoicing in Romania</h1>
+      <p class="text-xl text-gray-600 mb-4">Based in the EU? It's time to learn about electronic invoicing!</p>
+      <p class="text-lg text-gray-600 mb-8">Mandatory electronic invoicing in the EU is coming soon! With our PEPPOL integration, you can start sending and receiving electronic invoices immediately.</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
+    </div>
+  </section>
 
-      <h1 class="text-4xl font-bold text-dark mb-4">e-Invoicing in Romania</h1>
-      <p class="text-xl text-gray-600 mb-8">Invoice Ninja supports FACT1 for Romania-based businesses.</p>
+  <!-- What is e-Invoicing? -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">What is e-Invoicing?</h2>
+      <p class="text-lg text-gray-600 mb-4">Electronic invoicing adoption is expanding rapidly across jurisdictions worldwide. Instead of sending PDF invoices by email, e-invoicing uses structured data formats that can be automatically processed by accounting systems on both ends of a transaction.</p>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja supports the UBL (Universal Business Language) format and various electronic invoice standards, including FACT1 for Romania. Our platform enables direct invoice delivery through the PEPPOL network, ensuring your invoices reach their recipients in a compliant, machine-readable format.</p>
+      <p class="text-lg text-gray-600">All <strong>Enterprise Plan</strong> subscribers automatically receive <strong>250 e-invoicing credits at no additional cost</strong>.</p>
+    </div>
+  </section>
 
-      <div class="prose prose-lg max-w-none">
-        <h2>Supported Standard: FACT1</h2>
-        <p>Invoice Ninja enables compliant e-invoicing for businesses operating in Romania. All Enterprise Plan subscribers receive 250 e-invoicing credits at no additional cost.</p>
+  <!-- FACT1 Focus -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">FACT1 for Romania</h2>
+      <p class="text-lg text-gray-600 mb-4">FACT1 is Romania's electronic invoicing standard, designed for compliant B2B and B2G invoice exchange. Romania has been progressively mandating e-invoicing across different business sectors, making FACT1 compliance essential for businesses operating in the country.</p>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja generates fully compliant FACT1 invoices that meet Romanian regulatory requirements. The FACT1 format ensures your invoices contain all the structured data required by Romania's electronic invoicing infrastructure.</p>
+      <p class="text-lg text-gray-600">Invoice Ninja handles the technical complexity so you can focus on your business -- simply create your invoice and we generate the compliant FACT1 output automatically.</p>
+    </div>
+  </section>
 
-        <h2>Getting Started</h2>
-        <p>Ensure your Invoice Ninja account has the required jurisdiction-specific fields populated for successful e-invoice delivery and validation.</p>
+  <!-- PEPPOL Network -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">The PEPPOL Network</h2>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja has deployed a PEPPOL access point, enabling you to send and receive e-invoices across a vast international network.</p>
+      <p class="text-lg text-gray-600 mb-4">PEPPOL is like working with a telecommunications provider. When you make a phone call, you just dial the number and your provider works with the recipient's provider to establish the connection. You don't need to worry about the technical details -- it just works.</p>
+      <p class="text-lg text-gray-600">PEPPOL functions as an extremely secure international network that allows your company to exchange critical business documents electronically with any registered participant -- currently hundreds of thousands of public and private companies across borders.</p>
+    </div>
+  </section>
+
+  <!-- All Supported Standards -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">All Supported e-Invoice Standards</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">PEPPOL</h3>
+          <p class="text-gray-600">Universal, cross-industry and cross-border standard.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">ZUGFeRD / XRechnung</h3>
+          <p class="text-gray-600">Germany's electronic invoicing standard.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">Facturae</h3>
+          <p class="text-gray-600">Spain's mandatory electronic invoice format.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">FatturaPA</h3>
+          <p class="text-gray-600">Italy's electronic invoicing format via SDI.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">FACT1</h3>
+          <p class="text-gray-600">Romania's electronic invoicing standard.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">EN16931</h3>
+          <p class="text-gray-600">Generic EU electronic invoicing standard.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="mt-12">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
+  <!-- Getting Started -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Getting Started with e-Invoicing in Romania</h2>
+      <p class="text-lg text-gray-600 mb-4">Each jurisdiction requires specific mandatory fields for electronic invoice validation. For Romania, ensure your Invoice Ninja account has the following properly configured:</p>
+      <ul class="text-lg text-gray-600 mb-6 list-disc list-inside space-y-2">
+        <li>CUI/CIF (Romanian tax identification number)</li>
+        <li>VAT identification number</li>
+        <li>Complete company address details</li>
+        <li>Correct tax rates and categories for your line items</li>
+      </ul>
+      <p class="text-lg text-gray-600 mb-8">Our support team can help validate your account data to ensure successful FACT1 invoice generation and delivery through the PEPPOL network.</p>
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
       </div>
     </div>
   </section>

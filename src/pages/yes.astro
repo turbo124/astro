@@ -3,20 +3,221 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const section1 = [
+  {
+    q: "Is Invoice Ninja really FREE?",
+    a: "Yes! Invoice Ninja offers free invoicing software as an easier, faster, and smarter way to get paid, issuing professional, customized invoices to clients in seconds.",
+  },
+  {
+    q: "Is Invoice Ninja PCI compliant & secure?",
+    a: "Yes! Invoice Ninja takes security seriously and provides invoicing software with the latest data protection and cybersecurity safeguards to protect your information, billing details, and client contact information. Our secure portal is safer than email attachments vulnerable to hacking and data breaches.",
+  },
+  {
+    q: "Can I upload my logo and customize colors to match my brand?",
+    a: "Yes! Fully customize your invoices with your own logo, brand colors, and fonts to deliver a polished, professional appearance that matches your identity.",
+  },
+  {
+    q: "Can I integrate multiple payment gateways at the same time?",
+    a: "Yes! Invoice Ninja integrates with Stripe, PayPal, Authorize, Braintree, Square, Checkout, PayFast and others — all simultaneously — so your clients can pay the way they prefer.",
+  },
+  {
+    q: "Can I set minimums & maximums for credit card payments?",
+    a: "Yes! Configure minimum and maximum payment amounts for credit card transactions to control how clients pay.",
+  },
+  {
+    q: "Can I pass along the credit card processing fee % to my clients?",
+    a: "Yes! Automatically add a surcharge to pass credit card processing fees on to your clients, so you keep more of what you earn.",
+  },
+  {
+    q: "Can I attach additional files & docs to invoices & quote emails?",
+    a: "Yes! Attach contracts, proposals, supporting documents, or any files directly to your invoice and quote emails.",
+  },
+  {
+    q: "Can I add account users & set permissions on what they view or create?",
+    a: "Yes! Invite team members and assign granular permissions so each user only sees and does what they need to.",
+  },
+  {
+    q: "Does Invoice Ninja offer inventory management that updates as I create invoices?",
+    a: "Yes! Track product stock levels that automatically update every time you create an invoice, with low-stock notifications to keep you informed.",
+  },
+  {
+    q: "Does Invoice Ninja offer a client-side portal for viewing quotes and paying invoices?",
+    a: "Yes! Your clients get their own secure portal where they can view quotes, pay invoices, download documents, and manage their account.",
+  },
+  {
+    q: "Does Invoice Ninja offer an e-signature feature to display client signatures on invoices?",
+    a: "Yes! Clients can sign invoices electronically, and the signature is displayed directly on the invoice PDF for your records.",
+  },
+  {
+    q: "Can I enable an 'accept terms' checkbox before clients pay?",
+    a: "Yes! Require clients to accept your terms and conditions before they can submit payment, keeping you legally protected.",
+  },
+  {
+    q: "Can I email invoices to multiple client email contacts at the same time?",
+    a: "Yes! Send invoices simultaneously to multiple contacts for the same client — perfect for businesses with several stakeholders.",
+  },
+  {
+    q: "Can clients approve quotes to convert them into payable invoices?",
+    a: "Yes! Clients can review and approve quotes directly from the client portal, which automatically converts them into invoices ready for payment.",
+  },
+  {
+    q: "Can I set different currencies for different clients?",
+    a: "Yes! Assign unique currencies to individual clients so you can invoice internationally without any hassle.",
+  },
+  {
+    q: "Can I be notified when my clients view or pay invoices?",
+    a: "Yes! Receive real-time notifications when clients open your invoices and when payments are made, so you always know where things stand.",
+  },
+  {
+    q: "Can I set 'inclusive' or 'exclusive' taxes per client or invoice?",
+    a: "Yes! Configure tax-inclusive or tax-exclusive pricing on a per-client or per-invoice basis to match your region's tax requirements.",
+  },
+  {
+    q: "Can I set multiple taxes per line-item or per invoice total?",
+    a: "Yes! Apply multiple tax rates to individual line items or to the invoice total — great for jurisdictions with compound taxes.",
+  },
+  {
+    q: "Can Invoice Ninja automate taxation based on my client's location?",
+    a: "Yes! Automatically calculate the correct tax rates based on your client's location, saving you time and reducing errors.",
+  },
+];
+
+const section2 = [
+  {
+    q: "Can I integrate with 3rd party tools via Zapier.com or Make.com?",
+    a: "Yes! Connect Invoice Ninja to thousands of apps through Zapier and Make.com to automate your workflows and eliminate manual data entry.",
+  },
+  {
+    q: "Can I export all our data any time we want?",
+    a: "Yes! Your data is yours. Export everything — invoices, clients, payments, expenses — at any time in standard formats.",
+  },
+  {
+    q: "Can I deliver finished work to our clients via Invoice Ninja?",
+    a: "Yes! Attach deliverables and finished work directly to invoices, so clients receive their files and pay in one seamless experience.",
+  },
+  {
+    q: "Can I use Invoice Ninja without a long-term agreement?",
+    a: "Yes! There are no contracts or long-term commitments. Use Invoice Ninja month-to-month and cancel anytime.",
+  },
+  {
+    q: "Can I run simultaneous projects on Invoice Ninja?",
+    a: "Yes! Manage multiple projects at the same time, each with their own tasks, time tracking, and billing.",
+  },
+  {
+    q: "Can I create vendors to enter expenses per vendor?",
+    a: "Yes! Set up vendor profiles and categorize expenses by vendor for cleaner bookkeeping and reporting.",
+  },
+  {
+    q: "Can I create purchase orders that I can email out to vendors?",
+    a: "Yes! Generate professional purchase orders and email them directly to your vendors from within Invoice Ninja.",
+  },
+  {
+    q: "Can I create expenses for reporting and/or re-billing to clients?",
+    a: "Yes! Log expenses, assign them to clients or projects, and optionally re-invoice them so you never absorb a cost you shouldn't.",
+  },
+  {
+    q: "Can I assign different account users to projects or tasks?",
+    a: "Yes! Assign team members to specific projects or tasks to track who is working on what and bill accordingly.",
+  },
+  {
+    q: "Can I create P&L reports, payments & invoice reports, and client reports?",
+    a: "Yes! Generate detailed profit & loss statements, payment summaries, invoice aging reports, and client-level reports to stay on top of your finances.",
+  },
+  {
+    q: "Can I create projects & time-track billable tasks?",
+    a: "Yes! Create projects, log billable hours on tasks, and convert tracked time directly into invoices with a single click.",
+  },
+  {
+    q: "Does Invoice Ninja offer Kanban boards to visually manage projects?",
+    a: "Yes! Use drag-and-drop Kanban boards to visually organize tasks and track project progress at a glance.",
+  },
+  {
+    q: "Can I send out invoices via Gmail or MSN accounts?",
+    a: "Yes! Connect your Gmail or Microsoft account to send invoices directly from your own email address for a professional touch.",
+  },
+  {
+    q: "Can Invoice Ninja automate invoice past-due payment reminder emails?",
+    a: "Yes! Set up automated reminder schedules so clients receive friendly nudges when payments are overdue — no manual follow-up needed.",
+  },
+  {
+    q: "Does Invoice Ninja have an API?",
+    a: "Yes! Invoice Ninja provides a full REST API so developers can build custom integrations, automate workflows, and connect to any system.",
+  },
+  {
+    q: "Does Invoice Ninja offer desktop apps, mobile apps, and Chrome extensions?",
+    a: "Yes! Access Invoice Ninja from anywhere with native apps for desktop, iOS, Android, and a Chrome browser extension.",
+  },
+];
 ---
 
-<BaseLayout title="Yes!" description="With Invoice Ninja, the answer is always yes! Open source, self-hostable, free forever plan, and 200,000+ happy users." path="/yes/">
+<BaseLayout title="Yes!" description="With Invoice Ninja, the answer is always YES! Free invoicing, PCI compliant, multi-currency, payment gateways, and 35+ features." path="/yes/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Yes!</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">With Invoice Ninja, the answer is always yes! Open source, self-hostable, free forever plan, and 200,000+ happy users.</p>
-      </div>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-5xl lg:text-6xl font-bold text-dark mb-6">Yes!</h1>
+      <p class="text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto">With Invoice Ninja, the answer is always <strong class="text-primary">YES!</strong></p>
+    </div>
+  </section>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+  <!-- Section 1: Core Invoicing & Billing -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-4 text-center">Invoicing, Billing & Client Management</h2>
+      <p class="text-gray-500 text-center mb-10">Everything you need to create, send, and get paid.</p>
+
+      <div class="space-y-3">
+        {section1.map((item) => (
+          <details class="group border border-gray-200 rounded-lg overflow-hidden hover:border-primary/40 transition-colors">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 bg-white hover:bg-gray-50 transition-colors">
+              <span class="font-medium text-dark pr-4">{item.q}</span>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-4 pt-1 text-gray-600 border-t border-gray-100">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Integrations, Projects & Reporting -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-4 text-center">Integrations, Projects & Reporting</h2>
+      <p class="text-gray-500 text-center mb-10">Power tools for growing businesses.</p>
+
+      <div class="space-y-3">
+        {section2.map((item) => (
+          <details class="group border border-gray-200 rounded-lg overflow-hidden hover:border-primary/40 transition-colors">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 bg-white hover:bg-gray-50 transition-colors">
+              <span class="font-medium text-dark pr-4">{item.q}</span>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-4 pt-1 text-gray-600 border-t border-gray-100">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Start Invoicing Today!</h2>
+      <p class="text-xl text-gray-600 mb-8">Create. Send. Get Paid.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Sign Up</Button>
+        <Button href="https://react.invoicing.co/demo" variant="outline" size="lg">Try Demo</Button>
       </div>
     </div>
   </section>

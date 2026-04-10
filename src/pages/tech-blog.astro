@@ -15,12 +15,57 @@ import Button from "../components/ui/Button.astro";
         <p class="text-xl text-gray-600">Technical articles and development updates from Invoice Ninja.</p>
       </div>
 
-      <div class="prose prose-lg max-w-none mx-auto">
-        <p>For our latest articles on freelancing, invoicing, and small business tips, visit our <a href="/blog/">main blog</a>.</p>
-        <p>For technical documentation and developer resources, visit our <a href="https://invoiceninja.github.io/">documentation site</a>.</p>
+      <div class="space-y-6 mb-12">
+        {[
+          {
+            title: "Pricing Update January 1, 2026",
+            date: "October 1, 2025",
+            excerpt: "Important announcement regarding pricing changes for Invoice Ninja plans, effective January 1, 2026.",
+            href: "https://invoiceninja.com/pricing-update-january-1-2026/",
+          },
+          {
+            title: "Updated PayPal Integration Now Includes Venmo",
+            date: "December 10, 2024",
+            excerpt: "Our PayPal integration has been expanded to support Venmo payments, giving your clients even more ways to pay.",
+            href: "https://invoiceninja.com/venmo/",
+          },
+          {
+            title: "Google Chrome Task Extension",
+            date: "November 20, 2024",
+            excerpt: "Introducing the new Google Chrome extension for task management, allowing you to track time and manage tasks directly from your browser.",
+            href: "https://invoiceninja.com/google-chrome-task-extension/",
+          },
+        ].map((post) => (
+          <a href={post.href} target="_blank" rel="noopener noreferrer" class="block p-6 rounded-xl border border-gray-200 bg-white hover:border-primary/30 hover:shadow-lg transition-all duration-200">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+              <h3 class="text-lg font-bold text-dark">{post.title}</h3>
+              <span class="text-sm text-gray-400 whitespace-nowrap">{post.date}</span>
+            </div>
+            <p class="text-sm text-gray-600">{post.excerpt}</p>
+            <span class="text-primary text-sm font-medium mt-2 inline-block">Read More &rarr;</span>
+          </a>
+        ))}
       </div>
 
-      <div class="mt-12 text-center">
+      <div class="p-8 rounded-xl bg-gray-50 border border-gray-200 mb-12">
+        <h2 class="text-xl font-bold text-dark mb-4 text-center">More Resources</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+          <a href="/blog/" class="p-4 rounded-lg border border-gray-200 bg-white hover:border-primary/30 hover:shadow transition-all">
+            <h3 class="font-semibold text-dark mb-1">Main Blog</h3>
+            <p class="text-sm text-gray-500">Freelancing, invoicing, and small business tips</p>
+          </a>
+          <a href="https://invoiceninja.github.io/" class="p-4 rounded-lg border border-gray-200 bg-white hover:border-primary/30 hover:shadow transition-all">
+            <h3 class="font-semibold text-dark mb-1">Documentation</h3>
+            <p class="text-sm text-gray-500">User guide and self-hosting docs</p>
+          </a>
+          <a href="http://api-docs.invoicing.co/" class="p-4 rounded-lg border border-gray-200 bg-white hover:border-primary/30 hover:shadow transition-all">
+            <h3 class="font-semibold text-dark mb-1">API Reference</h3>
+            <p class="text-sm text-gray-500">Developer resources and API documentation</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center">
         <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
       </div>
     </div>

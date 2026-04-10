@@ -5,19 +5,145 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Branding Kit" description="Download Invoice Ninja logos, brand assets, and guidelines." path="/brand-kit/">
+<BaseLayout title="Brand Kit" description="Invoice Ninja brand guidelines, logos, and media assets." path="/brand-kit/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Branding Kit</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Download Invoice Ninja logos, brand assets, and guidelines.</p>
-      </div>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Brand Kit</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Logos, guidelines, and media assets for Invoice Ninja.</p>
+    </div>
+  </section>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+  <!-- Company Overview -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Company Overview</h2>
+      <div class="prose prose-lg max-w-none">
+        <p>Invoice Ninja was founded in 2014 by Hillel, Dave, and Shalom. We are a bootstrapped company &mdash; self-funded from day one with no venture capital. Invoice Ninja is the leading source-code available platform built for freelancers and SMBs with a complete suite of invoicing &amp; payment tools.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Brand Guidelines -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Brand Guidelines</h2>
+      <div class="prose prose-lg max-w-none mb-8">
+        <p>When using the Invoice Ninja brand in your materials, please follow these guidelines:</p>
+        <ul>
+          <li>Download and use only the approved logo files provided below.</li>
+          <li>Do not create inverted versions of the logos.</li>
+          <li>Do not alter the logo colors or use alternative color versions.</li>
+          <li>Always write the company name as <strong>"Invoice Ninja"</strong> &mdash; two words, title case.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-10">Logos</h2>
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="bg-gray-50 rounded-xl p-8 flex items-center justify-center">
+          <img
+            src="/images/logo-circle.png"
+            alt="Invoice Ninja circle logo"
+            class="max-h-48"
+            loading="lazy"
+          />
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8 flex items-center justify-center">
+          <img
+            src="/images/home/Invoice-Ninja-v5-1.png"
+            alt="Invoice Ninja v5 logo"
+            class="max-h-48"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Timeline -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-10">Company Timeline</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <span class="text-lg font-bold text-primary whitespace-nowrap">2014</span>
+          <p class="text-gray-600">Invoice Ninja v1 beta launches with founders Hillel and Shalom.</p>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="text-lg font-bold text-primary whitespace-nowrap">2015</span>
+          <p class="text-gray-600">Dave joins as CTO, completing the founding trio.</p>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="text-lg font-bold text-primary whitespace-nowrap">2019</span>
+          <p class="text-gray-600">Development begins on the v5 platform.</p>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="text-lg font-bold text-primary whitespace-nowrap">2021</span>
+          <p class="text-gray-600">Invoice Ninja v5 launches using Google Flutter.</p>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="text-lg font-bold text-primary whitespace-nowrap">2022</span>
+          <p class="text-gray-600">Company reaches 200,000+ user accounts.</p>
+        </div>
+        <div class="flex gap-6 items-start">
+          <span class="text-lg font-bold text-primary whitespace-nowrap">2023</span>
+          <p class="text-gray-600">New React app version launches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Community</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 rounded-xl p-8">
+          <h3 class="text-xl font-bold text-dark mb-3">Slack</h3>
+          <p class="text-gray-600 mb-4">Join 5,000+ users in our Slack community for real-time support and discussions.</p>
+          <a href="https://invoiceninja.slack.com" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Join Slack &rarr;</a>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8">
+          <h3 class="text-xl font-bold text-dark mb-3">Forums</h3>
+          <p class="text-gray-600 mb-4">Connect with thousands of users on our community forums.</p>
+          <a href="https://forum.invoiceninja.com" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Visit Forums &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Social Media</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <a href="https://www.facebook.com/invoiceninja" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold text-dark">Facebook</p>
+        </a>
+        <a href="https://twitter.com/invoiceninja" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold text-dark">Twitter</p>
+        </a>
+        <a href="https://www.linkedin.com/company/invoice-ninja" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold text-dark">LinkedIn</p>
+        </a>
+        <a href="https://github.com/invoiceninja" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold text-dark">GitHub</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
     </div>
   </section>
 

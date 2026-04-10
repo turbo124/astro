@@ -220,10 +220,18 @@ const whyUsCompare = [
 </header>
 
 <!-- Search Modal -->
-<div id="search-modal" class="hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm">
-  <div class="max-w-2xl mx-auto mt-20 px-4">
-    <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-      <div id="pagefind-container"></div>
+<div id="search-modal" class="hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Site search">
+  <div class="max-w-2xl mx-auto mt-12 sm:mt-20 px-4 max-h-[calc(100vh-6rem)] flex flex-col">
+    <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
+      <!-- Header with close hint -->
+      <div class="flex items-center justify-between px-5 pt-4 pb-2 border-b border-gray-100">
+        <span class="text-sm font-medium text-gray-500">Search the site</span>
+        <kbd class="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded font-mono">ESC</kbd>
+      </div>
+      <!-- Scrollable results area -->
+      <div class="overflow-y-auto overscroll-contain px-2 pb-4" style="max-height: calc(100vh - 12rem);">
+        <div id="pagefind-container"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -233,7 +241,100 @@ const whyUsCompare = [
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
 
-<script>
+<style is:inline>
+  /* Pagefind UI overrides */
+  .pagefind-ui {
+    --pagefind-ui-primary: #0091EA;
+    --pagefind-ui-text: #1f2937;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #e5e7eb;
+    --pagefind-ui-tag: #f3f4f6;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 12px;
+    --pagefind-ui-font: inherit;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input {
+    font-size: 1rem;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+    outline: none;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input:focus {
+    border-color: #0091EA;
+    box-shadow: 0 0 0 3px rgba(0, 145, 234, 0.15);
+    background: #fff;
+  }
+
+  .pagefind-ui .pagefind-ui__search-clear {
+    top: auto;
+    right: 0.75rem;
+    color: #9ca3af;
+  }
+
+  .pagefind-ui .pagefind-ui__result {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .pagefind-ui .pagefind-ui__result:hover {
+    background: #f0f9ff;
+    border-color: #bae6fd;
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    color: #0091EA;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .pagefind-ui .pagefind-ui__result-link:hover {
+    text-decoration: underline;
+  }
+
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .pagefind-ui mark {
+    background: rgba(0, 145, 234, 0.15);
+    color: #0077C2;
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  .pagefind-ui .pagefind-ui__message {
+    color: #6b7280;
+    font-size: 0.875rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .pagefind-ui .pagefind-ui__button {
+    background: #0091EA;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    transition: background 0.15s;
+  }
+
+  .pagefind-ui .pagefind-ui__button:hover {
+    background: #0077C2;
+  }
+</style>
+
+<script is:inline>
   const menuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const iconOpen = document.getElementById("menu-icon-open");
@@ -275,14 +376,14 @@ const whyUsCompare = [
         });
         setTimeout(() => {
           const input = document.querySelector("#pagefind-container input");
-          if (input) (input as HTMLInputElement).focus();
+          if (input) input.focus();
         }, 100);
       };
       document.head.appendChild(script);
     } else {
       setTimeout(() => {
         const input = document.querySelector("#pagefind-container input");
-        if (input) (input as HTMLInputElement).focus();
+        if (input) input.focus();
       }, 50);
     }
   }

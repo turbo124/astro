@@ -8,7 +8,7 @@ import Footer from "../components/Footer.astro";
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
+    <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-16">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Languages & Currencies</h1>
         <p class="text-xl text-gray-600">Getting paid is fun in every language :)</p>
@@ -17,7 +17,7 @@ import Footer from "../components/Footer.astro";
       <h2 class="text-2xl font-bold text-dark mb-6">Supported Languages</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-16">
         {[
-          "English", "Spanish", "Swedish", "Turkish", "Arabic", "Dutch",
+          "English", "Spanish (Spain)", "Swedish", "Turkish", "Arabic", "Dutch",
           "Portuguese (PT)", "French (CA)", "German", "Greek", "Portuguese (BR)",
           "Italian", "Croatian", "Persian", "Finnish", "French", "Bulgarian",
           "Chinese", "Serbian", "Latvian", "Macedonian", "Slovak", "Russian",
@@ -25,11 +25,89 @@ import Footer from "../components/Footer.astro";
           <div class="p-3 rounded-lg bg-gray-50 text-sm text-gray-700 text-center">{lang}</div>
         ))}
       </div>
-      <p class="text-center text-gray-500 mb-12">And many more community-contributed translations!</p>
+      <p class="text-center text-gray-500 mb-16">And many more community-contributed translations!</p>
 
-      <h2 class="text-2xl font-bold text-dark mb-6">Multi-Currency Support</h2>
-      <p class="text-lg text-gray-600 mb-4">Invoice Ninja supports dozens of currencies from Albanian Lek to Zimbabwean Dollar. Invoice clients globally in their preferred currency with automatic conversion.</p>
-      <p class="text-sm text-gray-500">Language and currency localization is available on the <strong>Forever Free</strong> plan.</p>
+      <h2 class="text-2xl font-bold text-dark mb-6">Supported Currencies</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
+        {[
+          "US Dollar (USD)", "Euro (EUR)", "British Pound", "Australian Dollar",
+          "Canadian Dollar", "Swiss Franc", "Chinese Renminbi", "Japanese Yen",
+          "Indian Rupee", "Brazilian Real", "Mexican Peso", "South Korean Won",
+          "Singapore Dollar", "Hong Kong Dollar", "Norwegian Krone", "Swedish Krona",
+          "Danish Krone", "New Zealand Dollar", "South African Rand", "Russian Ruble",
+          "Turkish Lira", "Israeli Shekel", "Polish Zloty", "Thai Baht",
+          "Indonesian Rupiah", "Hungarian Forint", "Czech Koruna", "Colombian Peso",
+          "Philippine Peso", "Malaysian Ringgit", "Pakistani Rupee", "Egyptian Pound",
+          "Nigerian Naira", "Vietnamese Dong", "Ukrainian Hryvnia", "Romanian New Leu",
+          "Chilean Peso", "Argentine Peso", "Saudi Riyal", "UAE Dirham",
+          "Kuwaiti Dinar", "Qatari Riyal", "Bahraini Dinar", "Omani Rial",
+          "Kenyan Shilling", "Ghanaian Cedi", "Tanzanian Shilling", "Moroccan Dirham",
+          "Peruvian Sol", "Croatian Kuna", "Bulgarian Lev", "Serbian Dinar",
+          "Bangladeshi Taka", "Sri Lankan Rupee", "Jamaican Dollar", "Costa Rican Colon",
+          "Guatemalan Quetzal", "Paraguayan Guarani", "Uruguayan Peso", "Bolivian Boliviano",
+          "Dominican Peso", "Honduran Lempira", "Albanian Lek", "Armenian Dram",
+          "Georgian Lari", "Azerbaijani Manat", "Kazakhstani Tenge", "Moldovan Leu",
+          "Icelandic Krona", "Lebanese Pound", "Jordanian Dinar", "Tunisian Dinar",
+          "Algerian Dinar", "Trinidad & Tobago Dollar", "East Caribbean Dollar",
+          "Barbadian Dollar", "Surinamese Dollar", "Namibian Dollar", "Botswana Pula",
+          "Rwandan Franc", "Ugandan Shilling", "Zambian Kwacha", "Zimbabwean Dollar",
+          "Papua New Guinean Kina", "Fijian Dollar", "Vanuatu Vatu", "CFP Franc",
+          "Brunei Dollar", "Cambodian Riel", "Myanmar Kyat", "Nepalese Rupee",
+          "Maldivian Rufiyaa", "Macanese Pataca", "Mozambican Metical",
+          "Malawi Kwacha", "Ethiopian Birr", "Mauritian Rupee", "Haitian Gourde",
+          "Macedonian Denar", "Cape Verdean Escudo", "Gambian Dalasi",
+          "Gibraltar Pound", "Netherlands Antillean Guilder", "Aruban Florin",
+          "Bosnia & Herzegovina Convertible Mark", "Belarusian Ruble", "Venezuelan Bolivars",
+          "Taiwan New Dollar",
+        ].map((currency) => (
+          <div class="p-3 rounded-lg bg-gray-50 text-sm text-gray-700 text-center">{currency}</div>
+        ))}
+      </div>
+      <p class="text-center text-gray-500 mb-16">Invoice clients globally in their preferred currency with automatic conversion.</p>
+
+      <!-- Feature Plan Cards -->
+      <h2 class="text-2xl font-bold text-dark mb-8 text-center">Feature Highlights by Plan</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-bold text-dark mb-4">Forever Free</h3>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>Real-time invoice PDF previews</li>
+            <li>Overpayment & underpayment settings</li>
+            <li>Language and currency localization</li>
+            <li>Customizable labels</li>
+            <li>Vendor purchase orders</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl border border-primary/30 bg-white shadow-sm">
+          <h3 class="text-lg font-bold text-primary mb-4">Ninja Pro</h3>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>Custom client portal (YourBrand.Invoicing.co)</li>
+            <li>Automated workflows via Zapier, Make, Pabbly</li>
+            <li>Custom reminder & late fee emails</li>
+            <li>11 customizable invoice templates</li>
+            <li>Gmail & MSN email integration</li>
+            <li>Client subscriptions & recurring auto-billing</li>
+            <li>Reports & accounts aging statements</li>
+            <li>Link up to 10 companies with one login</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-bold text-dark mb-4">Enterprise</h3>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>All Pro features included</li>
+            <li>Document locking until payment</li>
+            <li>Additional user accounts with permissions</li>
+            <li>Client & vendor portal document uploads</li>
+            <li>Banking integration via Yodlee</li>
+            <li>Custom domain (Billing.YourCompany.com)</li>
+            <li>Attach third-party files to invoices & expenses</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </section>
 

@@ -5,44 +5,114 @@ import Footer from "../../components/Footer.astro";
 import Button from "../../components/ui/Button.astro";
 ---
 
-<BaseLayout title="EU e-Invoicing & PEPPOL" description="Invoice Ninja supports e-invoicing compliance for EU businesses with PEPPOL, ZUGFeRD, Facturae, FatturaPA and more." path="/e-invoicing/">
+<BaseLayout title="EU e-Invoicing & PEPPOL" description="Invoice Ninja supports e-invoicing compliance for EU businesses with PEPPOL, ZUGFeRD, Facturae, FatturaPA, FACT1, EN16931 and more." path="/e-invoicing/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">EU e-Invoicing & PEPPOL</h1>
+      <p class="text-xl text-gray-600 mb-6">EU based? Yes, we are e-Invoicing compliant!</p>
+      <p class="text-lg text-gray-600 mb-8">Mandatory electronic invoicing in the EU is coming soon! With our PEPPOL integration, you can start sending and receiving electronic invoices immediately.</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
+    </div>
+  </section>
+
+  <!-- What is e-Invoicing? -->
+  <section class="py-16">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">EU e-Invoicing & PEPPOL</h1>
-        <p class="text-xl text-gray-600">EU based? Yes, we are e-Invoicing compliant!</p>
+      <h2 class="text-3xl font-bold text-dark mb-6">What is e-Invoicing?</h2>
+      <p class="text-lg text-gray-600 mb-4">Electronic invoicing adoption is expanding rapidly across jurisdictions worldwide. Instead of sending PDF invoices by email, e-invoicing uses structured data formats that can be automatically processed by accounting systems on both ends of a transaction.</p>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja supports the UBL (Universal Business Language) format and various electronic invoice standards. Our platform enables direct invoice delivery through the PEPPOL network, ensuring your invoices reach their recipients in a compliant, machine-readable format.</p>
+      <p class="text-lg text-gray-600">All <strong>Enterprise Plan</strong> subscribers automatically receive <strong>250 e-invoicing credits at no additional cost</strong>. Additional credits are available: $50 for 500 credits or $100 for 1,000 credits (1-year validity).</p>
+    </div>
+  </section>
+
+  <!-- PEPPOL Network -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">The PEPPOL Network</h2>
+      <p class="text-lg text-gray-600 mb-4">Invoice Ninja has deployed a PEPPOL access point, enabling you to send and receive e-invoices across a vast international network.</p>
+      <p class="text-lg text-gray-600 mb-4">PEPPOL is like working with a telecommunications provider. When you make a phone call, you just dial the number and your provider works with the recipient's provider to establish the connection. You don't need to worry about the technical details -- it just works.</p>
+      <p class="text-lg text-gray-600 mb-4">Similarly, PEPPOL functions as an extremely secure international network that allows your company to exchange critical business documents electronically with any registered participant. The network currently connects hundreds of thousands of public and private companies across borders.</p>
+      <p class="text-lg text-gray-600">Invoice Ninja acts as your access point, routing your e-invoices securely through the PEPPOL network to reach your clients and trading partners anywhere in the network.</p>
+    </div>
+  </section>
+
+  <!-- Supported Standards -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">Supported e-Invoice Standards</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">PEPPOL</h3>
+          <p class="text-gray-600">Universal, cross-industry and cross-border standard used internationally for B2B and B2G invoicing.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">ZUGFeRD / XRechnung</h3>
+          <p class="text-gray-600">Germany's standard for electronic invoicing, combining a PDF with embedded structured XML data.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">Facturae</h3>
+          <p class="text-gray-600">Spain's mandatory electronic invoice format for public sector and increasingly private sector transactions.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">FatturaPA</h3>
+          <p class="text-gray-600">Italy's electronic invoicing format, routed through the government's SDI (Sistema di Interscambio) system.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">FACT1</h3>
+          <p class="text-gray-600">Romania's electronic invoicing standard for compliant B2B and B2G invoice exchange.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-xl font-bold text-dark mb-2">EN16931</h3>
+          <p class="text-gray-600">The generic EU standard for electronic invoicing, providing baseline compliance across all member states.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Jurisdictions -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Supported Jurisdictions</h2>
+      <p class="text-lg text-gray-600 mb-8">Invoice Ninja supports e-invoicing compliance across a growing list of European jurisdictions. Each jurisdiction has specific mandatory field requirements for valid e-invoice generation.</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        {["Austria", "Belgium", "Switzerland", "Germany", "Spain", "Finland", "France", "Italy", "Netherlands", "Poland", "Romania", "Sweden"].map((country) => (
+          <div class="p-3 rounded-lg border border-gray-200 bg-white text-center">
+            <span class="text-base font-medium text-gray-700">{country}</span>
+          </div>
+        ))}
       </div>
 
-      <div class="prose prose-lg max-w-none">
-        <h2>Supported e-Invoice Standards</h2>
-        <ul>
-          <li><strong>PEPPOL</strong> — Universal, cross-industry standard</li>
-          <li><strong>ZUGFeRD / XRechnung</strong> — Germany</li>
-          <li><strong>Facturae</strong> — Spain</li>
-          <li><strong>FatturaPA</strong> — Italy</li>
-          <li><strong>FACT1</strong> — Romania</li>
-          <li><strong>EN16931</strong> — Generic EU standard</li>
-        </ul>
-
-        <h2>PEPPOL Network</h2>
-        <p>PEPPOL functions as a secure, international routing system connecting hundreds of thousands of public and private companies across borders.</p>
-
-        <h2>Supported Jurisdictions</h2>
-        <p>Austria, Belgium, Switzerland, Germany, Spain (Verifactu), Finland, France, Italy, Netherlands, Poland, Romania, and Sweden.</p>
-
-        <h2>Pricing</h2>
-        <p>All Enterprise Plan subscribers receive <strong>250 e-invoicing credits at no additional cost</strong>. Additional credits available: $50/500 or $100/1000 (1-year validity).</p>
-      </div>
-
-      <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
-        {["Spain", "France", "Germany", "Italy", "Romania"].map((country) => (
-          <a href={"/e-invoicing-" + country.toLowerCase() + "/"} class="p-4 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all text-center">
-            <span class="text-sm font-medium text-gray-700">e-Invoicing</span>
-            <p class="text-lg font-bold text-dark">{country}</p>
+      <h3 class="text-2xl font-bold text-dark mb-6">Country-Specific Guides</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          { name: "Spain", note: "Facturae / Verifactu" },
+          { name: "France", note: "Factur-X" },
+          { name: "Germany", note: "ZUGFeRD / XRechnung" },
+          { name: "Italy", note: "FatturaPA" },
+          { name: "Romania", note: "FACT1" },
+        ].map((country) => (
+          <a href={"/e-invoicing-" + country.name.toLowerCase() + "/"} class="p-4 rounded-xl border border-gray-200 bg-white hover:border-primary/30 hover:shadow-md transition-all text-center">
+            <span class="text-sm font-medium text-gray-500">e-Invoicing</span>
+            <p class="text-lg font-bold text-dark">{country.name}</p>
+            <span class="text-xs text-gray-500">{country.note}</span>
           </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-6">Getting Started</h2>
+      <p class="text-lg text-gray-600 mb-4">Each jurisdiction requires specific mandatory fields for electronic invoice validation. During onboarding, ensure your Invoice Ninja account has the required jurisdiction-specific fields populated for successful e-invoice delivery.</p>
+      <p class="text-lg text-gray-600 mb-4">Some regions require government registration before sending electronic invoices. For example, Italy requires SDI registration, and Spain has Verifactu compliance requirements.</p>
+      <p class="text-lg text-gray-600 mb-8">Our support team can help validate your account data to ensure successful electronic invoice generation and delivery.</p>
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
       </div>
     </div>
   </section>

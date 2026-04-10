@@ -8,47 +8,285 @@ import Button from "../components/ui/Button.astro";
 <BaseLayout title="Invoice Ninja vs. Invoice2Go" description="Compare Invoice Ninja vs Invoice2Go. See features, pricing, and why businesses choose Invoice Ninja." path="/invoice-ninja-vs-invoice2go/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-4xl font-bold text-dark mb-8">Invoice Ninja vs. Invoice2Go</h1>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Invoice Ninja vs. Invoice2Go</h1>
+      <p class="text-xl text-gray-600 mb-4">Are you overpaying, just to get paid?</p>
+      <p class="text-lg text-gray-500 mb-8">How does Invoice Ninja stack up against the competition!</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Test Drive!</Button>
+    </div>
+  </section>
 
-      <div class="overflow-x-auto mb-12">
+  <!-- Comparison Table -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="overflow-x-auto">
         <table class="w-full text-left">
           <thead>
             <tr class="border-b-2 border-gray-200">
-              <th class="py-3 pr-4"></th>
-              <th class="py-3 text-center font-semibold text-primary">Invoice Ninja</th>
-              <th class="py-3 text-center font-semibold text-gray-700">Invoice2Go</th>
+              <th class="py-4 pr-4 text-sm font-semibold text-gray-700">Feature</th>
+              <th class="py-4 text-center text-sm font-semibold text-gray-500">Invoice2Go</th>
+              <th class="py-4 text-center text-sm font-semibold text-primary">Invoice Ninja</th>
             </tr>
           </thead>
           <tbody>
             <tr class="border-b border-gray-100">
-              <td class="py-3 pr-4 text-gray-700">Annual Price</td>
-              <td class="py-3 text-center font-bold text-primary">$140</td>
-              <td class="py-3 text-center text-gray-700">$450/yr</td>
+              <td class="py-4 pr-4 text-gray-700 font-medium">Free Plan?</td>
+              <td class="py-4 text-center text-red-500 font-semibold">None</td>
+              <td class="py-4 text-center text-green-600 font-semibold">Yes!</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Annual Price (Entry Paid Plan)</td>
+              <td class="py-4 text-center text-red-500 font-semibold">$399.99 Ouch!</td>
+              <td class="py-4 text-center text-green-600 font-semibold">$140 Yay!</td>
             </tr>
             <tr class="border-b border-gray-100">
-              <td class="py-3 pr-4 text-gray-700">Free Plan</td>
-              <td class="py-3 text-center text-green-600">Yes</td>
-              <td class="py-3 text-center text-red-500">No</td>
+              <td class="py-4 pr-4 text-gray-700 font-medium">Open Source</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Self-Hosting Available</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
             </tr>
             <tr class="border-b border-gray-100">
-              <td class="py-3 pr-4 text-gray-700">Open Source</td>
-              <td class="py-3 text-center text-green-600">Yes</td>
-              <td class="py-3 text-center text-red-500">No</td>
+              <td class="py-4 pr-4 text-gray-700 font-medium">Invoice Designs</td>
+              <td class="py-4 text-center text-gray-700">6</td>
+              <td class="py-4 text-center text-green-600 font-semibold">11</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Payment Gateways</td>
+              <td class="py-4 text-center text-gray-700">1</td>
+              <td class="py-4 text-center text-green-600 font-semibold">16</td>
             </tr>
             <tr class="border-b border-gray-100">
-              <td class="py-3 pr-4 text-gray-700">Self-Hosting Option</td>
-              <td class="py-3 text-center text-green-600">Yes</td>
-              <td class="py-3 text-center text-red-500">No</td>
+              <td class="py-4 pr-4 text-gray-700 font-medium">Purchase Orders</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Inventory Tracking</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Interlink Multiple Companies</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Attach 3rd Party Files for Clients</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Kanban Boards for Projects & Tasks</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Quotes Convert to Payable Invoices</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Subscriptions / Buy Now Links</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Create "Client Groups" Settings</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Web App</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-4 pr-4 text-gray-700 font-medium">Desktop App</td>
+              <td class="py-4 text-center text-red-500">&#10007;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-4 pr-4 text-gray-700 font-medium">iOS & Google Play</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
+              <td class="py-4 text-center text-green-600">&#10003;</td>
             </tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
 
-      <div class="text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Try Invoice Ninja Free</Button>
+  <!-- Social Proof -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-12 text-center">What the Experts Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+          <p class="text-gray-600 italic mb-4">"Invoice Ninja is a robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day..."</p>
+          <p class="text-primary font-semibold">-- CardRates.com</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+          <p class="text-gray-600 italic mb-4">"Invoice Ninja is well on its way to becoming one of the greats of the invoicing world! A great option for small business owners!"</p>
+          <p class="text-primary font-semibold">-- Merchant Maverick</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+          <p class="text-gray-600 italic mb-4">"The best free invoice software is not only easy on the bank account but user-friendly and packed with the features!"</p>
+          <p class="text-primary font-semibold">-- Forbes</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+          <p class="text-gray-600 italic mb-4">"2023 Best Invoicing for Freelancers. Invoice Ninja can give any other free invoicing and billing software a run for its money!"</p>
+          <p class="text-primary font-semibold">-- Money.com</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-12 text-center">What Our Users Say</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"Invoice Ninja is extremely easy to use for both your team and clients. It allows for you to create customizable and nicely designed invoices and quotes. You can customize the messaging sent in email communications. It also gives your clients their own portals to manage their accounts."</p>
+          <p class="text-dark font-semibold">-- Alberto O.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"Easy of use - Customization of the software - Integration to payment gateways - Automatic Invoice Reminders"</p>
+          <p class="text-dark font-semibold">-- Aslan C.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"Invoice Ninja has incredible features for invoice management. Being able to track and automate my invoices as a small business owner is fantastic!"</p>
+          <p class="text-dark font-semibold">-- Aaron L.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"I particularly like the client portal and the ability for my clients to log in at anytime to view their active or past invoices and payments. The ability to customize most of the details such as what is displayed on your invoice, where it's displayed, the colors, etc. is really great!"</p>
+          <p class="text-dark font-semibold">-- Kyle G.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"Great for both large organizations and smaller projects. Using it is straightforward and easy."</p>
+          <p class="text-dark font-semibold">-- Joseph S.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"10 out of 10. Easy to use, good user interface and overall great system. All invoicing options are available. 100% working and reliable."</p>
+          <p class="text-dark font-semibold">-- Robbe D.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"Works great! Easy to use and does exactly what we need it to. A very simple program and the costs are minimal. Not much to dislike about Invoice Ninja."</p>
+          <p class="text-dark font-semibold">-- Matt G.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"A simple solution to creating professional looking invoices that saves your time."</p>
+          <p class="text-dark font-semibold">-- Brent S.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"Sending invoices to customers is now so easy."</p>
+          <p class="text-dark font-semibold">-- Jonathan C.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"I LOVE INVOICE NINJA!!! ...is the MAN!!!!!"</p>
+          <p class="text-dark font-semibold">-- Andrew Y.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 italic mb-4">"Has vastly improved my invoicing process and made easy what was once an arduous task."</p>
+          <p class="text-dark font-semibold">-- Alexander F.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-12 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="bg-white rounded-xl p-6 shadow-sm group" open>
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            What are the benefits of using invoice templates?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-4">Businesses need clear, legally valid, timely, and professional invoices -- hastily typed documents lack credibility. Templates provide formatted structures where you upload your logo and company details, then add billing information for instant professionalism. Templates prevent omissions of crucial elements like sales tax, due dates, or contact information, saving time versus manual creation.</p>
+        </details>
+        <details class="bg-white rounded-xl p-6 shadow-sm group">
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            Which invoice template formats should I use?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-4">Browse Invoice Ninja's professional templates and select one matching your business style. The free plan includes four freelance invoice templates; Pro plans unlock eleven formats. Upload your business logo to customize every invoice for branding consistency.</p>
+        </details>
+        <details class="bg-white rounded-xl p-6 shadow-sm group">
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            How do I make an invoice for my small business?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-4">Create an Invoice Ninja account and enter your details and logo. Select your preferred template. Enter customer name, address, and relevant invoicing information. That's it! Integrate payment solutions like Stripe, PayPal, or WePay to enable "Pay Now" buttons. Access community support via Slack, forums, or contact our team directly.</p>
+        </details>
+        <details class="bg-white rounded-xl p-6 shadow-sm group">
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            Which are the best invoice templates?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-4">Invoice Ninja combines advanced software, security, and transparent pricing. The zero-cost option supports up to five clients with unlimited invoicing, four templates, branded documents, and auto-billing. Pro and Enterprise solutions scale with your business, supported by friendly customer service. Desktop apps and remote login access simplify invoice management.</p>
+        </details>
+        <details class="bg-white rounded-xl p-6 shadow-sm group">
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            How do I start invoicing online?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <div class="text-gray-600 mt-4">
+            <p class="mb-2">Four simple steps:</p>
+            <ol class="list-decimal list-inside space-y-1">
+              <li>Create a FREE Invoice Ninja account.</li>
+              <li>Upload your logo & choose an invoice design.</li>
+              <li>Integrate your payment gateway.</li>
+              <li>Create clients, invoices, and get paid!</li>
+            </ol>
+          </div>
+        </details>
+        <details class="bg-white rounded-xl p-6 shadow-sm group">
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            How do my clients pay their invoices online?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-4">A payment gateway processes client payments. After integrating one with Invoice Ninja, clients see a "Pay Now" button on invoices within their portal. The gateway processes the payment and deposits funds into your business account. Invoice Ninja supports dozens of payment gateways.</p>
+        </details>
+        <details class="bg-white rounded-xl p-6 shadow-sm group">
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            How do I upload my company logo on invoices?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-4">Navigate to Settings > Company Details and click "Logo" to upload or change your logo. This feature is available on all invoice plans, including the free option.</p>
+        </details>
+        <details class="bg-white rounded-xl p-6 shadow-sm group">
+          <summary class="text-lg font-semibold text-dark cursor-pointer list-none flex justify-between items-center">
+            How do I customize my invoice template design?
+            <span class="text-primary transition-transform group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-4">Free accounts include four invoice template designs; Pro & Enterprise plans include eleven. All plans allow logo uploads for professional branding. Pro & Enterprise plans offer advanced customization options.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Disclaimer -->
+  <section class="py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="text-xs text-gray-400 text-center">Legal disclaimer: The above pricing & feature sets are publicly listed by competitors on their websites and are accurate to the best of our knowledge. Although we do our best to ensure that all data is up-to-date, competitors may periodically update their pricing and feature sets. We welcome communication to ensure accurate data is presented on this site. Please email contact@invoiceninja.com with updates or discrepancies.</p>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Start Invoicing Today!</h2>
+      <p class="text-xl text-gray-600 mb-4">Create. Send. Get Paid.</p>
+      <p class="text-gray-500 mb-8">Find out why small businesses around the world trust Invoice Ninja. You can focus on doing what you love, we'll help with the invoicing.</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Test Drive!</Button>
     </div>
   </section>
 

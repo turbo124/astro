@@ -8,16 +8,98 @@ import Button from "../components/ui/Button.astro";
 <BaseLayout title="PCI Compliance" description="Invoice Ninja PCI compliance information for secure payment processing." path="/pci/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">PCI Compliance</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Invoice Ninja PCI compliance information for secure payment processing.</p>
-      </div>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">PCI Compliance</h1>
+    </div>
+  </section>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+  <!-- What is PCI Compliance -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">What is PCI Compliance?</h2>
+
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        The Payment Card Industry Data Security Standard (PCI DSS) is a set of security standards designed to ensure
+        that <strong>ALL</strong> companies that accept, process, store or transmit credit card information maintain a
+        secure environment.
+      </p>
+
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        The PCI DSS applies to any organization, regardless of size or number of transactions, that accepts, transmits
+        or stores any cardholder data.
+      </p>
+
+      <p class="text-gray-700 text-lg leading-relaxed">
+        The current PCI DSS documents can be found on the
+        <a
+          href="https://www.pcisecuritystandards.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary hover:text-primary-dark font-semibold transition-colors"
+        >PCI Security Standards Council website</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Certification -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">Our Certification</h2>
+
+      <p class="text-gray-700 text-lg leading-relaxed mb-8">
+        Invoice Ninja holds a Certificate of PCI DSS (Payment Card Industry Data Security Standards) Validation.
+        Merchant Compliance recognized by SecurityMetrics.
+      </p>
+
+      <div class="flex justify-center mb-8">
+        <a
+          href="https://www.securitymetrics.com/site_certificate?id=2194180&tk=11f7f9f17ddd4979bf4ce24ebabd1555"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://www.securitymetrics.com/images/sm_pci_dss_compliant.png"
+            alt="SecurityMetrics PCI DSS Compliant"
+            class="h-32"
+            loading="lazy"
+          />
+        </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8">Contact Us</h2>
+
+      <p class="text-gray-700 text-lg leading-relaxed mb-4">
+        If you have any compliance-related questions, please contact us at:
+      </p>
+
+      <ul class="list-disc list-inside text-gray-700 text-lg space-y-2">
+        <li>
+          <a href="mailto:compliance@invoiceninja.com" class="text-primary hover:text-primary-dark font-semibold transition-colors">
+            compliance@invoiceninja.com
+          </a>
+        </li>
+        <li>
+          <a href="mailto:legal@invoiceninja.com" class="text-primary hover:text-primary-dark font-semibold transition-colors">
+            legal@invoiceninja.com
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Start using Invoice Ninja Today!</h2>
+      <p class="text-xl text-gray-600 mb-8">Create. Send. Get Paid.</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Sign up</Button>
     </div>
   </section>
 

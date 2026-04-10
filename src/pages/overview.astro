@@ -3,20 +3,377 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const invoicingFeatures = [
+  "One-click client payment processing",
+  "Branded subdomain URLs (YourBrand.invoicing.co)",
+  "Professional template designs (11 base templates)",
+  "Accept deposits & partial payments",
+  "Email integration (Gmail, Microsoft, SMTP)",
+  "Customizable auto-reminder emails",
+  "E-signature display on invoices",
+  "Auto-billing & recurring invoicing",
+  "Product library management",
+  "Inventory management with stock tracking",
+  "Profit & loss reporting",
+];
+
+const quotationFeatures = [
+  "Client approval & one-click conversion to invoices",
+  "Shared template designs with invoices",
+  "Bulk email quotes to clients",
+  "Expiration date settings with auto-archiving",
+  "Track quote status from sent to approved",
+];
+
+const paymentGateways = [
+  { name: "Stripe", logo: "/images/gateways/stripe.svg" },
+  { name: "PayPal", logo: "/images/gateways/paypal.svg" },
+  { name: "Authorize.net", logo: "/images/gateways/authorize-net.svg" },
+  { name: "Checkout.com", logo: "/images/gateways/checkout-com.svg" },
+  { name: "GoCardless", logo: "/images/gateways/gocardless.svg" },
+  { name: "Square", logo: "/images/gateways/square.svg" },
+  { name: "Mollie", logo: "/images/gateways/mollie.svg" },
+  { name: "PayFast", logo: "/images/gateways/payfast.svg" },
+  { name: "PayTrace", logo: "/images/gateways/paytrace.svg" },
+  { name: "Razorpay", logo: "/images/gateways/razorpay.svg" },
+  { name: "Eway", logo: "/images/gateways/eway.svg" },
+  { name: "Forte", logo: "/images/gateways/csg-forte.svg" },
+  { name: "BTCPay", logo: "/images/gateways/btcpay.svg" },
+];
+
+const testimonials = [
+  {
+    quote: "Invoice Ninja is a robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day\u2026",
+    source: "CardRates.com",
+    href: "https://www.cardrates.com/news/invoice-ninja-makes-getting-paid-seamless-for-smbs/",
+  },
+  {
+    quote: "Invoice Ninja is well on its way to becoming one of the greats of the invoicing world! A great option for small business owners!",
+    source: "Merchant Maverick",
+    href: "https://www.merchantmaverick.com/review-category/invoicing-software/?sortby=rating&pagen=0",
+  },
+  {
+    quote: "The best free invoice software is not only easy on the bank account but user-friendly and packed with the features!",
+    source: "Forbes",
+    href: "https://www.forbes.com/advisor/business/software/best-free-invoice-software/",
+  },
+  {
+    quote: "2023 Best Invoicing for Freelancers",
+    source: "Money.com",
+    href: "https://money.com/best-invoicing-software/",
+  },
+];
 ---
 
-<BaseLayout title="Invoice Ninja Overview" description="The complete invoicing platform for freelancers and small businesses. Create invoices, accept payments, track time, manage expenses — all in one place." path="/overview/">
+<BaseLayout title="Overview" description="Make it easy for clients to pay you. Powerful apps to run your business: invoicing, quotes, payments, projects, tasks, expenses and more." path="/overview/">
   <Header slot="header" />
 
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Overview</h1>
+      <p class="text-xl text-gray-500 mb-2">All Benefits</p>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">Make it easy for clients to pay you. Powerful apps to run your business.</p>
+      <div class="flex flex-wrap justify-center gap-4 mt-10">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account</Button>
+        <Button href="https://react.invoicing.co/demo" variant="outline" size="lg">Try Demo</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="py-12 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="#invoicing" class="group flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark group-hover:text-primary transition-colors">Invoicing, Quotes & Payments</h3>
+            <p class="text-sm text-gray-500">Bill clients and get paid fast</p>
+          </div>
+        </a>
+        <a href="#projects" class="group flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark group-hover:text-primary transition-colors">Tasks & Projects</h3>
+            <p class="text-sm text-gray-500">Track time and manage work</p>
+          </div>
+        </a>
+        <a href="#expenses" class="group flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" /></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark group-hover:text-primary transition-colors">Vendors & Expenses</h3>
+            <p class="text-sm text-gray-500">Create vendors & track expenses</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Dashboard -->
   <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">Dynamic Dashboard</h2>
+          <p class="text-gray-600 mb-6">Get an intuitive overview of your company activity at a glance. Your dashboard is the command center for your entire business.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-600"><strong class="text-dark">Revenue tracking</strong> &mdash; View total revenue, outstanding balances, and payment trends over custom date ranges</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-600"><strong class="text-dark">Activity overview</strong> &mdash; Track client activity, system logs, and recent records all in one place</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-600"><strong class="text-dark">Upcoming invoices</strong> &mdash; See upcoming and past-due invoices and quotes at a glance</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-gray-600"><strong class="text-dark">Custom date ranges</strong> &mdash; Set date-range parameters to analyze specific periods</span>
+            </li>
+          </ul>
+        </div>
+        <img src="/images/home/Invoice-Ninja-v5-1.png" alt="Invoice Ninja dynamic dashboard" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Invoicing Module -->
+  <section id="invoicing" class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="/images/how-it-works/email-invoices-thumbnail.png" alt="Invoice Ninja invoicing" class="w-full rounded-xl shadow-lg" loading="lazy" />
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Invoicing</h2>
+          <p class="text-gray-600 mb-6">Create and send professional invoices in seconds. Get paid faster with one-click online payments.</p>
+          <div class="grid grid-cols-1 gap-3">
+            {invoicingFeatures.map((feature) => (
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-sm text-gray-700">{feature}</span>
+              </div>
+            ))}
+          </div>
+          <a href="/invoicing/" class="inline-block mt-6 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more about invoicing &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quotations Module -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Quotations</h2>
+          <p class="text-gray-600 mb-6">Send professional quotes and convert them to invoices with a single click when your client approves.</p>
+          <div class="grid grid-cols-1 gap-3">
+            {quotationFeatures.map((feature) => (
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-sm text-gray-700">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <img src="/images/how-it-works/invoices.png" alt="Invoice Ninja quotations" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Payments Module -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Invoice Ninja Overview</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">The complete invoicing platform for freelancers and small businesses. Create invoices, accept payments, track time, manage expenses — all in one place.</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Payments</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Accept payments from clients around the world with 13+ supported payment gateways. Let your clients pay the way they prefer.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {paymentGateways.map((gw) => (
+          <div class="flex flex-col items-center gap-3 p-5 bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-primary/20 transition-all">
+            <img src={gw.logo} alt={gw.name} class="h-10 w-auto object-contain" loading="lazy" />
+            <span class="text-sm font-medium text-gray-700">{gw.name}</span>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-8">And more gateway integrations available. <a href="/payments/" class="text-primary hover:text-primary-dark font-semibold">View all payment options &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- Projects, Tasks & Time Tracking -->
+  <section id="projects" class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="/images/how-it-works/track-work-tasks.png" alt="Projects, tasks and time tracking" class="w-full rounded-xl shadow-lg" loading="lazy" />
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Projects, Tasks & Time Tracking</h2>
+          <p class="text-gray-600 mb-6">Organize your work, track billable time, and invoice clients directly from your task list.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Organize tasks under projects with budget control limits</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">One-click task invoicing &mdash; convert tracked time directly to invoices</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Assign tasks to team members with role-based permissions</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Kanban board task management for visual workflow</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Built-in billable time tracking with start/stop timer</span>
+            </li>
+          </ul>
+          <a href="/projects/" class="inline-block mt-6 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more about projects &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vendors, Purchase Orders & Expense Tracking -->
+  <section id="expenses" class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Vendors, Purchase Orders & Expense Tracking</h2>
+          <p class="text-gray-600 mb-6">Manage vendor relationships, create purchase orders, and track every business expense in one unified system.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Create and manage vendor profiles with contact details</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Track and categorize expenses with custom categories</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Re-invoice expenses directly to clients</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Generate vendor statements and expense reports</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Create purchase orders and convert them to billable expenses</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span class="text-sm text-gray-700">Attach receipts and documents to expense records</span>
+            </li>
+          </ul>
+          <a href="/expenses/" class="inline-block mt-6 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more about expenses &rarr;</a>
+        </div>
+        <img src="/images/how-it-works/track-expanses.png" alt="Expense tracking and vendor management" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof / Testimonials -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark">Trusted by 200,000+ Businesses</h2>
+        <p class="mt-3 text-lg text-gray-500">See what the press is saying about Invoice Ninja</p>
       </div>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map((t) => (
+          <a href={t.href} target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+            <div class="flex gap-1 mb-4">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-gray-600 leading-relaxed mb-4 text-sm">
+              &ldquo;{t.quote}&rdquo;
+            </blockquote>
+            <div class="text-sm font-semibold text-primary">{t.source}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Community & Support -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Community & Support</h2>
+        <p class="text-lg text-gray-600">Join the Invoice Ninja community. Get help, share ideas, and connect with other users.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Forums / Email -->
+        <div class="bg-white rounded-xl p-8 border border-gray-200 text-center hover:shadow-md transition-all">
+          <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-dark mb-2">Email Support</h3>
+          <p class="text-sm text-gray-600">Reach our team directly for help with your account or technical questions.</p>
+          <a href="/contact-support/" class="inline-block mt-4 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Contact us &rarr;</a>
+        </div>
+
+        <!-- Slack -->
+        <div class="bg-white rounded-xl p-8 border border-gray-200 text-center hover:shadow-md transition-all">
+          <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-dark mb-2">Slack</h3>
+          <p class="text-sm text-gray-600">Join our Slack community to chat with developers and other Invoice Ninja users.</p>
+          <a href="https://invoiceninja.slack.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Join Slack &rarr;</a>
+        </div>
+
+        <!-- Forums -->
+        <div class="bg-white rounded-xl p-8 border border-gray-200 text-center hover:shadow-md transition-all">
+          <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-dark mb-2">Forums</h3>
+          <p class="text-sm text-gray-600">Browse community discussions, ask questions, and find answers from other users.</p>
+          <a href="https://forum.invoiceninja.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Visit forums &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="bg-primary py-20 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Start Invoicing Today!</h2>
+      <p class="mt-4 text-lg text-white/80">Invoice Clients, Get Paid Fast!</p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a
+          href="https://app.invoicing.co/#/register"
+          class="inline-block px-10 py-4 text-lg font-semibold text-primary bg-white rounded-xl hover:bg-gray-50 transition-all shadow-lg"
+        >
+          Create a Free Account
+        </a>
+        <a
+          href="https://react.invoicing.co/demo"
+          class="inline-block px-10 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-all"
+        >
+          Try Demo
+        </a>
       </div>
     </div>
   </section>

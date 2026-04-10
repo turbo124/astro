@@ -3,21 +3,232 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const expenseFeatures = [
+  "Easily Create & Manage Expenses",
+  "Auto-Import Bank Transactions via Yodlee",
+  "Auto-Import Bank Transactions via GoCardless",
+  "Convert & Invoice Clients for Expenses",
+  "Create Vendors & Organize Categories",
+  "Expense Reporting, Vendor Statements",
+  "Create Recurring Expense Profiles",
+  "Support Marking Expenses as Logged or Paid",
+  "Support Exporting Expenses & Vendors",
+  "Bulk Assign Expense Categories",
+  "Bulk Create Expenses from Transactions",
+];
+
+const purchaseOrderFeatures = [
+  "Create & Email Purchase Orders to Vendors",
+  "Convert Purchase Orders to Billable Expenses",
+  "Track PO's & Converted Expenses per Vendor",
+  "Run Profit & Loss Reports for PO's, Vendors, Expenses",
+  "PO's can be Cloned to Create Invoices, Quotes, Credits",
+  "Much more!",
+];
+
+const capabilityCards = [
+  {
+    title: "Mark Expenses as Billable",
+    desc: "Mark expenses as 'billable' and send to re-invoice with 1-click!",
+    icon: "M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z",
+  },
+  {
+    title: "Recurring Expense Profiles",
+    desc: "Set up ongoing recurring expense profiles to save time.",
+    icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
+  },
+  {
+    title: "Reports, Aging & Statements",
+    desc: "Understand the bigger financial picture with our report features.",
+    icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+  },
+  {
+    title: "Importing Expenses & Vendors",
+    desc: "Automatically import your expenses data to your Invoice Ninja account.",
+    icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12",
+  },
+  {
+    title: "Vendor Purchase Orders",
+    desc: "Create Purchase Orders to email vendors. Approved PO's convert into expenses to rebill or log for reporting.",
+    icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+  },
+  {
+    title: "Banking Integration via Yodlee or Nordigen",
+    desc: "With the Invoice Ninja + Yodlee and/or Nordigen integrations you can automatically import expenses & transactions from your bank accounts, credit cards, and PayPal.",
+    icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
+  },
+];
+
+const faqs = [
+  {
+    q: "Does Invoice Ninja offer an API?",
+    a: "Yes! As part of the Pro & Enterprise plans you have REST API access.",
+  },
+  {
+    q: "How do my clients pay their invoices online?",
+    a: "After integrating a payment gateway to your Invoice Ninja account, your clients will see a 'Pay Now' button on their invoices. The payment gateway processes the payment and your clients never leave their Invoice Ninja client-side portal. Subsequently the gateway deposits the money to your bank account. Invoice Ninja supports dozens of payment gateways.",
+  },
+  {
+    q: "How do I upload my company logo on invoices?",
+    a: "Navigate to Settings > Company Details, and click 'Logo' to upload or change your logo. This is available to all plans, including free!",
+  },
+  {
+    q: "Do you offer a client-side portal for my clients?",
+    a: "Yes, all your clients have access to a client-side portal to view their invoices, payment history, documents, and more. Your clients can also update their payment details on file for recurring invoices with auto-billing.",
+  },
+  {
+    q: "Can I add more users but limit what they see or do?",
+    a: "Yes, the Enterprise plans allow you to add up to 50 additional account users! You can adjust user permissions to create/edit/view only.",
+  },
+  {
+    q: "Can I run reports & year-end P&L's?",
+    a: "Yes, as part of the Pro & Enterprise plans you have access to a robust reporting module to create custom reports within calendar/date parameters you define.",
+  },
+  {
+    q: "How do I integrate with Zapier?",
+    a: "After upgrading to Pro or Enterprise, navigate to Settings > Account Management, and click 'Zapier'.",
+  },
+];
+
+const connectCards = [
+  { title: "Ninja Support Forums", desc: "Connect with thousands of Invoice Ninja users on our community forums.", cta: "Launch Forums!", href: "https://forum.invoiceninja.com" },
+  { title: "Contact Email", desc: "We want to hear from you! Questions? We're here to help!", cta: "Email Us", href: "mailto:contact@invoiceninja.com" },
+  { title: "Slack Community", desc: "Join over 5,000 Invoice Ninja members on our community Slack channel!", cta: "Join Slack", href: "https://invoiceninja.slack.com" },
+];
 ---
 
 <BaseLayout title="Expenses, Vendors & Purchase Orders" description="Track expenses, manage vendors, create purchase orders, and re-invoice costs to clients." path="/expenses/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Expenses, Vendors & Purchase Orders</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Track expenses, manage vendors, create purchase orders, and re-invoice costs to clients.</p>
-      </div>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Expenses, Vendors, Purchase Orders</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Tools to Manage Business</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+    </div>
+  </section>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+  <!-- Expenses & Vendors -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-bold text-dark mb-4">Expenses & Vendors</h2>
+          <p class="text-gray-600 mb-6">With Invoice Ninja, all sales, expenses, clients and vendors are stored and managed in one system.</p>
+          <ul class="space-y-3">
+            {expenseFeatures.map((feature) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700 text-sm">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center">
+          <img src="/images/how-it-works/track-expanses.png" alt="Track expenses with Invoice Ninja" class="w-full rounded-lg" loading="lazy" />
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Purchase Orders -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="bg-white rounded-2xl p-8 flex items-center justify-center md:order-first">
+          <img src="/images/home/Frame-37210.png" alt="Purchase Orders" class="w-full rounded-lg" loading="lazy" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-dark mb-4">Purchase Orders</h2>
+          <p class="text-gray-600 mb-6">Create Vendor Purchase Orders that convert to Expenses.</p>
+          <ul class="space-y-3">
+            {purchaseOrderFeatures.map((feature) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700 text-sm">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Capability Cards -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-12">Expense Management Capabilities</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {capabilityCards.map((card) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d={card.icon} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-dark mb-2">{card.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{card.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-4">Frequently Asked Questions</h2>
+      <p class="text-center text-gray-500 mb-10">Everything you need to know about Invoice Ninja expenses.</p>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-sm font-semibold text-dark hover:bg-gray-50 transition-colors">
+              {faq.q}
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-4">
+              <p class="text-sm text-gray-600">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Community & Support -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark text-center mb-10">Let's Connect!</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {connectCards.map((card) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200 text-center hover:border-primary/30 hover:shadow-lg transition-all">
+            <h3 class="text-lg font-bold text-dark mb-2">{card.title}</h3>
+            <p class="text-sm text-gray-500 mb-4">{card.desc}</p>
+            <a href={card.href} class="inline-block px-5 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+              {card.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="bg-primary py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Start Invoicing Today!</h2>
+      <p class="text-lg text-white/80 mb-8">Create. Send. Get Paid.</p>
+      <a href="https://app.invoicing.co/#/register" class="inline-block px-10 py-4 text-lg font-semibold text-primary bg-white rounded-xl hover:bg-gray-50 transition-all shadow-lg">
+        Get Started Free
+      </a>
     </div>
   </section>
 

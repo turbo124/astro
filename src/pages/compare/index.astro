@@ -3,18 +3,124 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Button from "../../components/ui/Button.astro";
+
+const competitors = [
+  { name: "Invoice Ninja Pro", price: "$140", highlight: true },
+  { name: "FreshBooks", price: "$756", highlight: false },
+  { name: "Invoice2Go", price: "$449.99", highlight: false },
+  { name: "HiveAge", price: "$504+", highlight: false },
+  { name: "Invoicely", price: "$287.88", highlight: false },
+  { name: "QuickBooks", price: "$1,188", highlight: false },
+  { name: "Xero", price: "$960", highlight: false },
+  { name: "Invoiced", price: "$6,000", highlight: false },
+  { name: "Zoho", price: "$468", highlight: false },
+];
+
+const pressQuotes = [
+  {
+    quote: "Invoice Ninja is a robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day\u2026",
+    source: "CardRates.com",
+    href: "https://www.cardrates.com/news/invoice-ninja-makes-getting-paid-seamless-for-smbs/",
+  },
+  {
+    quote: "Invoice Ninja is well on its way to becoming one of the greats of the invoicing world! A great option for small business owners!",
+    source: "Merchant Maverick",
+    href: "https://www.merchantmaverick.com/review-category/invoicing-software/?sortby=rating&pagen=0",
+  },
+  {
+    quote: "The best free invoice software is not only easy on the bank account but user-friendly and packed with the features!",
+    source: "Forbes",
+    href: "https://www.forbes.com/advisor/business/software/best-free-invoice-software/",
+  },
+  {
+    quote: "2023 Best Invoicing for Freelancers. Invoice Ninja can give any other free invoicing and billing software a run for its money!",
+    source: "Money.com",
+    href: "https://money.com/best-invoicing-software/",
+  },
+];
+
+const testimonials = [
+  { quote: "Easy of use - Customization of the software - Integration to payment gateways - Automatic Invoice Reminders", author: "Alberto O." },
+  { quote: "Invoice Ninja has incredible features for invoice management. Being able to track and automate my invoices as a small business owner is fantastic!", author: "Aslan C." },
+  { quote: "Being able to track and automate my invoices as a small business owner is fantastic!", author: "Aaron L." },
+  { quote: "I particularly like the client portal and the ability for my clients to log in at anytime to view their active or past invoices and payments. The ability to customize most of the details such as what is displayed on your invoice, where it's displayed, the colors, etc. is really great!", author: "Kyle G." },
+  { quote: "Great for both large organizations and smaller projects. Using it straightforward and easy.", author: "Joseph S." },
+  { quote: "10 out of 10. Easy to use, good user interface and overall great system. All invoicing options are available. 100% working and reliable.", author: "Robbe D." },
+  { quote: "Works great! Easy to use and does exactly what we need it to. A very simple program and the costs are minimal, not much to dislike about Invoice Ninja.", author: "Matt G." },
+  { quote: "A simple solution to creating professional looking invoices that saves your time.", author: "Brent S." },
+  { quote: "Sending invoices to customers is now so easy.", author: "Jonathan C." },
+  { quote: "I LOVE INVOICE NINJA!!! ...is the MAN!!!!", author: "Andrew Y." },
+  { quote: "Has vastly improved my invoicing process and made easy what was once an arduous task.", author: "Alexander F." },
+];
+
+const faqs = [
+  {
+    question: "What are the benefits of using invoice templates?",
+    answer: `<p>Businesses need their invoices to be clear, legally valid, set on time and professional\u2013a hastily typed Word document or email simply doesn't give the right impression and can pretty easily be mistaken for spam. Invoice template provides a done-for-you format. All you need to do is upload your logo and company details (or personal information if you're a freelancer) and enter the relevant billing to have a professional invoice. It's quick, simple, and free!</p>
+<p>Missing out something crucial from an invoice is all too easy when you're in a rush, working through a massive pile of outstanding admin, or trying to type or write out every business invoice manually. Our templates are ready to go, with options to link to your preferred payment method, ensuring you don't skip past anything important, such as sales tax, payment due dates, or your contact details.</p>`,
+  },
+  {
+    question: "Which invoice template formats should I use?",
+    answer: `<p>The choice of invoice template is yours\u2013browse through our professional templates and pick a style that feels right for your business! Our free plan includes four freelance invoice templates to choose from, or you can go Pro and unlock access to a library of eleven invoice formats that you can use for your business.</p>
+<p>When you first create your Invoice Ninja account, we'll give you a nudge to upload your business logo to invoices, so every invoice you produce is tailored to you.</p>`,
+  },
+  {
+    question: "How do I make an invoice for my small business?",
+    answer: `<p>It's simple, and you don't need bookkeeping or accounting expertise to produce professional, consistent invoices, whether you're an experienced business owner or just starting out. Here's how it works:</p>
+<p>Create an Invoice Ninja account, enter your details, and upload your logo onto the invoice. Pick the template you like best, and type in the relevant info: customer name, address, and any other relevant invoicing details. That's it! Shoot your invoice over to your client directly and integrate your payments solution if you wish, such as a Pay Now button linked to your Stripe, PayPal or WePay account, and you can tick your invoicing off the list.</p>
+<p>If you get stuck or need a few pointers, you can access tons of tips with over 5,000 community members in our exclusive Slack group, a wealth of guidance in our online forums, or you can send us a quick message for support from the Invoice Ninja team.</p>`,
+  },
+  {
+    question: "Which are the best invoice templates?",
+    answer: `<p>We set out to make business invoicing stress-free and seamless, combining advanced software features and security with transparent pricing, amazing service, and all the tools you need.</p>
+<p>Our pricing plans are varied and scalable, starting with a zero-cost option for up to 5 clients, unlimited invoicing, four templates, branded documents, and auto-billing functionality. As your business grows, we're right here with you, offering Pro and Enterprise solutions, always backed by our friendly support services.</p>
+<p>Invoice Ninja also has a handy desktop app, or you can log into your account from anywhere, making it easier than ever to handle your invoicing remotely in just a few clicks.</p>`,
+  },
+  {
+    question: "How do I start invoicing online?",
+    answer: `<p><a href="/how-it-works/" class="text-primary hover:underline">Where do I begin?</a></p>
+<ol class="list-decimal list-inside space-y-2 mt-2">
+<li><a href="https://app.invoicing.co/#/register" class="text-primary hover:underline">Create a FREE Invoice Ninja account</a></li>
+<li>Upload your logo & <a href="/invoice-templates/" class="text-primary hover:underline">choose an invoice design</a></li>
+<li>Integrate your <a href="/payments/" class="text-primary hover:underline">payment gateway</a></li>
+<li><a href="/features/" class="text-primary hover:underline">Create clients, invoices, get paid!</a></li>
+</ol>`,
+  },
+  {
+    question: "How do my clients pay their invoices online?",
+    answer: `<p>A merchant processor is also called a 'payment gateway'. After integrating a <a href="/payments/" class="text-primary hover:underline">payment gateway</a> with your Invoice Ninja account, your clients will see a "Pay Now" button on their invoices.</p>
+<p class="font-semibold mt-3">What is a Merchant Processor/ "Payment Gateway"</p>
+<p>The 'payment gateway' processes your clients payment and your clients never leave their Invoice Ninja client-portal. The payment gateway then deposits the money into your business bank account.</p>
+<p>Invoice Ninja supports dozens of payment gateways, <a href="/payments/" class="text-primary hover:underline">click here for the full list.</a></p>`,
+  },
+  {
+    question: "How do I upload my company logo on invoices?",
+    answer: `<p>Navigate to Settings>Company Details, and click "Logo" to upload or change your logo. This is available to all invoice plans, including free:)</p>`,
+  },
+  {
+    question: "How do I customize my invoice template design?",
+    answer: `<p>Free Invoice Ninja accounts include 4 free <a href="/invoice-templates/" class="text-primary hover:underline">invoice template designs</a>, Pro & Enterprise plans include 11 <a href="/invoice-templates/" class="text-primary hover:underline">invoice template designs</a>!</p>
+<p>All plans allow you to upload your company logo/branding to invoice clients with a professionally branded invoice design.</p>
+<p>The <a href="/pricing-plans/" class="text-primary hover:underline">Pro & Enterprise plans</a> also allow advanced customization of invoice designs.</p>`,
+  },
+];
 ---
 
 <BaseLayout title="Compare Invoice Ninja" description="See how Invoice Ninja compares to FreshBooks, QuickBooks, Xero, Zoho and more." path="/compare/">
   <Header slot="header" />
 
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Overpaying, just to get paid?</h1>
+      <p class="text-xl text-gray-600 mb-8">Invoice Ninja offers Free & Premium plans that outshine expensive competition!</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Try it now for FREE!</Button>
+    </div>
+  </section>
+
+  <!-- Pricing Comparison Table -->
   <section class="py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Overpaying, just to get paid?</h1>
-        <p class="text-xl text-gray-600">See how Invoice Ninja stacks up against the competition.</p>
-      </div>
-
       <div class="overflow-x-auto">
         <table class="w-full text-left">
           <thead>
@@ -24,29 +130,150 @@ import Button from "../../components/ui/Button.astro";
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b border-gray-100 bg-primary/5">
-              <td class="py-4 pr-4 font-bold text-primary">Invoice Ninja Pro</td>
-              <td class="py-4 text-right font-bold text-primary">$140</td>
-            </tr>
-            {[
-              ["FreshBooks", "$756"], ["Invoice2Go", "$450"], ["HiveAge", "$504+"],
-              ["Invoicely", "$288"], ["QuickBooks", "$1,188"], ["Xero", "$960"],
-              ["Invoiced", "$6,000"], ["Zoho", "$468"],
-            ].map(([name, price]) => (
-              <tr class="border-b border-gray-100">
-                <td class="py-4 pr-4 text-gray-700">{name}</td>
-                <td class="py-4 text-right text-gray-700">{price}</td>
+            {competitors.map((c) => (
+              <tr class:list={["border-b border-gray-100", c.highlight && "bg-primary/5"]}>
+                <td class:list={["py-4 pr-4", c.highlight ? "font-bold text-primary" : "text-gray-700"]}>{c.name}</td>
+                <td class:list={["py-4 text-right", c.highlight ? "font-bold text-primary" : "text-gray-700"]}>{c.price}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      <div class="mt-10 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Disclaimer -->
+  <section class="pb-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-xs text-gray-400 leading-relaxed text-center">
+        The above pricing is listed by competitors on their websites and are accurate to the best of our knowledge. Although we do our best to ensure that all data is up-to-date, competitors may periodically update their pricing, feature sets, plan packages, or run promotions. We welcome communication to ensure accurate data is presented on this site. Please email <a href="mailto:contact@invoiceninja.com" class="text-primary hover:underline">contact@invoiceninja.com</a> with updates or data to correct any discrepancies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Social Proof: Press Quotes -->
+  <section class="bg-gray-50 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark">200,000+ users trust Invoice Ninja.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {pressQuotes.map((t) => (
+          <a href={t.href} target="_blank" rel="noopener noreferrer" class="block bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+            <div class="flex gap-1 mb-5">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-gray-600 leading-relaxed mb-6 text-sm">
+              &ldquo;{t.quote}&rdquo;
+            </blockquote>
+            <div class="text-sm font-semibold text-primary">{t.source}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- "Find out why" CTA -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-dark mb-4">Find out why small businesses around the world trust Invoice Ninja.</h2>
+      <p class="text-lg text-gray-600 mb-8">You can focus on doing what you love, we'll help with the invoicing.</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
+    </div>
+  </section>
+
+  <!-- User Testimonials -->
+  <section class="bg-gray-50 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark">What our users say</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((t) => (
+          <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-100">
+            <div class="flex gap-1 mb-4">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="text-gray-600 leading-relaxed mb-4 text-sm">
+              &ldquo;{t.quote}&rdquo;
+            </blockquote>
+            <div class="text-sm font-semibold text-dark">{t.author}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-white py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-dark">Frequently asked questions</h2>
+      </div>
+
+      <div class="space-y-3" id="compare-faq-list">
+        {faqs.map((faq) => (
+          <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+            <button
+              class="compare-faq-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+              aria-expanded="false"
+            >
+              <span class="text-base font-semibold text-dark pr-4">{faq.question}</span>
+              <svg class="compare-faq-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="compare-faq-content hidden px-6 pb-6">
+              <div class="text-sm text-gray-600 leading-relaxed space-y-3" set:html={faq.answer} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-primary py-20 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Start Invoicing Today!</h2>
+      <p class="mt-4 text-lg text-white/80">Invoice Clients, Get Paid Fast!</p>
+      <div class="mt-10">
+        <a
+          href="https://app.invoicing.co/#/register"
+          class="inline-block px-10 py-4 text-lg font-semibold text-primary bg-white rounded-xl hover:bg-gray-50 transition-all shadow-lg"
+        >
+          Test Drive!
+        </a>
       </div>
     </div>
   </section>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  // FAQ accordion toggle
+  document.querySelectorAll('.compare-faq-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.compare-faq-arrow');
+      const isOpen = content?.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      arrow?.classList.toggle('rotate-180', isOpen);
+    });
+  });
+</script>

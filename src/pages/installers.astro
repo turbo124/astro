@@ -17,23 +17,73 @@ import Card from "../components/ui/Card.astro";
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
-          { name: "Softaculous", desc: "Automate installation on cPanel-based hosting." },
-          { name: "Cloudron", desc: "Auto-updates, security fixes, and managed deployments." },
-          { name: "Coolify", desc: "Open-source self-hostable Heroku/Netlify alternative." },
-          { name: "Elestio", desc: "Managed deployment with encryption, backups, and monitoring." },
-          { name: "Installatron", desc: "One-click installation and management." },
-          { name: "Hossted", desc: "Instantly deploy on your cloud infrastructure." },
-          { name: "Umbrel", desc: "Run on your own home cloud environment." },
+          {
+            name: "Softaculous",
+            desc: "Install Invoice Ninja simply and effectively with Softaculous, designed to automate the installation of web applications on cPanel-based hosting.",
+            href: "https://www.softaculous.com/apps/ecommerce/Invoice_Ninja",
+            logo: "/images/software/softaculous.svg",
+          },
+          {
+            name: "Cloudron",
+            desc: "Tired of installation docs and tinkering with Dockerfiles? Cloudron keeps your apps and server updated with the latest releases and security fixes.",
+            href: "https://www.cloudron.io/button/com.invoiceninja.cloudronapp2.html",
+            logo: "/images/software/cloudron.svg",
+          },
+          {
+            name: "Coolify",
+            desc: "An open-source and self-hostable Heroku / Netlify / Vercel alternative for deploying Invoice Ninja.",
+            href: "https://coolify.io/docs/services/invoice-ninja",
+            logo: "/images/software/coolify.svg",
+          },
+          {
+            name: "Elestio",
+            desc: "Deploy a fully managed instance of Invoice Ninja in minutes. They handle installation, configuration, encryption, backups, and live monitoring.",
+            href: "https://elest.io/open-source/invoiceninja",
+            logo: "/images/software/elestio.svg",
+          },
+          {
+            name: "Installatron",
+            desc: "Installatron Remote is a one-click solution to install and manage all of your Invoice Ninja websites.",
+            href: "https://installatron.com/invoiceninja",
+            logo: "/images/software/installatron.svg",
+          },
+          {
+            name: "Hossted",
+            desc: "Deployment and maintenance for deploying open-source applications instantly on your cloud infrastructure.",
+            href: "https://hossted.com/applications/invoiceninja/",
+            logo: "/images/software/hossted.svg",
+          },
+          {
+            name: "Umbrel",
+            desc: "Run Invoice Ninja on your own home cloud environment via the Umbrel App Store.",
+            href: "https://apps.umbrel.com/app/invoice-ninja",
+            logo: null,
+          },
         ].map((item) => (
-          <Card padding="md">
-            <h3 class="text-lg font-bold text-dark mb-2">{item.name}</h3>
-            <p class="text-sm text-gray-600">{item.desc}</p>
-          </Card>
+          <a href={item.href} target="_blank" rel="noopener noreferrer" class="block p-6 rounded-xl border border-gray-200 bg-white hover:border-primary/30 hover:shadow-lg transition-all duration-200">
+            <div class="flex items-center gap-4 mb-3">
+              {item.logo && (
+                <img src={item.logo} alt={`${item.name} logo`} class="w-10 h-10 object-contain" loading="lazy" />
+              )}
+              <h3 class="text-lg font-bold text-dark">{item.name}</h3>
+            </div>
+            <p class="text-sm text-gray-600 mb-3">{item.desc}</p>
+            <span class="text-primary text-sm font-medium">Visit {item.name} &rarr;</span>
+          </a>
         ))}
       </div>
 
-      <div class="mt-12 text-center text-gray-500">
-        <p>Need help? Join our <a href="https://slack.invoiceninja.com/" class="text-primary hover:underline">Slack community</a> (5,000+ members) or email <a href="mailto:Contact@InvoiceNinja.com" class="text-primary hover:underline">Contact@InvoiceNinja.com</a>.</p>
+      <!-- Community & Support Section -->
+      <div class="mt-16 p-8 rounded-xl bg-gray-50 border border-gray-200">
+        <h2 class="text-2xl font-bold text-dark mb-4 text-center">Community & Support</h2>
+        <p class="text-gray-600 text-center mb-6">Need help with your self-hosted installation? Our community is here to help.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://forum.invoiceninja.com/" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Community Forums</a>
+          <a href="https://slack.invoiceninja.com/" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Slack (8,000+ members)</a>
+          <a href="https://discord.gg/ZwEdtfCwXA" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Discord</a>
+          <a href="mailto:Contact@InvoiceNinja.com" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Email Support</a>
+        </div>
+        <p class="text-sm text-gray-500 text-center mt-4">For detailed setup guides, visit our <a href="https://invoiceninja.github.io/" class="text-primary hover:underline">documentation site</a> or <a href="http://api-docs.invoicing.co/" class="text-primary hover:underline">API docs</a>.</p>
       </div>
     </div>
   </section>

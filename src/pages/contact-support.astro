@@ -5,14 +5,14 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="Contact & Support" description="Get in touch with the Invoice Ninja team. Email support, Slack community, Discord, and documentation." path="/contact-support/">
+<BaseLayout title="Contact & Support" description="Get in touch with the Invoice Ninja team. Email support, Slack community, Discord, forums, and documentation." path="/contact-support/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-12">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Contact & Support</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Get in touch with the Invoice Ninja team. Email support, Slack community, Discord, and documentation.</p>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Get in touch with the Invoice Ninja team. Email support, Slack community, Discord, forums, and documentation.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -22,19 +22,37 @@ import Button from "../components/ui/Button.astro";
           <a href="mailto:contact@invoiceninja.com" class="text-primary hover:underline text-sm">contact@invoiceninja.com</a>
         </div>
         <div class="p-6 rounded-xl border border-gray-200 bg-white">
-          <h3 class="text-lg font-bold text-dark mb-2">Slack Community</h3>
-          <p class="text-sm text-gray-600 mb-3">5,000+ members. Get help from the community.</p>
-          <a href="https://slack.invoiceninja.com/" class="text-primary hover:underline text-sm">Join Slack</a>
+          <h3 class="text-lg font-bold text-dark mb-2">Slack & Discord</h3>
+          <p class="text-sm text-gray-600 mb-3">8,000+ members on Slack & Discord. Get help from the community.</p>
+          <div class="flex gap-4">
+            <a href="https://slack.invoiceninja.com/" class="text-primary hover:underline text-sm">Join Slack</a>
+            <a href="https://discord.gg/ZwEdtfCwXA" class="text-primary hover:underline text-sm">Join Discord</a>
+          </div>
         </div>
         <div class="p-6 rounded-xl border border-gray-200 bg-white">
-          <h3 class="text-lg font-bold text-dark mb-2">Discord</h3>
-          <p class="text-sm text-gray-600 mb-3">Chat with developers and other users.</p>
-          <a href="https://discord.gg/ZwEdtfCwXA" class="text-primary hover:underline text-sm">Join Discord</a>
+          <h3 class="text-lg font-bold text-dark mb-2">Community Forums</h3>
+          <p class="text-sm text-gray-600 mb-3">Connect with thousands of Invoice Ninja users on our community forums.</p>
+          <a href="https://forum.invoiceninja.com/" class="text-primary hover:underline text-sm">Visit Forums</a>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-bold text-dark mb-2">In-App Support</h3>
+          <p class="text-sm text-gray-600 mb-3">Existing members can reach support directly from their dashboard by clicking the email icon in the footer.</p>
+          <a href="https://app.invoicing.co/" class="text-primary hover:underline text-sm">Open Dashboard</a>
         </div>
         <div class="p-6 rounded-xl border border-gray-200 bg-white">
           <h3 class="text-lg font-bold text-dark mb-2">Documentation</h3>
-          <p class="text-sm text-gray-600 mb-3">User guide and API documentation.</p>
+          <p class="text-sm text-gray-600 mb-3">User guide and self-hosting documentation.</p>
           <a href="https://invoiceninja.github.io/" class="text-primary hover:underline text-sm">View Docs</a>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white">
+          <h3 class="text-lg font-bold text-dark mb-2">API Documentation</h3>
+          <p class="text-sm text-gray-600 mb-3">Developer resources and API reference.</p>
+          <a href="http://api-docs.invoicing.co/" class="text-primary hover:underline text-sm">API Docs</a>
+        </div>
+        <div class="p-6 rounded-xl border border-gray-200 bg-white md:col-span-2">
+          <h3 class="text-lg font-bold text-dark mb-2">Server Status</h3>
+          <p class="text-sm text-gray-600 mb-3">Check real-time system status and uptime for Invoice Ninja services.</p>
+          <a href="https://status.invoiceninja.com/" class="text-primary hover:underline text-sm">View Status Page</a>
         </div>
       </div>
       <div class="mt-12 text-center">

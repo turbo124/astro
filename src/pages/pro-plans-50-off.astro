@@ -5,25 +5,124 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
 ---
 
-<BaseLayout title="50% Off Pro Plans" description="Get 50% off Invoice Ninja Pro plans for a limited time." path="/pro-plans-50-off/">
+<BaseLayout title="50% Off Pro Plan - Only $60!" description="Get 50% off Invoice Ninja Pro Plan. Stripe, PayPal, GoCardless, unlimited clients, remove branding, 11 templates, API access and more for just $60." path="/pro-plans-50-off/">
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-6xl font-bold text-dark mb-6">Go Pro 50% Off! <span class="text-primary">$60!</span></h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">Upgrade to the Invoice Ninja Pro Plan and unlock the full power of professional invoicing.</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg" class="text-lg px-10 py-4">Go Pro Only $60!</Button>
+    </div>
+  </section>
+
+  <!-- Pro Plan Benefits -->
+  <section class="py-16 lg:py-20">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">50% Off Pro Plans</h1>
-        <p class="text-xl text-gray-600">Get 50% off Invoice Ninja Pro plans for a limited time.</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-12 text-center">Pro Plan Benefits</h2>
+
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 max-w-3xl mx-auto mb-12">
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">Stripe, PayPal &amp; GoCardless payment integration</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">Unlimited clients and invoices</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">Remove "Created by Invoice Ninja" branding</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">Email via Gmail/MSN and custom SMTP</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">Custom branded URL (YourSite.Invoicing.co)</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">11 professional invoice templates</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">API integration capability</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">Auto-reminder emails for past-due invoices</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          <span class="text-gray-700 text-lg">Client e-signature on invoices</span>
+        </div>
       </div>
 
-      <div class="max-w-xl mx-auto text-center not-prose">
-        <p class="text-5xl font-bold text-primary mb-4">50% OFF</p>
-        <p class="text-2xl font-bold text-dark mb-4">Pro Plans</p>
-        <p class="text-gray-600 mb-8">Upgrade to Invoice Ninja Pro and unlock unlimited clients, custom templates, API access, and more.</p>
+      <div class="text-center space-y-2 text-sm text-gray-500">
+        <p>* First-time upgrades only.</p>
+        <p>* First-year 50% Off, subsequent years regular pricing.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+  <!-- Payment Gateway Logos -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-12 text-center">Integrated Payment Gateways</h2>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 items-center justify-items-center">
+        <img src="/images/gateways-logos/STRIPE-1024x488.png" alt="Stripe" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/PAYPAL.png" alt="PayPal" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/GoCardless-Symbol-Negative-RGB-500px-1024x1024.png" alt="GoCardless" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/CHECKOUT-1-1024x538.png" alt="Checkout.com" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/BRAINTREE.png" alt="Braintree" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/Payfast-By-Network_dark-1024x541.png" alt="Payfast" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/AUTHORIZE-1024x235.png" alt="Authorize.net" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/SQUARE-1024x576.jpg" alt="Square" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/MollieLogo23-Black-1024x302.png" alt="Mollie" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/MicrosoftTeams-image-4.png" alt="WePay" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/EWAY-1024x298.png" alt="eWay" class="h-10 object-contain" loading="lazy" />
+        <img src="/images/gateways-logos/Razorpay-1024x1024.png" alt="Razorpay" class="h-10 object-contain" loading="lazy" />
       </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-4 text-center">200,000+ businesses rely on Invoice Ninja</h2>
+      <p class="text-gray-600 text-center mb-14 text-lg">See what the experts are saying.</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- CardRates -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex flex-col">
+          <blockquote class="text-gray-600 mb-6 flex-grow italic">"Invoice Ninja is a robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day."</blockquote>
+          <p class="font-semibold text-dark">CardRates.com</p>
+        </div>
+
+        <!-- Merchant Maverick -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex flex-col">
+          <blockquote class="text-gray-600 mb-6 flex-grow italic">"Invoice Ninja is well on its way to becoming one of the greats of the invoicing world! A great option for small business owners!"</blockquote>
+          <p class="font-semibold text-dark">Merchant Maverick</p>
+        </div>
+
+        <!-- Forbes -->
+        <div class="bg-white rounded-xl shadow-md p-8 flex flex-col">
+          <blockquote class="text-gray-600 mb-6 flex-grow italic">"The best free invoice software is not only easy on the bank account but user-friendly and packed with features!"</blockquote>
+          <p class="font-semibold text-dark">Forbes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Start invoicing today as a Pro!</h2>
+      <p class="text-xl text-gray-600 mb-10">Invoice Clients, Get Paid Fast!</p>
+      <Button href="https://app.invoicing.co/#/register" size="lg" class="text-lg px-10 py-4">Get 50% Off Now</Button>
     </div>
   </section>
 

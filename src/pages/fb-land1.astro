@@ -3,34 +3,363 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const testimonials = [
+  { name: "Alberto O.", quote: "Easy of use - Customization of the software - Integration to payment gateways - Automatic Invoice Reminders" },
+  { name: "Aslan C.", quote: "Invoice Ninja has incredible features for invoice management. Being able to track and automate my invoices as a small business owner is fantastic!" },
+  { name: "Aaron L.", quote: "Invoice Ninja has incredible features for invoice management. Being able to track and automate my invoices as a small business owner is fantastic!" },
+  { name: "Kyle G.", quote: "I particularly like the client portal and the ability for my clients to log in at anytime to view their active or past invoices and payments. The ability to customize most of the details such as what is displayed on your invoice, where it's displayed, the colors, etc. is really great!" },
+  { name: "Joseph S.", quote: "Great for both large organizations and smaller projects. Using it straightforward and easy." },
+  { name: "Robbe D.", quote: "10 out of 10. Easy to use, good user interface and overall great system. All invoicing options are available. 100% working and reliable." },
+  { name: "Matt G.", quote: "Works great! Easy to use and does exactly what we need it to. A very simple program and the costs are minimal, not much to dislike about Invoice Ninja." },
+  { name: "Brent S.", quote: "A simple solution to creating professional looking invoices that saves your time." },
+];
+
+const foreverFreeFeatures = [
+  "Live .PDF Invoice Preview",
+  "Overpayment & Underpayment Settings",
+  "Localization of Language & Currency Settings",
+  "Vendor Purchase Orders",
+  "Kanban Boards to Manage Projects",
+  "Multiple Contacts Per Client",
+  "Custom Payment Instructions",
+  "Enabling/Disabling Nav Modules",
+  "Create Taxes per Invoice Total or per Invoice Line-Item",
+  "Enable/Disable Recurring When Cloning",
+  "Setup Automatic Credit Card Gateway Fees",
+  "Bulk Emailing Invoices & Quotations",
+  "Multiple Currencies & Languages",
+  "Importing Expenses & Vendors",
+  "Item & Product Library System",
+  "Alerts When Client Views & Pays Invoices",
+  "Projects, Tasks & Track Time",
+  "Accept Deposits & Partial Payments",
+  "Approved Quotes Auto-Convert to Payable Invoices",
+  "Client-Side Portal & Invoices/Payments History",
+  "Recurring Invoicing & Auto-Billing Clients",
+  "Track Inventory Levels",
+  "Invoice Template Designs (4 templates)",
+  "Online Payment Gateways (Stripe, WePay, PayPal, Checkout.com, Braintree, PayFast, Authorize.net, Square, Mollie, and more)",
+  "Upload your Company Logo",
+  "Create & Email Invoices & Quotes in Real-Time",
+  "Dynamic Dashboard Data",
+];
+
+const proFeatures = [
+  "Custom Client-Portal Subdomain",
+  "Storefront Functionality",
+  "Automated Workflow (Zapier, Make, Pabbly, Integrately)",
+  "Custom Reminder Emails",
+  "Custom Invoice Email Design",
+  "Set a 'BCC' Address for Invoice & Quote Emails",
+  "Custom Invoice & Quote Number Sequencing",
+  "Automatic Late Fees on Unpaid Invoices",
+  "Create Reports, Accounts Aging & Client Statements",
+  "Enable Invoice Approval Checkbox or Client Signature",
+  "Customize Email Subjects & Body Text",
+  "Fully Customizable Invoice Template Designs (11 templates)",
+  "Attach Invoice & Quotations PDFs to Emails",
+  "Create Client Subscriptions: Recurring & Auto-Billing",
+  'Create "Client Groups" Workflow Settings',
+  "Send Invoices & Quotes via Gmail & MSN Accounts",
+  "Create Custom Fields & Invoice Designs",
+  "Link Multiple Companies (x10) with 1 Login",
+];
+
+const enterpriseFeatures = [
+  "Unlock Documents After Payment",
+  "Additional Users Activity Notification Settings",
+  "Client-Portal & Vendor Document Upload",
+  "Additional Users & Set Permissions",
+  "Banking Integration (Yodlee partnership)",
+  'Custom Domain "Billing.YourCompany.com"',
+  "Attach 3rd Party Files to Invoices & Expenses",
+];
+
+const faqs = [
+  {
+    question: "What is free invoicing software?",
+    answer: "Free invoicing software is an easier, faster, and smarter way to get paid, issuing professional, customized, and official invoice documentation to your clients in seconds -- leaving you free to concentrate on everything else.",
+  },
+  {
+    question: "Is invoicing software secure?",
+    answer: "We take security seriously and provide invoicing software with the latest data protection and cybersecurity safeguards to protect your information, billing details, and client contact information. Issuing invoices through our secure portal is massively safer than attaching invoice files to emails, which are vulnerable to hacking and data breaches as they travel from one server to the next.",
+  },
+];
 ---
 
-<BaseLayout title="Invoice Ninja" description="Free invoicing software for freelancers and small businesses." path="/fb-land1/">
+<BaseLayout
+  title="Free Invoicing Software | Invoice Ninja"
+  description="Overpaying just to get paid? Create professional invoices and let clients pay you fast. Free plan with unlimited invoicing for up to 5 clients."
+  path="/fb-land1/"
+  noindex={true}
+>
   <Header slot="header" />
 
-  <section class="py-16 lg:py-24">
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-6xl font-bold text-dark mb-6">
+        Overpaying, Just to get paid?
+      </h1>
+      <p class="text-2xl lg:text-3xl font-semibold text-primary mb-6">
+        Get paid faster with Invoice Ninja!
+      </p>
+      <p class="text-lg text-gray-600 mb-4 max-w-2xl mx-auto">
+        Create professional invoices and let clients pay you fast with 1-click!
+      </p>
+      <p class="text-base text-gray-500 mb-10 max-w-2xl mx-auto">
+        Check out our <strong>FREE Plan</strong> -- unlimited invoicing for up to 5 clients! Or go <strong>Pro</strong> for Unlimited Everything!
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started!</Button>
+        <Button href="#features" variant="outline" size="lg">Learn more</Button>
+      </div>
+
+      <!-- Star Rating -->
+      <div class="mt-10 flex items-center justify-center gap-2">
+        <div class="flex text-yellow-400">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <span class="text-sm text-gray-500 font-medium">Rated 5 out of 5</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press / Social Proof Quotes -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-14">What the Press is Saying</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
+        <!-- CardRates.com -->
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+          <p class="text-gray-600 italic mb-6">
+            "Invoice Ninja is a robust, flexible, yet surprisingly affordable invoicing and expense management tool that more than 200,000 sole proprietors and small business owners use every day..."
+          </p>
+          <p class="text-sm font-bold text-dark">-- CardRates.com</p>
+        </div>
+
+        <!-- Merchant Maverick -->
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+          <p class="text-gray-600 italic mb-6">
+            "Invoice Ninja is well on its way to becoming one of the greats of the invoicing world! A great option for small business owners!"
+          </p>
+          <p class="text-sm font-bold text-dark">-- Merchant Maverick</p>
+        </div>
+
+        <!-- Forbes -->
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+          <p class="text-gray-600 italic mb-6">
+            "The best free invoice software is not only easy on the bank account but user-friendly and packed with the features!"
+          </p>
+          <p class="text-sm font-bold text-dark">-- Forbes</p>
+        </div>
+
+        <!-- Money.com -->
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+          <p class="text-gray-600 italic mb-6">
+            "2023 Best Invoicing for Freelancers. Invoice Ninja can give any other free invoicing and billing software a run for its money!"
+          </p>
+          <p class="text-sm font-bold text-dark">-- Money.com</p>
+        </div>
+      </div>
+
+      <!-- Corporate Quote -->
+      <div class="mt-10 bg-primary/5 rounded-2xl p-8 lg:p-10 border border-primary/10 max-w-4xl mx-auto">
+        <p class="text-gray-700 italic text-center text-lg">
+          "Invoice Ninja is extremely easy to use for both your team and clients. It allows for you to create customizable and nicely designed invoices and quotes. You can customize the messaging sent in email communications. It also gives your clients their own portals to manage their accounts."
+        </p>
+      </div>
+
+      <div class="text-center mt-12">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Testimonials -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-14">What Our Users Are Saying</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map((t) => (
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col">
+            <!-- Stars -->
+            <div class="flex text-yellow-400 mb-4">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-sm text-gray-600 italic flex-1">"{t.quote}"</p>
+            <p class="text-sm font-bold text-dark mt-4">-- {t.name}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Create a Free Account!</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Deep-Dive Sections -->
+  <section id="features" class="py-16 lg:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Invoice Ninja</h1>
-        <p class="text-xl text-gray-600">Free invoicing software for freelancers and small businesses.</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-6">Feature Deep-Dive</h2>
+      <p class="text-lg text-gray-600 text-center mb-14 max-w-2xl mx-auto">
+        Everything you need to invoice clients, accept payments, track time, and run your business.
+      </p>
+
+      <!-- Forever Free Tier -->
+      <div class="mb-8">
+        <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 lg:p-8 hover:bg-gray-100 transition-colors">
+            <div>
+              <span class="inline-block text-xs font-bold uppercase tracking-wider text-green-600 bg-green-100 px-3 py-1 rounded-full mb-2">Forever Free</span>
+              <h3 class="text-xl lg:text-2xl font-bold text-dark">Free Plan Features</h3>
+              <p class="text-gray-500 mt-1">Unlimited invoicing for up to 5 clients -- free forever.</p>
+            </div>
+            <svg class="w-6 h-6 text-gray-400 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 lg:px-8 pb-8">
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+              {foreverFreeFeatures.map((f) => (
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <span class="text-green-500 mt-0.5 shrink-0">&#10003;</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <Button href="https://app.invoicing.co/#/register">Create a Free Account!</Button>
+            </div>
+          </div>
+        </details>
       </div>
 
-      <div class="max-w-xl mx-auto text-center not-prose">
-        <p class="text-2xl font-bold text-dark mb-4">Stop Overpaying for Invoicing</p>
-        <p class="text-gray-600 mb-8">Invoice Ninja is free, open-source, and trusted by 200,000+ businesses. Create invoices, accept payments, track time — all in one place.</p>
-        <ul class="text-left space-y-3 mb-8">
-          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Free forever — no credit card required</li>
-          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Accept payments via Stripe, PayPal & more</li>
-          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Beautiful invoice templates</li>
-          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Time tracking & project management</li>
-        </ul>
+      <!-- Ninja Pro Tier -->
+      <div class="mb-8">
+        <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 lg:p-8 hover:bg-gray-100 transition-colors">
+            <div>
+              <span class="inline-block text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full mb-2">Ninja Pro</span>
+              <h3 class="text-xl lg:text-2xl font-bold text-dark">Pro Plan Features</h3>
+              <p class="text-gray-500 mt-1">Unlimited everything -- advanced features for growing businesses.</p>
+            </div>
+            <svg class="w-6 h-6 text-gray-400 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 lg:px-8 pb-8">
+            <p class="text-sm text-gray-500 mb-4 italic">Includes all Forever Free features, plus:</p>
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+              {proFeatures.map((f) => (
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <span class="text-primary mt-0.5 shrink-0">&#10003;</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <Button href="https://app.invoicing.co/#/register">Create a Free Account!</Button>
+            </div>
+          </div>
+        </details>
       </div>
 
-      <div class="mt-12 text-center">
-        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      <!-- Enterprise Tier -->
+      <div class="mb-8">
+        <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 lg:p-8 hover:bg-gray-100 transition-colors">
+            <div>
+              <span class="inline-block text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-100 px-3 py-1 rounded-full mb-2">Enterprise</span>
+              <h3 class="text-xl lg:text-2xl font-bold text-dark">Enterprise Plan Features</h3>
+              <p class="text-gray-500 mt-1">Full power for teams and larger organizations.</p>
+            </div>
+            <svg class="w-6 h-6 text-gray-400 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 lg:px-8 pb-8">
+            <p class="text-sm text-gray-500 mb-4 italic">Includes all Free and Pro features, plus:</p>
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+              {enterpriseFeatures.map((f) => (
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <span class="text-purple-500 mt-0.5 shrink-0">&#10003;</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <Button href="https://app.invoicing.co/#/register">Create a Free Account!</Button>
+            </div>
+          </div>
+        </details>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark text-center mb-14">Frequently Asked Questions</h2>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <summary class="flex items-center justify-between cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+              <h3 class="text-lg font-semibold text-dark pr-4">{faq.question}</h3>
+              <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 lg:py-24 bg-primary text-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">Ready to stop overpaying?</h2>
+      <p class="text-lg text-white/80 mb-10">
+        Join over 200,000 businesses using Invoice Ninja to get paid faster.
+      </p>
+      <a
+        href="https://app.invoicing.co/#/register"
+        class="inline-flex items-center justify-center font-semibold rounded-lg transition-colors duration-200 px-8 py-4 text-lg bg-white text-primary hover:bg-gray-100 shadow-lg"
+      >
+        Create a Free Account!
+      </a>
     </div>
   </section>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+})} />
