@@ -12,97 +12,56 @@ import Button from "../components/ui/Button.astro";
   <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">How It Works</h1>
-      <p class="text-xl text-gray-600">4 simple steps to start invoicing and get paid online.</p>
+      <p class="text-xl text-gray-600 mb-8">Create. Send. Get Paid.</p>
+      <img src="/images/how-it-works/create.png" alt="Create invoices" class="w-24 h-24 mx-auto" loading="lazy" />
     </div>
   </section>
 
   <!-- Reuse the same Steps component from the homepage -->
   <Steps />
 
-  <!-- Additional detail sections -->
+  <!-- Everything you need -->
   <section class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-dark mb-8 text-center">Core Invoicing Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <div class="p-6 bg-white rounded-xl border border-gray-100">
-          <h3 class="text-lg font-bold text-dark mb-3">Invoicing</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Create & email professional invoices in seconds
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Recurring invoicing with auto-billing
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Convert billable tasks to invoices with one click
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Accept deposits & partial payments
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Multi-currency & multi-language per client
-            </li>
-          </ul>
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-16 text-center">Everything you need</h2>
+
+      <!-- Feature 1: Email Invoices -->
+      <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Email invoices & quotes</h3>
+          <p class="text-gray-600 mb-4">Create & email professional invoices in seconds. Accept deposits & partial payments. Multi-currency & multi-language per client.</p>
+          <a href="/invoicing/" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more &rarr;</a>
         </div>
-        <div class="p-6 bg-white rounded-xl border border-gray-100">
-          <h3 class="text-lg font-bold text-dark mb-3">Expenses & Vendors</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Track all expenses in a unified system
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Categorize vendors & re-invoice expenses
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Generate expense reports
-            </li>
-          </ul>
+        <img src="/images/how-it-works/email-invoices-thumbnail.png" alt="Email invoices" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+
+      <!-- Feature 2: Recurring Invoices -->
+      <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+        <img src="/images/how-it-works/recurring-invoices.png" alt="Recurring invoices" class="w-full rounded-xl shadow-lg md:order-first" loading="lazy" />
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Recurring invoicing</h3>
+          <p class="text-gray-600 mb-4">Automate your billing with recurring invoices and auto-billing. Set it and forget it — get paid on time, every time.</p>
+          <a href="/features/" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more &rarr;</a>
         </div>
-        <div class="p-6 bg-white rounded-xl border border-gray-100">
-          <h3 class="text-lg font-bold text-dark mb-3">Time Tracking & Projects</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Record hours on individual tasks
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Transfer tracked time directly to invoices
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Kanban board project management
-            </li>
-          </ul>
+      </div>
+
+      <!-- Feature 3: Track Work & Tasks -->
+      <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Time-tasks & projects</h3>
+          <p class="text-gray-600 mb-4">Record hours on individual tasks. Transfer tracked time directly to invoices. Kanban board project management.</p>
+          <a href="/projects/" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more &rarr;</a>
         </div>
-        <div class="p-6 bg-white rounded-xl border border-gray-100">
-          <h3 class="text-lg font-bold text-dark mb-3">Free Plan Extras</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              PDF invoice preview
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Vendor purchase orders
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Product library & inventory
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              Client notifications for views & payments
-            </li>
-          </ul>
+        <img src="/images/how-it-works/track-work-tasks.png" alt="Track work tasks" class="w-full rounded-xl shadow-lg" loading="lazy" />
+      </div>
+
+      <!-- Feature 4: Track Expenses -->
+      <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+        <img src="/images/how-it-works/track-expanses.png" alt="Track expenses" class="w-full rounded-xl shadow-lg md:order-first" loading="lazy" />
+        <div>
+          <h3 class="text-2xl font-bold text-dark mb-4">Expenses & vendors</h3>
+          <p class="text-gray-600 mb-4">Track all expenses in a unified system. Categorize vendors & re-invoice expenses. Generate expense reports.</p>
+          <a href="/expenses/" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Learn more &rarr;</a>
         </div>
       </div>
 

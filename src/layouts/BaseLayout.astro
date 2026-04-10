@@ -73,6 +73,15 @@ const organizationSchema = {
       rel="stylesheet"
     />
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLE0F94NS5" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VLE0F94NS5');
+    </script>
+
   </head>
   <body class="font-sans text-dark bg-white antialiased">
     <slot name="header" />
