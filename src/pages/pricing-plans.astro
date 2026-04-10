@@ -3,95 +3,303 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const checkIcon = `<svg class="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>`;
+const checkIconBlue = `<svg class="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>`;
+
+const freePlanFeatures = [
+  "5 Clients + Unlimited Invoicing",
+  "4 Professional Invoice Templates",
+  "Brand Invoices with Your Logo",
+  "Accept Payments Online",
+  "Auto-Billing & Recurring Invoices",
+  "Product & Inventory Management",
+  "Time Tracking & Projects",
+  "Kanban Board Project Management",
+  "Vendor & Expense Tracking",
+  "Client Portal Access",
+  "Deposits & Partial Payments",
+  "Real-time PDF Generation",
+  "Email Delivery Statistics",
+  "Automatic Currency Conversion",
+];
+
+const proFeatures = [
+  "Everything in Free",
+  "Unlimited Clients & Invoices",
+  "Remove Invoice Ninja Branding",
+  "Email via Gmail & MSN / Custom SMTP",
+  "Branded URL (YourSite.invoicing.co)",
+  "11 Professional Templates",
+  "Customizable Invoice Designs",
+  "API Integration",
+  "Auto-Reminder Email Setup",
+  "Advanced Reporting (P&L, Aging)",
+  "Bulk Email Capabilities",
+  "Multi-Company Linking (10 companies)",
+  "Client Group Settings",
+  "Auto Sales Tax (US States)",
+];
+
+const enterpriseFeatures = [
+  "Everything in Pro",
+  "Up to 100 Account Users",
+  "User Permission Controls",
+  "File Attachments (PDF, JPG, etc.)",
+  "Custom Domain (Billing.YourCompany.com)",
+  "Bank Integration (Yodlee/GoCardless)",
+  "e-Invoicing & UBL Format",
+  "PEPPOL Network (250 credits included)",
+  "Lock Documents Until Payment",
+];
+
+const premiumFeatures = [
+  "Everything in Enterprise",
+  "Developer Concierge Support",
+  "Priority Direct Support",
+  "Invoice Design Services",
+  "Feature Request Priority",
+  "Data Migration Assistance",
+  "Custom Report Building",
+];
 ---
 
-<BaseLayout title="Pricing Plans" description="Invoice Ninja pricing - Free forever plan, Ninja Pro at $14/mo, Enterprise at $18/mo. No hidden fees." path="/pricing-plans/">
+<BaseLayout title="Pricing Plans" description="Invoice Ninja pricing — Free forever, Ninja Pro $14/mo, Enterprise $18/mo. No hidden fees." path="/pricing-plans/">
   <Header slot="header" />
 
   <section class="py-16 lg:py-24">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
         <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Simple, Transparent Pricing</h1>
         <p class="text-xl text-gray-600">Start free. Upgrade when you're ready.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Annual / Monthly Toggle -->
+      <div class="flex items-center justify-center gap-3 mb-12">
+        <span class="text-sm font-medium text-gray-700" id="label-monthly">Monthly</span>
+        <button
+          id="pricing-toggle"
+          class="relative w-14 h-7 bg-primary rounded-full cursor-pointer transition-colors"
+          aria-pressed="true"
+          aria-label="Toggle annual pricing"
+        >
+          <span id="toggle-dot" class="absolute top-0.5 right-0.5 w-6 h-6 bg-white rounded-full shadow-sm transition-all"></span>
+        </button>
+        <span class="text-sm font-medium text-primary" id="label-annual">Annual <span class="text-xs text-green-600 font-semibold">(2 months free!)</span></span>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 items-start">
+
         <!-- Free -->
-        <div class="rounded-2xl border border-gray-200 p-8">
-          <h3 class="text-lg font-bold text-dark mb-1">Free</h3>
-          <p class="text-sm text-gray-500 mb-4">Yes, it's really free :)</p>
-          <p class="text-4xl font-bold text-dark mb-6">$0<span class="text-sm font-normal text-gray-500">/mo</span></p>
-          <Button href="https://app.invoicing.co/#/register" variant="outline" class="w-full mb-6">Get Started</Button>
-          <ul class="space-y-3 text-sm text-gray-600">
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> 5 Clients + Unlimited Invoicing</li>
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> 4 Invoice Templates</li>
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Accept Payments Online</li>
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Auto-Billing & Recurring</li>
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Inventory Management</li>
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Time Tracking & Projects</li>
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Vendor & Expense Tracking</li>
-            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Client Portal</li>
+        <div class="rounded-2xl border border-gray-200 bg-white p-8 flex flex-col h-full">
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-dark mb-1">Free</h3>
+            <p class="text-sm text-gray-500">Yes, it's really free :)</p>
+          </div>
+          <div class="mb-6">
+            <span class="text-5xl font-extrabold text-dark">$0</span>
+            <span class="text-gray-500 ml-1">/year</span>
+          </div>
+          <Button href="https://app.invoicing.co/#/register" variant="outline" class="w-full mb-8">Get Started</Button>
+          <ul class="space-y-3 flex-1">
+            {freePlanFeatures.map((f) => (
+              <li class="flex items-start gap-3 text-sm text-gray-600">
+                <Fragment set:html={checkIcon} />
+                <span>{f}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <!-- Pro -->
-        <div class="rounded-2xl border-2 border-primary p-8 relative">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">Popular</span>
-          <h3 class="text-lg font-bold text-dark mb-1">Ninja Pro</h3>
-          <p class="text-sm text-gray-500 mb-4">For growing businesses</p>
-          <p class="text-4xl font-bold text-dark mb-1">$14<span class="text-sm font-normal text-gray-500">/mo</span></p>
-          <p class="text-xs text-gray-400 mb-6">or $140/year (2 months free)</p>
-          <Button href="https://app.invoicing.co/#/register" class="w-full mb-6">Start Pro</Button>
-          <ul class="space-y-3 text-sm text-gray-600">
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Everything in Free</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Unlimited Clients</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Remove Branding</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Gmail/MSN Email</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> 11 Invoice Templates</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> API Access</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Auto-Reminders</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Advanced Reporting</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> 10 Company Accounts</li>
+        <!-- Pro (highlighted) -->
+        <div class="rounded-2xl border-2 border-primary bg-white p-8 flex flex-col h-full relative shadow-lg shadow-primary/10">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+            <span class="px-4 py-1 bg-primary text-white text-xs font-bold rounded-full shadow-sm">Most Popular</span>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-dark mb-1">Ninja Pro</h3>
+            <p class="text-sm text-gray-500">For growing businesses</p>
+          </div>
+          <div class="mb-1">
+            <span class="text-5xl font-extrabold text-dark" id="pro-price">$140</span>
+            <span class="text-gray-500 ml-1" id="pro-period">/year</span>
+          </div>
+          <p class="text-xs text-green-600 font-medium mb-6" id="pro-savings">Pay 10 months, get 2 months free!</p>
+          <Button href="https://app.invoicing.co/#/register" class="w-full mb-8">Start Pro</Button>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">All Free features, plus:</p>
+          <ul class="space-y-3 flex-1">
+            {proFeatures.slice(1).map((f) => (
+              <li class="flex items-start gap-3 text-sm text-gray-600">
+                <Fragment set:html={checkIconBlue} />
+                <span>{f}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
         <!-- Enterprise -->
-        <div class="rounded-2xl border border-gray-200 p-8">
-          <h3 class="text-lg font-bold text-dark mb-1">Enterprise</h3>
-          <p class="text-sm text-gray-500 mb-4">For teams & advanced needs</p>
-          <p class="text-4xl font-bold text-dark mb-1">$18<span class="text-sm font-normal text-gray-500">/mo</span></p>
-          <p class="text-xs text-gray-400 mb-6">or $180/year (2 months free)</p>
-          <Button href="https://app.invoicing.co/#/register" variant="secondary" class="w-full mb-6">Start Enterprise</Button>
-          <ul class="space-y-3 text-sm text-gray-600">
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Everything in Pro</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Up to 100 Users</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Custom Domain Portal</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Bank Integration</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> e-Invoicing & PEPPOL</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> File Attachments</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Document Lock</li>
+        <div class="rounded-2xl border border-gray-200 bg-white p-8 flex flex-col h-full">
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-dark mb-1">Enterprise</h3>
+            <p class="text-sm text-gray-500">For teams & advanced needs</p>
+          </div>
+          <div class="mb-1">
+            <span class="text-5xl font-extrabold text-dark" id="ent-price">$180</span>
+            <span class="text-gray-500 ml-1" id="ent-period">/year</span>
+          </div>
+          <p class="text-xs text-green-600 font-medium mb-6" id="ent-savings">Pay 10 months, get 2 months free!</p>
+          <Button href="https://app.invoicing.co/#/register" variant="secondary" class="w-full mb-8">Start Enterprise</Button>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">All Pro features, plus:</p>
+          <ul class="space-y-3 flex-1">
+            {enterpriseFeatures.slice(1).map((f) => (
+              <li class="flex items-start gap-3 text-sm text-gray-600">
+                <Fragment set:html={checkIconBlue} />
+                <span>{f}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <!-- Premium -->
-        <div class="rounded-2xl border border-gray-200 p-8 bg-gray-50">
-          <h3 class="text-lg font-bold text-dark mb-1">Premium Business</h3>
-          <p class="text-sm text-gray-500 mb-4">White glove support</p>
-          <p class="text-4xl font-bold text-dark mb-1">$280<span class="text-sm font-normal text-gray-500">/yr</span></p>
-          <p class="text-xs text-gray-400 mb-6">Contact for details</p>
-          <Button href="mailto:concierge@invoiceninja.com" variant="outline" class="w-full mb-6">Contact Us</Button>
-          <ul class="space-y-3 text-sm text-gray-600">
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Everything in Enterprise</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Developer Concierge</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Priority Support</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Invoice Design Services</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Feature Request Priority</li>
-            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Data Migration Help</li>
+        <!-- Premium Business -->
+        <div class="rounded-2xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-8 flex flex-col h-full">
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-dark mb-1">Premium Business</h3>
+            <p class="text-sm text-gray-500">White glove support</p>
+          </div>
+          <div class="mb-1">
+            <span class="text-sm text-gray-500">From</span>
+            <span class="text-5xl font-extrabold text-dark ml-1">$280</span>
+            <span class="text-gray-500 ml-1">/year</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-6">Contact for custom pricing</p>
+          <Button href="mailto:concierge@invoiceninja.com" variant="outline" class="w-full mb-8">Contact Us</Button>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">All Enterprise features, plus:</p>
+          <ul class="space-y-3 flex-1">
+            {premiumFeatures.slice(1).map((f) => (
+              <li class="flex items-start gap-3 text-sm text-gray-600">
+                <Fragment set:html={checkIconBlue} />
+                <span>{f}</span>
+              </li>
+            ))}
           </ul>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Comparison Table -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-dark mb-8 text-center">Compare Plans</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="py-3 pr-4 text-left font-semibold text-gray-700 w-1/3">Feature</th>
+              <th class="py-3 px-4 text-center font-semibold text-gray-700">Free</th>
+              <th class="py-3 px-4 text-center font-semibold text-primary bg-primary/5 rounded-t-lg">Pro</th>
+              <th class="py-3 px-4 text-center font-semibold text-gray-700">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            {[
+              ["Unlimited Invoicing", true, true, true],
+              ["Online Payments", true, true, true],
+              ["Recurring & Auto-Billing", true, true, true],
+              ["Time Tracking & Projects", true, true, true],
+              ["Client Portal", true, true, true],
+              ["Remove Branding", false, true, true],
+              ["Unlimited Clients", false, true, true],
+              ["API Access", false, true, true],
+              ["Gmail / Custom SMTP Email", false, true, true],
+              ["Advanced Reporting", false, true, true],
+              ["Custom Invoice Designs", false, true, true],
+              ["Auto-Reminders", false, true, true],
+              ["Multi-Company (10)", false, true, true],
+              ["Additional Users", false, false, true],
+              ["Custom Domain Portal", false, false, true],
+              ["Bank Integration", false, false, true],
+              ["e-Invoicing & PEPPOL", false, false, true],
+              ["File Attachments", false, false, true],
+            ].map(([feature, free, pro, ent]) => (
+              <tr class="border-b border-gray-100">
+                <td class="py-3 pr-4">{feature}</td>
+                <td class="py-3 px-4 text-center">
+                  {free
+                    ? <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    : <span class="text-gray-300">—</span>}
+                </td>
+                <td class="py-3 px-4 text-center bg-primary/5">
+                  {pro
+                    ? <svg class="w-5 h-5 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    : <span class="text-gray-300">—</span>}
+                </td>
+                <td class="py-3 px-4 text-center">
+                  {ent
+                    ? <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    : <span class="text-gray-300">—</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  const toggle = document.getElementById('pricing-toggle');
+  const dot = document.getElementById('toggle-dot');
+  const labelMonthly = document.getElementById('label-monthly');
+  const labelAnnual = document.getElementById('label-annual');
+  const proPrice = document.getElementById('pro-price');
+  const proPeriod = document.getElementById('pro-period');
+  const proSavings = document.getElementById('pro-savings');
+  const entPrice = document.getElementById('ent-price');
+  const entPeriod = document.getElementById('ent-period');
+  const entSavings = document.getElementById('ent-savings');
+
+  let isAnnual = true;
+
+  toggle?.addEventListener('click', () => {
+    isAnnual = !isAnnual;
+    toggle.setAttribute('aria-pressed', String(isAnnual));
+
+    if (isAnnual) {
+      dot!.style.transform = 'translateX(0)';
+      dot!.style.left = 'auto';
+      dot!.style.right = '2px';
+      labelAnnual!.classList.add('text-primary');
+      labelAnnual!.classList.remove('text-gray-500');
+      labelMonthly!.classList.remove('text-primary');
+      labelMonthly!.classList.add('text-gray-700');
+      proPrice!.textContent = '$140';
+      proPeriod!.textContent = '/year';
+      proSavings!.textContent = 'Pay 10 months, get 2 months free!';
+      proSavings!.classList.remove('invisible');
+      entPrice!.textContent = '$180';
+      entPeriod!.textContent = '/year';
+      entSavings!.textContent = 'Pay 10 months, get 2 months free!';
+      entSavings!.classList.remove('invisible');
+    } else {
+      dot!.style.right = 'auto';
+      dot!.style.left = '2px';
+      labelAnnual!.classList.remove('text-primary');
+      labelAnnual!.classList.add('text-gray-500');
+      labelMonthly!.classList.add('text-primary');
+      labelMonthly!.classList.remove('text-gray-700');
+      proPrice!.textContent = '$14';
+      proPeriod!.textContent = '/month';
+      proSavings!.classList.add('invisible');
+      entPrice!.textContent = '$18';
+      entPeriod!.textContent = '/month';
+      entSavings!.classList.add('invisible');
+    }
+  });
+</script>
