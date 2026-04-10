@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="DocuNinja" description="E-signing and document management integrated with Invoice Ninja. Send. eSign. Manage." path="/documents/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">DocuNinja</h1>
+        <p class="text-xl text-gray-600">Send. eSign. Manage. Without the hefty price tag.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {[
+          { title: "E-Signatures", desc: "Legally binding e-signatures with single, multiple, co-signing, and sequential workflows." },
+          { title: "Document Analytics", desc: "Track who opens, views, and engages with your documents." },
+          { title: "Invoice Ninja Integration", desc: "Attach signed contracts to invoices and request payments upon signature." },
+          { title: "Security & Compliance", desc: "SOC 2, HIPAA, and GDPR compliance. Data encryption & MFA." },
+          { title: "Team Roles & Permissions", desc: "Assign roles for signers, approvers, and viewers." },
+          { title: "Custom Branding", desc: "Add your company logo, colors, and branding to every document." },
+        ].map((f) => (
+          <div class="p-6 rounded-xl border border-gray-200">
+            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
+            <p class="text-sm text-gray-600">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+        <h2>Pre-Built Templates</h2>
+        <p>10 professional document templates included: Contractor Agreements, NDAs, Partnership Agreements, Sales Contracts, Scope of Work, Service Agreements, and more.</p>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

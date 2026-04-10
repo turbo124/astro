@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="Our Story" description="Invoice Ninja — bootstrapped since 2014. Building business tools for freelancers and small businesses." path="/our-story/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-8">Our Story</h1>
+      <p class="text-xl text-gray-600 mb-12">Bootstrapped since 2014. No VC overlords.</p>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+        <p>Invoice Ninja was founded in 2014 by Hillel and Shalom. Dave joined as CTO in 2015, completing the founding trio. The platform launched in March 2014 as a beta product.</p>
+
+        <p>We're a bootstrapped company — self-funded from day one with no venture capital. This means we answer to our users, not investors.</p>
+
+        <h2>Timeline</h2>
+        <ul>
+          <li><strong>2014</strong> — Beta launch</li>
+          <li><strong>2015</strong> — Dave joins as CTO</li>
+          <li><strong>2019</strong> — Development of v5 begins</li>
+          <li><strong>2021</strong> — Invoice Ninja v5 launches using Google Flutter</li>
+          <li><strong>2022</strong> — 200,000+ account milestone</li>
+          <li><strong>2023</strong> — React-based application launches</li>
+        </ul>
+
+        <h2>Self-Hosting</h2>
+        <p>We offer users the ability to self-host the platform on their own servers through our open-source project.</p>
+
+        <h2>Community</h2>
+        <p>Our co-founders personally handle customer support. We maintain active community channels including Slack (5,000+ members) and Discord.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

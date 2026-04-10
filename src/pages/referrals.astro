@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Referral Program" description="Earn 50% commission on all referrals for 3 years. Share Invoice Ninja and get paid." path="/referrals/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Earn 50% on Referrals</h1>
+        <p class="text-xl text-gray-600">For 3 years. Recurring every year.</p>
+      </div>
+
+      <div class="space-y-8">
+        <div class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold shrink-0">1</span>
+          <div>
+            <h3 class="text-lg font-bold text-dark mb-1">Create Your Free Account</h3>
+            <p class="text-gray-600">Sign up and confirm your email address.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold shrink-0">2</span>
+          <div>
+            <h3 class="text-lg font-bold text-dark mb-1">Get Your Referral URL</h3>
+            <p class="text-gray-600">Find it in Settings &gt; Account Management &gt; Referral Program.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold shrink-0">3</span>
+          <div>
+            <h3 class="text-lg font-bold text-dark mb-1">Share & Earn</h3>
+            <p class="text-gray-600">Add to your email signature, invoice footers, or blog. Commissions arrive automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Join the Referral Program</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

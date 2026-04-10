@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Features" description="More than invoicing. Explore all Invoice Ninja features for freelancers and small businesses." path="/features/">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-6">Small Business Invoicing Features</h1>
+      <p class="text-xl text-gray-600 mb-8">Focus on doing what you love. We'll help with the invoicing.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+        <Button href="https://react.invoicing.co/demo" variant="outline" size="lg">Try Demo</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Overview -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="text-center p-8 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-bold text-dark mb-2">Forever Free</h3>
+          <p class="text-3xl font-bold text-primary mb-2">$0<span class="text-sm text-gray-500">/mo</span></p>
+          <p class="text-sm text-gray-500">Unlimited invoicing</p>
+        </div>
+        <div class="text-center p-8 rounded-xl border-2 border-primary bg-primary/5">
+          <h3 class="text-lg font-bold text-dark mb-2">Ninja Pro</h3>
+          <p class="text-3xl font-bold text-primary mb-2">$12<span class="text-sm text-gray-500">/mo</span></p>
+          <p class="text-sm text-gray-500">Billed annually</p>
+        </div>
+        <div class="text-center p-8 rounded-xl border border-gray-200">
+          <h3 class="text-lg font-bold text-dark mb-2">Enterprise</h3>
+          <p class="text-3xl font-bold text-primary mb-2">$16<span class="text-sm text-gray-500">/mo</span></p>
+          <p class="text-sm text-gray-500">Billed annually</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Plan Features -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8 text-center">Free Plan — 30+ Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          "Real-time PDF invoice creation",
+          "Online payment gateways (Stripe, PayPal, GoCardless, Braintree, Square, Mollie)",
+          "Client portal with payment history",
+          "Recurring invoices and auto-billing",
+          "Project tracking & time logging",
+          "Task management with Kanban boards",
+          "Inventory tracking with low-stock alerts",
+          "Multi-currency & multi-language support",
+          "Vendor purchase orders",
+          "Expense importing & tracking",
+          "Overpayment/underpayment handling",
+          "Multiple contacts per client",
+          "Custom payment instructions",
+          "Deposit & partial payment support",
+          "Email delivery statistics",
+          "Automatic currency conversion",
+        ].map((feature) => (
+          <div class="flex items-start gap-3 p-3 bg-white rounded-lg">
+            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm text-gray-700">{feature}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro Plan Features -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8 text-center">Pro Plan — Everything Free, Plus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          "Up to 10 company accounts under one login",
+          "Custom fields & invoice design templates",
+          "Gmail/Outlook/SMTP email integration",
+          "Client grouping with workflow customization",
+          "Payment link generation",
+          "Automated workflows via Zapier, Make, Integrately",
+          "Advanced reporting & aging statements",
+          "Custom invoice numbering sequences",
+          "Late fees on unpaid invoices",
+          "11 professional invoice templates",
+          "Auto-reminder email setup",
+          "Client e-signature display",
+          "Branded URL (YourSite.invoicing.co)",
+          "Bulk email capabilities",
+          "Auto sales tax (US states)",
+          "Remove Invoice Ninja branding",
+        ].map((feature) => (
+          <div class="flex items-start gap-3 p-3 bg-primary/5 rounded-lg">
+            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm text-gray-700">{feature}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Plan Features -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-dark mb-8 text-center">Enterprise — Everything Pro, Plus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          "Banking integrations (Yodlee, GoCardless/Nordigen)",
+          "Custom branded domain (Billing.YourCompany.com)",
+          "Multiple user accounts with permission controls",
+          "Document upload capabilities",
+          "PEPPOL e-invoicing (250 credits included)",
+          "Lock documents until payment received",
+        ].map((feature) => (
+          <div class="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200">
+            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm text-gray-700">{feature}</span>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <Button href="/pricing-plans/" size="lg">View Full Pricing</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

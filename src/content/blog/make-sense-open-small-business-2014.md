@@ -1,0 +1,25 @@
+---
+title: Does it make sense to open a small business in 2014?
+description: The twenty-first century business world seems to be dominated by big chains and online shopping sites. Big chains have the advantage of being a known quantit...
+publishDate: 2014-10-03
+category: "small-business"
+author: "Invoice Ninja"
+draft: false
+oldSlug: "make-sense-open-small-business-2014"
+---
+
+The twenty-first century business world seems to be dominated by big chains and online shopping sites. Big chains have the advantage of being a known quantity – if you have been to one branch you know what to expect in another. Chains have large advertising budgets and the ability to offer attractive deals and sales. Their regular prices are often lower too. Shopping online enjoys the convenience factor. Customers can compare prices without having to go from store to store, and don’t even have to carry their purchases home.
+
+Does it make sense to open a small business in this environment? Is it possible for a small business to compete with the big chains and the internet? It turns out that if you focus on taking advantage of the assets that are exclusive to small businesses you CAN compete with the big guys:
+
+- **Location** – Big chains are often located in strip malls outside the residential areas. Small businesses can open up near where people live and work. Customers may still prefer to drive out of their way for a big shop, but when they just want to pick up a few things they will choose the more convenient and closer option. And a less commercial area will also be lower in rent. Many small towns and even states have campaigns to encourage residents to buy local. Being a part of such a campaign will encourage customers from the neighborhood to try your store before going elsewhere.
+
+- **Personality **– Big chains and websites are pretty impersonal. Each branch is basically the same, and there are so many products being sold in one place that there is no individuality. But small businesses can focus on a certain culture and invest the bulk of their resources on creating a store with a specific personality. For instance, a small store can afford to market only to the teenage audience, while big chains will only have a small section to devoted to that demographic.
+
+- **Personal relationships and customer service**– As the owner of a small business, you have the opportunity to develop a warm personal relationship with your customers. Large chains, where customers meet employees who aren’t invested in the business, and websites, where customers never meet the personnel at all, cannot compete with the excellent customer service that small stores can provide. When a customer knows he will be greeted warmly when he walks in the door, he is motivated to come back. And when the owner comes over personally to offer a loyal customer a special discount, she is not likely to go elsewhere. A business owner can also mark milestones in customers’ lives, join local causes and events and hire local employees. All of these activities make him a part of the community and give locals a reason to support him.
+
+- **Flexibility –** At a big company, suggestions for change have to go to corporate for approval and may not be accepted because they violate the uniformity rules of the chain. But small businesses are in the position to adapt easily and quickly to what the locals say they want. Clothing styles and trends, for instance, tend to be very different according to region, even inside the United States. If women are looking for more skirts in a store in the Midwest, the owner of a small store will simply order more skirts, without waiting for anyone’s approval. A restaurant or coffee shop can take advantage of locally produced ingredients to satisfy the local palate.
+
+- **Advertising –** Small businesses can’t compete with the big ones on large-scale advertising like national newspapers and TV, but they can certainly get ahead in local newspapers and radio and in social media. Encouraging customers who come through the door to follow you on social media or sign up for your newsletter allows you to maintain an ongoing relationship with them in between purchases. Entice them into the store with exclusive offers, with them a happy birthday and let them know when new merchandise arrives. Big companies will have a social media presence, but it won’t have the personal touch that a smaller business can bring to the table.
+
+Small businesses are still the backbone of the business world. In the U.S. there are almost 28 million small businesses and over 22 million are self-employed with no additional payroll or employees. [http://www.forbes.com/sites/jasonnazar/2013/09/09/16-surprising-statistics-about-small-businesses/](http://www.forbes.com/sites/jasonnazar/2013/09/09/16-surprising-statistics-about-small-businesses/) Small businesses definitely have the ability to succeed and compete against both the big chain stores and the growing trend of internet shopping. It’s just a matter of excelling where the big boys can’t.

@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/ui/Card.astro";
+---
+
+<BaseLayout title="Mobile & Desktop Apps" description="Download Invoice Ninja for iOS, Android, macOS, Windows, and Linux. Available on all platforms." path="/apps/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Apps & Platforms</h1>
+        <p class="text-xl text-gray-600">Invoice Ninja is available everywhere you work.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card padding="lg">
+          <h3 class="text-lg font-bold text-dark mb-4">Desktop</h3>
+          <ul class="space-y-3">
+            <li><a href="https://apps.apple.com/app/id1503970375?platform=mac" class="text-primary hover:underline">macOS — App Store</a></li>
+            <li><a href="https://apps.microsoft.com/store/detail/invoice-ninja/9N3F2BBCFDR6" class="text-primary hover:underline">Windows — Microsoft Store</a></li>
+            <li><a href="https://flathub.org/apps/com.invoiceninja.InvoiceNinja" class="text-primary hover:underline">Linux — Flathub</a></li>
+            <li><a href="https://snapcraft.io/invoiceninja" class="text-primary hover:underline">Linux — Snapcraft</a></li>
+          </ul>
+        </Card>
+
+        <Card padding="lg">
+          <h3 class="text-lg font-bold text-dark mb-4">Mobile</h3>
+          <ul class="space-y-3">
+            <li><a href="https://apps.apple.com/app/id1503970375?platform=iphone" class="text-primary hover:underline">iOS — App Store</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.invoiceninja.app" class="text-primary hover:underline">Android — Google Play</a></li>
+            <li><a href="https://f-droid.org/en/packages/com.invoiceninja.app" class="text-primary hover:underline">Android — F-Droid</a></li>
+          </ul>
+        </Card>
+
+        <Card padding="lg">
+          <h3 class="text-lg font-bold text-dark mb-4">Browser & Web</h3>
+          <ul class="space-y-3">
+            <li><a href="https://app.invoicing.co" class="text-primary hover:underline">Web App</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/invoice-ninja-tasks/dlfcbfdpemfnjbjlladogijcchfmmaaf" class="text-primary hover:underline">Chrome Extension</a></li>
+          </ul>
+        </Card>
+
+        <Card padding="lg">
+          <h3 class="text-lg font-bold text-dark mb-4">Integrations</h3>
+          <ul class="space-y-3">
+            <li><a href="https://wordpress.org/plugins/invoiceninja/" class="text-primary hover:underline">WordPress Plugin</a></li>
+            <li><a href="/software/" class="text-primary hover:underline">View All Integrations</a></li>
+          </ul>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

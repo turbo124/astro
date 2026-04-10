@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/ui/Button.astro";
+---
+
+<BaseLayout title="EU e-Invoicing & PEPPOL" description="Invoice Ninja supports e-invoicing compliance for EU businesses with PEPPOL, ZUGFeRD, Facturae, FatturaPA and more." path="/e-invoicing/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">EU e-Invoicing & PEPPOL</h1>
+        <p class="text-xl text-gray-600">EU based? Yes, we are e-Invoicing compliant!</p>
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+        <h2>Supported e-Invoice Standards</h2>
+        <ul>
+          <li><strong>PEPPOL</strong> — Universal, cross-industry standard</li>
+          <li><strong>ZUGFeRD / XRechnung</strong> — Germany</li>
+          <li><strong>Facturae</strong> — Spain</li>
+          <li><strong>FatturaPA</strong> — Italy</li>
+          <li><strong>FACT1</strong> — Romania</li>
+          <li><strong>EN16931</strong> — Generic EU standard</li>
+        </ul>
+
+        <h2>PEPPOL Network</h2>
+        <p>PEPPOL functions as a secure, international routing system connecting hundreds of thousands of public and private companies across borders.</p>
+
+        <h2>Supported Jurisdictions</h2>
+        <p>Austria, Belgium, Switzerland, Germany, Spain (Verifactu), Finland, France, Italy, Netherlands, Poland, Romania, and Sweden.</p>
+
+        <h2>Pricing</h2>
+        <p>All Enterprise Plan subscribers receive <strong>250 e-invoicing credits at no additional cost</strong>. Additional credits available: $50/500 or $100/1000 (1-year validity).</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+        {["Spain", "France", "Germany", "Italy", "Romania"].map((country) => (
+          <a href={"/e-invoicing-" + country.toLowerCase() + "/"} class="p-4 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all text-center">
+            <span class="text-sm font-medium text-gray-700">e-Invoicing</span>
+            <p class="text-lg font-bold text-dark">{country}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

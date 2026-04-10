@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Pricing Plans" description="Invoice Ninja pricing - Free forever plan, Ninja Pro at $14/mo, Enterprise at $18/mo. No hidden fees." path="/pricing-plans/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Simple, Transparent Pricing</h1>
+        <p class="text-xl text-gray-600">Start free. Upgrade when you're ready.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Free -->
+        <div class="rounded-2xl border border-gray-200 p-8">
+          <h3 class="text-lg font-bold text-dark mb-1">Free</h3>
+          <p class="text-sm text-gray-500 mb-4">Yes, it's really free :)</p>
+          <p class="text-4xl font-bold text-dark mb-6">$0<span class="text-sm font-normal text-gray-500">/mo</span></p>
+          <Button href="https://app.invoicing.co/#/register" variant="outline" class="w-full mb-6">Get Started</Button>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> 5 Clients + Unlimited Invoicing</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> 4 Invoice Templates</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Accept Payments Online</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Auto-Billing & Recurring</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Inventory Management</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Time Tracking & Projects</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Vendor & Expense Tracking</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">&#10003;</span> Client Portal</li>
+          </ul>
+        </div>
+
+        <!-- Pro -->
+        <div class="rounded-2xl border-2 border-primary p-8 relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">Popular</span>
+          <h3 class="text-lg font-bold text-dark mb-1">Ninja Pro</h3>
+          <p class="text-sm text-gray-500 mb-4">For growing businesses</p>
+          <p class="text-4xl font-bold text-dark mb-1">$14<span class="text-sm font-normal text-gray-500">/mo</span></p>
+          <p class="text-xs text-gray-400 mb-6">or $140/year (2 months free)</p>
+          <Button href="https://app.invoicing.co/#/register" class="w-full mb-6">Start Pro</Button>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Everything in Free</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Unlimited Clients</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Remove Branding</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Gmail/MSN Email</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> 11 Invoice Templates</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> API Access</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Auto-Reminders</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Advanced Reporting</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> 10 Company Accounts</li>
+          </ul>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="rounded-2xl border border-gray-200 p-8">
+          <h3 class="text-lg font-bold text-dark mb-1">Enterprise</h3>
+          <p class="text-sm text-gray-500 mb-4">For teams & advanced needs</p>
+          <p class="text-4xl font-bold text-dark mb-1">$18<span class="text-sm font-normal text-gray-500">/mo</span></p>
+          <p class="text-xs text-gray-400 mb-6">or $180/year (2 months free)</p>
+          <Button href="https://app.invoicing.co/#/register" variant="secondary" class="w-full mb-6">Start Enterprise</Button>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Everything in Pro</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Up to 100 Users</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Custom Domain Portal</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Bank Integration</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> e-Invoicing & PEPPOL</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> File Attachments</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Document Lock</li>
+          </ul>
+        </div>
+
+        <!-- Premium -->
+        <div class="rounded-2xl border border-gray-200 p-8 bg-gray-50">
+          <h3 class="text-lg font-bold text-dark mb-1">Premium Business</h3>
+          <p class="text-sm text-gray-500 mb-4">White glove support</p>
+          <p class="text-4xl font-bold text-dark mb-1">$280<span class="text-sm font-normal text-gray-500">/yr</span></p>
+          <p class="text-xs text-gray-400 mb-6">Contact for details</p>
+          <Button href="mailto:concierge@invoiceninja.com" variant="outline" class="w-full mb-6">Contact Us</Button>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Everything in Enterprise</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Developer Concierge</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Priority Support</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Invoice Design Services</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Feature Request Priority</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Data Migration Help</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

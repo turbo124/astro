@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="e-Invoicing Italy" description="Invoice Ninja e-invoicing compliance for Italy. Support for FatturaPA." path="/e-invoicing-italy/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <nav class="mb-8 text-sm text-gray-500">
+        <a href="/" class="hover:text-primary">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/e-invoicing/" class="hover:text-primary">e-Invoicing</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-700">Italy</span>
+      </nav>
+
+      <h1 class="text-4xl font-bold text-dark mb-4">e-Invoicing in Italy</h1>
+      <p class="text-xl text-gray-600 mb-8">Invoice Ninja supports FatturaPA for Italy-based businesses.</p>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+        <h2>Supported Standard: FatturaPA</h2>
+        <p>Invoice Ninja enables compliant e-invoicing for businesses operating in Italy. All Enterprise Plan subscribers receive 250 e-invoicing credits at no additional cost.</p>
+
+        <h2>Getting Started</h2>
+        <p>Ensure your Invoice Ninja account has the required jurisdiction-specific fields populated for successful e-invoice delivery and validation.</p>
+      </div>
+
+      <div class="mt-12">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

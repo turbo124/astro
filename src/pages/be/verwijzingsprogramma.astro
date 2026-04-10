@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/ui/Button.astro";
+---
+
+<BaseLayout title="Verwijzingsprogramma" description="50% commissie op verwijzingen voor 3 jaar." locale="be" path="/referrals/">
+  <Header slot="header" locale="be" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Verwijzingsprogramma</h1>
+        <p class="text-xl text-gray-600">50% commissie op verwijzingen voor 3 jaar.</p>
+      </div>
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">
+          Gratis beginnen
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

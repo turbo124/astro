@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Invoice Ninja vs. FreshBooks" description="Compare Invoice Ninja vs FreshBooks. See features, pricing, and why businesses choose Invoice Ninja." path="/invoice-ninja-vs-fresh-books/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-4xl font-bold text-dark mb-8">Invoice Ninja vs. FreshBooks</h1>
+
+      <div class="overflow-x-auto mb-12">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="py-3 pr-4"></th>
+              <th class="py-3 text-center font-semibold text-primary">Invoice Ninja</th>
+              <th class="py-3 text-center font-semibold text-gray-700">FreshBooks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 pr-4 text-gray-700">Annual Price</td>
+              <td class="py-3 text-center font-bold text-primary">$140</td>
+              <td class="py-3 text-center text-gray-700">$756/yr</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 pr-4 text-gray-700">Free Plan</td>
+              <td class="py-3 text-center text-green-600">Yes</td>
+              <td class="py-3 text-center text-red-500">No</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 pr-4 text-gray-700">Open Source</td>
+              <td class="py-3 text-center text-green-600">Yes</td>
+              <td class="py-3 text-center text-red-500">No</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 pr-4 text-gray-700">Self-Hosting Option</td>
+              <td class="py-3 text-center text-green-600">Yes</td>
+              <td class="py-3 text-center text-red-500">No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Try Invoice Ninja Free</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
