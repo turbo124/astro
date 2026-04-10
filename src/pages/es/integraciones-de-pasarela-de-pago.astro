@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/ui/Button.astro";
+---
+
+<BaseLayout title="Integraciones de Pasarela de Pago" description="Acepta pagos con tarjeta de crédito, ACH, PayPal y más." locale="es">
+  <Header slot="header" locale="es" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Integraciones de Pasarela de Pago</h1>
+        <p class="text-xl text-gray-600">Acepta pagos con tarjeta de crédito, ACH, PayPal y más.</p>
+      </div>
+      <div class="text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Comienza gratis</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Invoice Ninja" description="Free invoicing software for freelancers and small businesses." path="/fb-land1/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Invoice Ninja</h1>
+        <p class="text-xl text-gray-600">Free invoicing software for freelancers and small businesses.</p>
+      </div>
+
+      <div class="max-w-xl mx-auto text-center not-prose">
+        <p class="text-2xl font-bold text-dark mb-4">Stop Overpaying for Invoicing</p>
+        <p class="text-gray-600 mb-8">Invoice Ninja is free, open-source, and trusted by 200,000+ businesses. Create invoices, accept payments, track time — all in one place.</p>
+        <ul class="text-left space-y-3 mb-8">
+          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Free forever — no credit card required</li>
+          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Accept payments via Stripe, PayPal & more</li>
+          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Beautiful invoice templates</li>
+          <li class="flex items-center gap-2 text-gray-700"><span class="text-green-500">&#10003;</span> Time tracking & project management</li>
+        </ul>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

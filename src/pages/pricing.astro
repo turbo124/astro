@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Pricing" description="Simple, transparent pricing for Invoice Ninja." path="/pricing/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Pricing</h1>
+        <p class="text-xl text-gray-600">Simple, transparent pricing for Invoice Ninja.</p>
+      </div>
+      <meta http-equiv="refresh" content="0;url=/pricing-plans/" />
+      <div class="mt-12 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="50% Off Pro Plans" description="Get 50% off Invoice Ninja Pro plans for a limited time." path="/pro-plans-50-off/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">50% Off Pro Plans</h1>
+        <p class="text-xl text-gray-600">Get 50% off Invoice Ninja Pro plans for a limited time.</p>
+      </div>
+
+      <div class="max-w-xl mx-auto text-center not-prose">
+        <p class="text-5xl font-bold text-primary mb-4">50% OFF</p>
+        <p class="text-2xl font-bold text-dark mb-4">Pro Plans</p>
+        <p class="text-gray-600 mb-8">Upgrade to Invoice Ninja Pro and unlock unlimited clients, custom templates, API access, and more.</p>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

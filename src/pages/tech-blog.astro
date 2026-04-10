@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<BaseLayout title="Tech Blog" description="Technical articles and development updates from Invoice Ninja." path="/tech-blog/">
+  <Header slot="header" />
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Tech Blog</h1>
+        <p class="text-xl text-gray-600">Technical articles and development updates from Invoice Ninja.</p>
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none mx-auto">
+        <p>For our latest articles on freelancing, invoicing, and small business tips, visit our <a href="/blog/">main blog</a>.</p>
+        <p>For technical documentation and developer resources, visit our <a href="https://invoiceninja.github.io/">documentation site</a>.</p>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="https://app.invoicing.co/#/register" size="lg">Get Started Free</Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
