@@ -3,13 +3,98 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/ui/Button.astro";
+
+const invoicingFeatures = [
+  { title: "Upload your Company Logo", desc: "Upload your logo & customize invoice colors to match your brand!" },
+  { title: "More Payment Gateways", desc: "Stripe, PayPal, Checkout, Braintree, PayFast, Authorize, Square, Mollie and more!", href: "/payments/" },
+  { title: "Dynamic Dashboard Data", desc: "View revenue, invoices sent, recent activity data. Track upcoming invoices, invoices past due, and more!" },
+  { title: "Invoice Template Designs", desc: "4 free invoice templates, Pro members have 10 professional designs!", href: "/invoice-templates/" },
+  { title: "Track Inventory Levels", desc: "Set inventory levels per product. Inventory levels are reduced automatically as products are invoiced." },
+  { title: "Additional Users & Set Permissions", desc: "Add users and set access permissions per user. Users can belong to multiple companies." },
+  { title: "Link Multiple Companies (x10) with 1 Login", desc: "Manage invoicing for up to 10 business accounts all under one Invoice Ninja account." },
+  { title: "Recurring Invoicing & Auto-Billing Clients", desc: "Save time by automatically billing long-term clients with recurring invoices." },
+  { title: "Attach 3rd Party Files to Invoices & Expenses", desc: "Combine important files with your invoice document. All in one email delivery." },
+  { title: "Customize Invoice Fields", desc: "Create dynamic custom fields for your company, client details, invoice product columns, more!" },
+  { title: "Client-Side Account Portal", desc: "Client can view their invoices, quotes, payments, documents, and all transaction history." },
+  { title: "Projects, Tasks & Track Time", desc: "Log every task. Record every second. Then simply click to add the data to your invoice.", href: "/projects/" },
+  { title: "Send Invoices & Quotes via Gmail & MSN Accounts", desc: "The most requested feature by far! Email invoices, quotes, & payment reminders via your Gmail or MSN email!" },
+  { title: "Email via your SMTP Setup", desc: "Email invoices, quotes, & payments emails via your own SMTP server configuration to provide your clients a 100% branded experience." },
+  { title: "Create Group Workflow Settings", desc: "Create 'groups' of custom settings: payment terms, designs and more, for different 'groups' of clients." },
+  { title: "Custom Domain 'Billing.YourCompany.com'", desc: "Simply create a unique DNS A Record entry and we'll work some magic!" },
+  { title: "Kanban Boards for Projects", desc: "Organize and plan your client work with our visual project management tool.", href: "/projects/" },
+  { title: "Approved Quotes Auto-Convert to Payable Invoices", desc: "Turn an approved quote into an invoice with just one click of a button or allow auto-conversion from client approval." },
+  { title: "Fully Customizable Invoice Template Design", desc: "Match the look of your invoice with the design of your brand." },
+  { title: "Customize Email Subjects & Body Text", desc: "Tailor your invoice email text for improved open rates and brand recognition." },
+  { title: "Accept Deposits & Partial Payments", desc: "Request partial payments using the same invoice again and again." },
+  { title: "Invoice Payment Auto-Reminder Emails", desc: "Use a pre-written auto-reminder email sequence to remind clients your invoice needs to be paid." },
+  { title: "Alerts When Client Views & Pays Invoices", desc: "Receive notifications when a client views and pays your invoice." },
+  { title: "Enable Invoice Approval Checkbox or Client Signature", desc: "Ensure clients understand your terms of agreement prior to payments." },
+  { title: "Item & Product Library System", desc: "Quickly select from potentially thousands of predefined service and product descriptions." },
+  { title: "Bulk Emailing Invoices & Quotations", desc: "Save time by quickly selecting multiple invoices and emailing them out together." },
+  { title: "Create Reports, Accounts Aging & Client Statements", desc: "Understand the bigger financial picture with our advanced report features." },
+  { title: "Importing Expenses & Vendors", desc: "Automatically import your expenses data to your Invoice Ninja account.", href: "/expenses/" },
+  { title: "Multiple Currencies & Languages", desc: "Dozens of languages & currencies – a true solution for global payments." },
+  { title: "Currency Formatting '.' vs ','", desc: "Set 100.00,00 or 100,00.00 per your region." },
+  { title: "Setup Automatic Credit Card Gateway Fees", desc: "Automatically add percentage fees to select predetermined price ranges." },
+  { title: "Setup Automatic Late Fees on Unpaid Invoices", desc: "Bill a client extra for unpaid invoices with automatic late payment fees." },
+  { title: "Enable/Disable Recurring When Cloning", desc: "Clone recurring invoices to a regular invoice, and vice versa!" },
+  { title: "Set a 'BCC' Address for Invoice & Quote Emails", desc: "Include additional company members in notifications." },
+  { title: "Tax Settings per Line Item or Invoice Total", desc: "Inclusive taxation, exclusive taxation, line-item taxation, and more!" },
+  { title: "Enabling/Disabling Nav Modules", desc: "Show more or less menu navigation based on your work preference." },
+  { title: "Create Custom Payment Instructions", desc: "Special payment instructions? Create custom instructions directly in the invoice!" },
+  { title: "Automated Currency Exchange", desc: "Automate currency exchange between clients currency, and your account default currency." },
+  { title: "Auto Sales Tax Calculation", desc: "Automate your invoice sales tax calculation (US States)." },
+];
+
+const proEnterpriseAccordion = [
+  {
+    title: "Custom Domain 'Billing.YourCompany.com'",
+    plan: "Enterprise",
+    desc: "Simply create a unique DNS A Record entry and we'll work some magic! Your clients view invoices and pay on your custom company URL for a 100% branded experience.",
+  },
+  {
+    title: "Attach 3rd Party Files to Invoices & Expenses",
+    plan: "Enterprise",
+    desc: "Attach important files for your client: .doc, .ppt, .xls, .jpg, .png, .pdf, and more, all together with your client's invoices and portal!",
+  },
+  {
+    title: "Banking Integration",
+    plan: "Enterprise",
+    desc: "With Yodlee and GoCardless (Nordigen) integrations, automatically import expenses and transactions from your bank accounts, credit cards, and PayPal.",
+  },
+  {
+    title: "Additional Users & Activity Notifications",
+    plan: "Enterprise",
+    desc: "Add account users and set or limit access permissions per user. Enable or disable account activity and email notifications for different account users.",
+  },
+  {
+    title: "Unlock Documents After Payment",
+    plan: "Enterprise",
+    desc: "Enable \"locking\" documents from being downloaded until after an invoice has been paid.",
+  },
+  {
+    title: "Automated Workflow",
+    plan: "Pro",
+    desc: "Use the power of Zapier, Make, Pabbly, Integrately to integrate Invoice Ninja with hundreds of apps to automate your invoicing workflow!",
+  },
+  {
+    title: "Custom Reminder Emails",
+    plan: "Pro",
+    desc: "Create unique templates for past-due reminder emails. Emails are automatically sent per date parameters you define!",
+  },
+  {
+    title: "Create Reports, Accounts Aging & Client Statements",
+    plan: "Pro",
+    desc: "Understand the bigger financial picture with our advanced report features. Configure auto-creation of reports on a regular basis.",
+  },
+];
 ---
 
 <BaseLayout title="Invoicing, Quotes, Payments" description="Free Invoicing Software for Small Businesses. Create invoices, send quotes, and accept online payments." path="/invoicing/">
   <Header slot="header" />
 
   <!-- HERO -->
-  <section class="relative py-16 lg:py-24" style="background: linear-gradient(110deg, #F5F9FE 25%, #E4F0FF 99%);">
+  <section class="relative py-16 lg:py-24" style="background: linear-gradient(110.18deg, #F5F9FE 25.55%, #E4F0FF 99.08%);">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h1 class="text-4xl lg:text-6xl font-extrabold text-dark mb-4">Create. Send. Get Paid.</h1>
       <p class="text-lg font-semibold text-gray-500 mb-4">Invoicing, Quotes, Payments</p>
@@ -20,7 +105,6 @@ import Button from "../components/ui/Button.astro";
       </div>
       <img src="/images/how-it-works/email-invoices-thumbnail.png" alt="Invoice Ninja invoicing dashboard" class="w-full max-w-4xl mx-auto rounded-xl" loading="eager" />
     </div>
-    <!-- Decorative ornament -->
     <img src="/images/common/Ornament-11.svg" alt="" class="hidden lg:block absolute left-0 top-1/3 w-32 opacity-20 pointer-events-none" aria-hidden="true" />
   </section>
 
@@ -69,7 +153,6 @@ import Button from "../components/ui/Button.astro";
         </div>
       </div>
     </div>
-    <!-- Decorative ornament -->
     <img src="/images/common/Ornament-75.svg" alt="" class="hidden lg:block absolute right-0 top-1/4 w-24 opacity-20 pointer-events-none" aria-hidden="true" />
   </section>
 
@@ -81,47 +164,7 @@ import Button from "../components/ui/Button.astro";
       <p class="text-gray-600 text-center max-w-3xl mx-auto mb-14">Real-time PDF preview creation shows your invoice review as you build it in real-time.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { title: "Upload your Company Logo", desc: "Upload your logo & customize invoice colors to match your brand!" },
-          { title: "More Payment Gateways", desc: "Stripe, PayPal, Checkout, Braintree, PayFast, Authorize, Square, Mollie and more!", href: "/payments/" },
-          { title: "Dynamic Dashboard Data", desc: "View revenue, invoices sent, recent activity data. Track upcoming invoices, invoices past due, and more!" },
-          { title: "Invoice Template Designs", desc: "4 free invoice templates, Pro members have 10 professional designs!", href: "/invoice-templates/" },
-          { title: "Track Inventory Levels", desc: "Set inventory levels per product. Inventory levels are reduced automatically as products are invoiced." },
-          { title: "Additional Users & Set Permissions", desc: "Add users and set access permissions per user. Users can belong to multiple companies." },
-          { title: "Link Multiple Companies (x10) with 1 Login", desc: "Manage invoicing for up to 10 business accounts all under one Invoice Ninja account." },
-          { title: "Recurring Invoicing & Auto-Billing Clients", desc: "Save time by automatically billing long-term clients with recurring invoices." },
-          { title: "Attach 3rd Party Files to Invoices & Expenses", desc: "Combine important files with your invoice document. All in one email delivery." },
-          { title: "Customize Invoice Fields", desc: "Create dynamic custom fields for your company, client details, invoice product columns, more!" },
-          { title: "Client-Side Account Portal", desc: "Client can view their invoices, quotes, payments, documents, and all transaction history." },
-          { title: "Projects, Tasks & Track Time", desc: "Log every task. Record every second. Then simply click to add the data to your invoice.", href: "/projects/" },
-          { title: "Send Invoices & Quotes via Gmail & MSN Accounts", desc: "The most requested feature by far! Email invoices, quotes, & payment reminders via your Gmail or MSN email!" },
-          { title: "Email via your SMTP Setup", desc: "Email invoices, quotes, & payments emails via your own SMTP server configuration to provide your clients a 100% branded experience." },
-          { title: "Create Group Workflow Settings", desc: "Create 'groups' of custom settings: payment terms, designs and more, for different 'groups' of clients." },
-          { title: "Custom Domain 'Billing.YourCompany.com'", desc: "Simply create a unique DNS A Record entry and we'll work some magic!" },
-          { title: "Kanban Boards for Projects", desc: "Organize and plan your client work with our visual project management tool.", href: "/projects/" },
-          { title: "Approved Quotes Auto-Convert to Payable Invoices", desc: "Turn an approved quote into an invoice with just one click of a button or allow auto-conversion from client approval." },
-          { title: "Fully Customizable Invoice Template Design", desc: "Match the look of your invoice with the design of your brand." },
-          { title: "Customize Email Subjects & Body Text", desc: "Tailor your invoice email text for improved open rates and brand recognition." },
-          { title: "Accept Deposits & Partial Payments", desc: "Request partial payments using the same invoice again and again." },
-          { title: "Invoice Payment Auto-Reminder Emails", desc: "Use a pre-written auto-reminder email sequence to remind clients your invoice needs to be paid." },
-          { title: "Alerts When Client Views & Pays Invoices", desc: "Receive notifications when a client views and pays your invoice." },
-          { title: "Enable Invoice Approval Checkbox or Client Signature", desc: "Ensure clients understand your terms of agreement prior to payments." },
-          { title: "Item & Product Library System", desc: "Quickly select from potentially thousands of predefined service and product descriptions." },
-          { title: "Bulk Emailing Invoices & Quotations", desc: "Save time by quickly selecting multiple invoices and emailing them out together." },
-          { title: "Create Reports, Accounts Aging & Client Statements", desc: "Understand the bigger financial picture with our advanced report features." },
-          { title: "Importing Expenses & Vendors", desc: "Automatically import your expenses data to your Invoice Ninja account.", href: "/expenses/" },
-          { title: "Multiple Currencies & Languages", desc: "Dozens of languages & currencies – a true solution for global payments." },
-          { title: "Currency Formatting '.' vs ','", desc: "Set 100.00,00 or 100,00.00 per your region." },
-          { title: "Setup Automatic Credit Card Gateway Fees", desc: "Automatically add percentage fees to select predetermined price ranges." },
-          { title: "Setup Automatic Late Fees on Unpaid Invoices", desc: "Bill a client extra for unpaid invoices with automatic late payment fees." },
-          { title: "Enable/Disable Recurring When Cloning", desc: "Clone recurring invoices to a regular invoice, and vice versa!" },
-          { title: "Set a 'BCC' Address for Invoice & Quote Emails", desc: "Include additional company members in notifications." },
-          { title: "Tax Settings per Line Item or Invoice Total", desc: "Inclusive taxation, exclusive taxation, line-item taxation, and more!" },
-          { title: "Enabling/Disabling Nav Modules", desc: "Show more or less menu navigation based on your work preference." },
-          { title: "Create Custom Payment Instructions", desc: "Special payment instructions? Create custom instructions directly in the invoice!" },
-          { title: "Automated Currency Exchange", desc: "Automate currency exchange between clients currency, and your account default currency." },
-          { title: "Auto Sales Tax Calculation", desc: "Automate your invoice sales tax calculation (US States)." },
-        ].map((feature) => (
+        {invoicingFeatures.map((feature) => (
           <div class="p-6 bg-white rounded-2xl shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
             <h3 class="font-bold text-dark mb-2">{feature.title}</h3>
             <p class="text-sm text-gray-600 mb-3">{feature.desc}</p>
@@ -134,12 +177,43 @@ import Button from "../components/ui/Button.astro";
     </div>
   </section>
 
-  <!-- LET'S CONNECT -->
+  <!-- PRO & ENTERPRISE FEATURES ACCORDION -->
   <section class="py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3 text-center">Pro & Enterprise Features</h2>
+      <p class="text-lg text-gray-500 text-center mb-12">Upgrade for even more powerful invoicing tools</p>
+
+      <div class="space-y-4" id="pro-enterprise-accordion">
+        {proEnterpriseAccordion.map((item) => (
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <button
+              class="accordion-toggle w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-3">
+                <span class={`inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full ${item.plan === 'Enterprise' ? 'bg-purple-100 text-purple-700' : 'bg-primary/10 text-primary'}`}>{item.plan}</span>
+                <span class="text-base font-semibold text-dark">{item.title}</span>
+              </div>
+              <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="accordion-content hidden px-6 pb-6">
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">{item.desc}</p>
+              <Button href="https://app.invoicing.co/#/register" size="sm">Create a Free Account!</Button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LET'S CONNECT -->
+  <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-14 text-center">Let's Connect!</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+        <div class="rounded-2xl overflow-hidden bg-white shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)]">
           <img src="/images/banking/unsplash_DUmFLtMeAbQ.jpg" alt="Community support" class="w-full h-48 object-cover" loading="lazy" />
           <div class="p-6 text-center">
             <h3 class="text-lg font-bold text-dark mb-2">Support Forums</h3>
@@ -147,7 +221,7 @@ import Button from "../components/ui/Button.astro";
             <a href="https://forum.invoiceninja.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors">Community Forums</a>
           </div>
         </div>
-        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+        <div class="rounded-2xl overflow-hidden bg-white shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)]">
           <img src="/images/banking/unsplash_kUqqaRjJuw0.jpg" alt="Contact us" class="w-full h-48 object-cover" loading="lazy" />
           <div class="p-6 text-center">
             <h3 class="text-lg font-bold text-dark mb-2">Contact Email</h3>
@@ -155,7 +229,7 @@ import Button from "../components/ui/Button.astro";
             <a href="mailto:Contact@InvoiceNinja.com" class="inline-block px-5 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors">Contact@InvoiceNinja.com</a>
           </div>
         </div>
-        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+        <div class="rounded-2xl overflow-hidden bg-white shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)]">
           <img src="/images/banking/unsplash_DUmFLtMeAbQ.jpg" alt="Slack community" class="w-full h-48 object-cover" loading="lazy" />
           <div class="p-6 text-center">
             <h3 class="text-lg font-bold text-dark mb-2">Slack Community</h3>
@@ -168,7 +242,7 @@ import Button from "../components/ui/Button.astro";
   </section>
 
   <!-- CTA BANNER -->
-  <section class="py-16 lg:py-20 bg-primary rounded-none">
+  <section class="py-16 lg:py-20" style="background: linear-gradient(336.7deg, #161C27 0%, #0E466D 100%);">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Start Invoicing Today!</h2>
       <p class="text-xl text-white/80 mb-8">Create. Send. Get Paid.</p>
@@ -178,3 +252,15 @@ import Button from "../components/ui/Button.astro";
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('.accordion-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.accordion-arrow');
+      const isOpen = content?.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      arrow?.classList.toggle('rotate-180', isOpen);
+    });
+  });
+</script>
