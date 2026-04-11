@@ -264,8 +264,10 @@ const enterpriseFeatures = [
   </section>
 
   <!-- Pricing Tier Cards -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
+  <section class="relative py-16 overflow-hidden">
+    <!-- Decorative blue shape behind cards -->
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-64 mx-auto max-w-5xl rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 -z-0"></div>
+    <div class="relative max-w-6xl mx-auto px-4 z-10">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Forever Free -->
         <div class="text-center p-8 rounded-2xl border border-gray-200 bg-white shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
@@ -292,16 +294,17 @@ const enterpriseFeatures = [
     </div>
   </section>
 
-  <!-- Tab / Anchor Navigation -->
+  <!-- Jump-to Navigation -->
   <nav class="sticky top-16 lg:top-20 z-30 bg-white border-b border-gray-200 shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 flex justify-center gap-2">
-      <a href="#features_free" class="px-5 py-3 text-sm font-semibold text-gray-600 hover:text-primary border-b-2 border-transparent hover:border-primary transition-colors">
+    <div class="max-w-4xl mx-auto px-4 flex items-center justify-center gap-4 py-3">
+      <span class="text-sm text-gray-400 font-medium">Jump to</span>
+      <a href="#features_free" class="px-5 py-2 text-sm font-semibold text-white bg-primary rounded-full hover:bg-primary-dark transition-colors">
         Free
       </a>
-      <a href="#features_pro" class="px-5 py-3 text-sm font-semibold text-gray-600 hover:text-primary border-b-2 border-transparent hover:border-primary transition-colors">
+      <a href="#features_pro" class="px-5 py-2 text-sm font-semibold text-gray-600 bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-colors">
         Pro
       </a>
-      <a href="#features_enterprise" class="px-5 py-3 text-sm font-semibold text-gray-600 hover:text-primary border-b-2 border-transparent hover:border-primary transition-colors">
+      <a href="#features_enterprise" class="px-5 py-2 text-sm font-semibold text-gray-600 bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-colors">
         Enterprise
       </a>
     </div>
