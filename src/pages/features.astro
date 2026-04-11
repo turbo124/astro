@@ -264,30 +264,28 @@ const enterpriseFeatures = [
   </section>
 
   <!-- Pricing Tier Cards -->
-  <section class="relative py-16 overflow-hidden">
-    <!-- Decorative blue shape behind cards -->
-    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-64 mx-auto max-w-5xl rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 -z-0"></div>
-    <div class="relative max-w-6xl mx-auto px-4 z-10">
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Forever Free -->
-        <div class="text-center p-8 rounded-2xl border border-gray-200 bg-white shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
-          <h3 class="text-lg font-bold text-dark mb-2">Forever Free</h3>
-          <p class="text-4xl font-bold text-primary mb-1">$0<span class="text-base font-normal text-gray-500">/mo</span></p>
-          <p class="text-sm text-gray-500 mb-6">Yes, it's really free :)</p>
+        <div class="pricing-card text-center p-8 rounded-lg bg-white border border-gray-200">
+          <span class="block font-bold text-base text-dark mb-2">Forever Free!</span>
+          <span class="block text-sm text-gray-500 mb-5">Yes, it's really free :)</span>
+          <p class="mb-6"><span class="text-2xl font-bold text-dark">$0</span> <span class="text-sm text-gray-500">per month</span></p>
           <Button href="https://app.invoicing.co/#/register" size="sm">Create & Email Invoices in Real-Time</Button>
         </div>
         <!-- Ninja Pro -->
-        <div class="text-center p-8 rounded-2xl border-2 border-primary bg-primary/5 shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
-          <h3 class="text-lg font-bold text-dark mb-2">Ninja Pro</h3>
-          <p class="text-4xl font-bold text-primary mb-1">$12<span class="text-base font-normal text-gray-500">/mo</span></p>
-          <p class="text-sm text-gray-500 mb-6">Pay annually for 10 months + 2 free!</p>
+        <div class="pricing-card pricing-card-green text-center p-8 rounded-lg bg-white">
+          <span class="block font-bold text-base text-dark mb-2">Ninja Pro</span>
+          <span class="block text-sm text-gray-500 mb-5">Pay annually for 10 months + 2 free!</span>
+          <p class="mb-6"><span class="text-2xl font-bold text-dark">$12</span> <span class="text-sm text-gray-500">per month</span></p>
           <p class="text-sm font-semibold text-dark">Unlimited Everything</p>
         </div>
         <!-- Enterprise -->
-        <div class="text-center p-8 rounded-2xl border border-gray-200 bg-white shadow-[0_100px_80px_rgba(0,0,0,0.03),0_20px_30px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow">
-          <h3 class="text-lg font-bold text-dark mb-2">Ninja Enterprise</h3>
-          <p class="text-4xl font-bold text-primary mb-1">$16<span class="text-base font-normal text-gray-500">/mo</span></p>
-          <p class="text-sm text-gray-500 mb-6">Pay annually for 10 months + 2 free!</p>
+        <div class="pricing-card pricing-card-blue text-center p-8 rounded-lg bg-white">
+          <span class="block font-bold text-base text-dark mb-2">Ninja Enterprise</span>
+          <span class="block text-sm text-gray-500 mb-5">Pay annually for 10 months + 2 free!</span>
+          <p class="mb-6"><span class="text-2xl font-bold text-dark">$16</span> <span class="text-sm text-gray-500">per month</span></p>
           <p class="text-sm font-semibold text-dark">Free + Pro + Enterprise Features</p>
         </div>
       </div>
@@ -380,3 +378,23 @@ const enterpriseFeatures = [
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  .pricing-card {
+    box-shadow:
+      0px 70px 56px rgba(0, 0, 0, 0.03),
+      0px 46px 33px rgba(0, 0, 0, 0.023),
+      0px 27px 18px rgba(0, 0, 0, 0.018),
+      0px 14px 9px rgba(0, 0, 0, 0.015),
+      0px 6px 5px rgba(0, 0, 0, 0.012),
+      0px 1px 2px rgba(0, 0, 0, 0.007);
+  }
+  .pricing-card-green {
+    border: 1px solid #28CA42;
+    border-top: 7px solid #28CA42;
+  }
+  .pricing-card-blue {
+    border: 1px solid #0091EA;
+    border-top: 7px solid #0091EA;
+  }
+</style>
